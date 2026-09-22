@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#3f7d45">
+
 <title>Orion's Kindergarten Safari 🦁</title>
 
 <style>
@@ -16,10 +19,9 @@
 html,body{
   margin:0;
   padding:0;
-  width:100%;
   min-height:100%;
   font-family:"Comic Sans MS","Trebuchet MS",sans-serif;
-  background:#e9f7df;
+  background:#eaf7df;
   color:#29452d;
 }
 
@@ -39,7 +41,7 @@ button{
   z-index:1000;
   background:#3f7d45;
   color:white;
-  padding:10px 14px;
+  padding:9px 12px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -58,7 +60,7 @@ button{
 }
 
 .small-btn{
-  background:#fff;
+  background:white;
   color:#315f35;
   border-radius:14px;
   padding:8px 11px;
@@ -68,7 +70,7 @@ button{
 
 .screen{
   display:none;
-  min-height:calc(100vh - 58px);
+  min-height:calc(100vh - 56px);
   padding:18px;
 }
 
@@ -77,6 +79,8 @@ button{
   flex-direction:column;
   align-items:center;
 }
+
+/* HOME */
 
 .home{
   justify-content:center;
@@ -88,7 +92,7 @@ button{
 }
 
 .home-animal{
-  font-size:85px;
+  font-size:90px;
   animation:bounce 2s infinite;
 }
 
@@ -98,23 +102,18 @@ h1{
   color:#3d713e;
 }
 
-h2{
-  font-size:29px;
-  margin:8px 0 16px;
-}
-
 .subtitle{
   font-size:19px;
-  max-width:650px;
+  max-width:700px;
   margin:5px auto 20px;
 }
 
 .big-start{
   background:#f5a623;
   color:white;
-  font-size:27px;
+  font-size:26px;
   font-weight:bold;
-  padding:18px 45px;
+  padding:17px 40px;
   border-radius:30px;
   box-shadow:0 6px 0 #c97b0b;
 }
@@ -124,24 +123,25 @@ h2{
   box-shadow:0 2px 0 #c97b0b;
 }
 
+/* MENU */
+
 .menu-screen{
-  background:
-    linear-gradient(#e8f8d9,#fff7cf);
+  background:linear-gradient(#e8f8d9,#fff7cf);
 }
 
 .menu-title{
   text-align:center;
-  margin-bottom:5px;
+  margin-bottom:4px;
 }
 
 .menu-subtitle{
   text-align:center;
   font-size:17px;
-  margin:0 0 16px;
+  margin:0 0 15px;
 }
 
 .menu-grid{
-  width:min(1000px,100%);
+  width:min(1050px,100%);
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
   gap:12px;
@@ -162,7 +162,6 @@ h2{
   gap:5px;
   font-weight:bold;
   color:#355f38;
-  transition:.15s;
 }
 
 .game-button:active{
@@ -185,9 +184,7 @@ h2{
   min-height:90px;
 }
 
-.everything .game-icon{
-  font-size:38px;
-}
+/* ACTIVITY */
 
 .activity-screen{
   background:
@@ -197,12 +194,11 @@ h2{
 }
 
 .activity-header{
-  width:min(1000px,100%);
+  width:min(1050px,100%);
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:8px;
-  margin-bottom:8px;
+  margin-bottom:7px;
 }
 
 .activity-title{
@@ -211,12 +207,12 @@ h2{
 }
 
 .progress-wrap{
-  width:min(1000px,100%);
+  width:min(1050px,100%);
   height:15px;
   background:#d2dfcf;
   border-radius:20px;
   overflow:hidden;
-  margin-bottom:14px;
+  margin-bottom:13px;
 }
 
 .progress{
@@ -227,8 +223,8 @@ h2{
 }
 
 .question{
-  width:min(1000px,100%);
-  background:#ffffffdd;
+  width:min(1050px,100%);
+  background:#ffffffdf;
   border-radius:30px;
   padding:18px;
   box-shadow:0 5px 15px #0002;
@@ -243,7 +239,7 @@ h2{
 
 .choices{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
   gap:12px;
   width:100%;
 }
@@ -264,20 +260,8 @@ h2{
   transform:scale(.95);
 }
 
-.emoji-choice{
-  font-size:58px;
-}
-
-.correct{
-  animation:correct .55s ease;
-  background:#d9f7c9 !important;
-  border-color:#62a94c !important;
-}
-
-.wrong{
-  animation:shake .35s ease;
-  background:#ffdcdc !important;
-  border-color:#e78a8a !important;
+.picture-choice{
+  font-size:68px;
 }
 
 .feedback{
@@ -288,7 +272,7 @@ h2{
 }
 
 .activity-bottom{
-  width:min(1000px,100%);
+  width:min(1050px,100%);
   display:flex;
   justify-content:center;
   gap:10px;
@@ -313,6 +297,8 @@ h2{
   font-weight:bold;
 }
 
+/* VISUALS */
+
 .visual{
   font-size:110px;
   line-height:1;
@@ -324,17 +310,19 @@ h2{
   height:145px;
   border-radius:28px;
   margin:10px auto 20px;
-  box-shadow:inset 0 0 0 6px #ffffffaa,0 5px 12px #0002;
+  box-shadow:
+    inset 0 0 0 6px #ffffffaa,
+    0 5px 12px #0002;
 }
 
 .shape{
-  width:140px;
-  height:140px;
+  width:145px;
+  height:145px;
   margin:10px auto 20px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:70px;
+  font-size:90px;
 }
 
 .count-items{
@@ -343,39 +331,55 @@ h2{
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
-  gap:5px;
+  gap:4px;
   font-size:55px;
-  max-width:800px;
+  max-width:850px;
   margin:0 auto 12px;
 }
 
 .letter{
-  font-size:100px;
+  font-size:110px;
   font-weight:bold;
   color:#e68a27;
 }
 
-.food-pair{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:18px;
-  font-size:80px;
-  margin:8px;
+/* FOOD */
+
+.food-animal{
+  font-size:105px;
+  margin:5px;
 }
 
-.line-board{
-  width:min(850px,100%);
+.food-arrow{
+  font-size:45px;
+  margin:5px;
+}
+
+/* DRAWING */
+
+.draw-instructions{
+  font-size:21px;
+  font-weight:bold;
+  margin:4px 0 10px;
+}
+
+.draw-board{
+  width:min(1000px,100%);
   background:#fff;
   border-radius:25px;
   padding:12px;
-  box-shadow:0 4px 10px #0002;
+  box-shadow:0 4px 12px #0002;
+}
+
+.canvas-wrap{
   position:relative;
+  width:100%;
 }
 
 canvas{
   width:100%;
-  height:310px;
+  height:360px;
+  display:block;
   background:
     radial-gradient(circle,#dbead2 1px,transparent 1px);
   background-size:20px 20px;
@@ -384,10 +388,20 @@ canvas{
   touch-action:none;
 }
 
-.draw-instructions{
-  font-size:20px;
-  font-weight:bold;
-  margin:5px;
+.animal-side{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:65px;
+  pointer-events:none;
+}
+
+.animal-left{
+  left:18px;
+}
+
+.animal-right{
+  right:18px;
 }
 
 .clear-btn{
@@ -396,44 +410,95 @@ canvas{
   padding:10px 18px;
   border-radius:18px;
   font-weight:bold;
-  margin-top:8px;
+  margin-top:9px;
 }
+
+.done-btn{
+  background:#5e9f55;
+  color:white;
+  padding:12px 25px;
+  border-radius:20px;
+  font-size:20px;
+  font-weight:bold;
+  margin-top:9px;
+}
+
+/* MATCHING */
+
+.match-area{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  width:min(800px,100%);
+  margin:auto;
+}
+
+.match-column{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.match-card{
+  min-height:100px;
+  background:white;
+  border:4px solid #d9e9cf;
+  border-radius:22px;
+  box-shadow:0 4px 8px #0002;
+  font-size:65px;
+}
+
+.match-card:active{
+  transform:scale(.95);
+}
+
+.match-selected{
+  border-color:#f5a623;
+  background:#fff5d9;
+  transform:scale(1.04);
+}
+
+/* BIG SMALL */
 
 .big-small-area{
   display:flex;
   align-items:flex-end;
   justify-content:center;
   gap:55px;
-  min-height:210px;
+  min-height:220px;
 }
 
 .big-object{
-  font-size:150px;
+  font-size:155px;
 }
 
 .small-object{
   font-size:65px;
 }
 
-.tall-tree{
-  font-size:150px;
-}
+/* MISSING */
 
 .pattern{
-  font-size:70px;
-  letter-spacing:8px;
+  font-size:75px;
+  letter-spacing:7px;
   margin:20px;
 }
 
-.missing{
-  color:#e68a27;
+.missing-picture{
   font-size:70px;
+}
+
+/* SAFARI */
+
+.safari-instruction{
+  font-size:23px;
   font-weight:bold;
+  margin:5px 0 10px;
 }
 
 .safari{
   width:min(1100px,100%);
-  min-height:430px;
+  min-height:450px;
   border-radius:30px;
   overflow:hidden;
   position:relative;
@@ -455,8 +520,15 @@ canvas{
   font-size:55px;
 }
 
-.cloud.one{left:8%;top:25px;}
-.cloud.two{left:48%;top:55px;}
+.cloud.one{
+  left:8%;
+  top:25px;
+}
+
+.cloud.two{
+  left:48%;
+  top:55px;
+}
 
 .tree{
   position:absolute;
@@ -464,9 +536,18 @@ canvas{
   font-size:85px;
 }
 
-.tree.t1{left:10px;}
-.tree.t2{right:15px;}
-.tree.t3{left:43%;bottom:0;}
+.tree.t1{
+  left:10px;
+}
+
+.tree.t2{
+  right:15px;
+}
+
+.tree.t3{
+  left:43%;
+  bottom:0;
+}
 
 .safari-object{
   position:absolute;
@@ -475,18 +556,13 @@ canvas{
   font-size:55px;
   padding:3px;
   z-index:5;
-  transition:.15s;
 }
 
 .safari-object:active{
   transform:scale(1.25);
 }
 
-.safari-instruction{
-  font-size:23px;
-  font-weight:bold;
-  margin:5px 0 10px;
-}
+/* CELEBRATION */
 
 .celebration{
   justify-content:center;
@@ -498,8 +574,15 @@ canvas{
 }
 
 .trophy{
-  font-size:100px;
+  font-size:105px;
   animation:bounce 1s infinite;
+}
+
+.finish-buttons{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
 .confetti{
@@ -517,12 +600,21 @@ canvas{
   animation:fall 3s linear forwards;
 }
 
-.finish-buttons{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
+/* FEEDBACK */
+
+.correct{
+  animation:correct .55s ease;
+  background:#d9f7c9 !important;
+  border-color:#62a94c !important;
 }
+
+.wrong{
+  animation:shake .35s ease;
+  background:#ffdcdc !important;
+  border-color:#e78a8a !important;
+}
+
+/* ANIMATION */
 
 @keyframes bounce{
   0%,100%{transform:translateY(0)}
@@ -547,27 +639,91 @@ canvas{
   }
 }
 
+/* MOBILE */
+
 @media(max-width:600px){
-  h1{font-size:31px}
-  h2{font-size:25px}
-  .subtitle{font-size:16px}
-  .question-text{font-size:24px}
-  .activity-title{font-size:19px}
-  .visual{font-size:85px}
-  .choice{min-height:88px;font-size:19px}
-  .emoji-choice{font-size:45px}
-  .menu-grid{grid-template-columns:repeat(2,1fr)}
-  .game-button{min-height:110px}
-  .game-icon{font-size:38px}
-  .safari{min-height:380px}
-  .safari-object{font-size:44px}
-  canvas{height:270px}
+
+  h1{
+    font-size:31px;
+  }
+
+  .question-text{
+    font-size:24px;
+  }
+
+  .activity-title{
+    font-size:19px;
+  }
+
+  .visual{
+    font-size:85px;
+  }
+
+  .choice{
+    min-height:92px;
+  }
+
+  .picture-choice{
+    font-size:52px;
+  }
+
+  .menu-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .game-button{
+    min-height:110px;
+  }
+
+  .game-icon{
+    font-size:38px;
+  }
+
+  .color-box{
+    width:115px;
+    height:115px;
+  }
+
+  canvas{
+    height:320px;
+  }
+
+  .animal-side{
+    font-size:52px;
+  }
+
+  .animal-left{
+    left:10px;
+  }
+
+  .animal-right{
+    right:10px;
+  }
+
+  .match-area{
+    gap:10px;
+  }
+
+  .match-card{
+    font-size:52px;
+  }
+
+  .safari{
+    min-height:390px;
+  }
+
+  .safari-object{
+    font-size:45px;
+  }
 }
 
+/* LANDSCAPE PHONE */
+
 @media(orientation:landscape) and (max-height:600px){
+
   .screen{
     min-height:calc(100vh - 50px);
-    padding:10px;
+    padding:8px;
   }
 
   .question{
@@ -575,23 +731,26 @@ canvas{
   }
 
   .question-text{
-    font-size:23px;
+    font-size:22px;
     margin-bottom:5px;
   }
 
   .choice{
     min-height:65px;
-    padding:5px;
-  }
-
-  .visual{
-    font-size:70px;
   }
 
   .color-box{
-    width:90px;
-    height:90px;
+    width:85px;
+    height:85px;
     margin:3px auto 8px;
+  }
+
+  .visual{
+    font-size:65px;
+  }
+
+  canvas{
+    height:250px;
   }
 
   .menu-grid{
@@ -599,15 +758,15 @@ canvas{
   }
 
   .game-button{
-    min-height:82px;
+    min-height:80px;
   }
 
   .game-icon{
-    font-size:30px;
+    font-size:29px;
   }
 
   .game-name{
-    font-size:13px;
+    font-size:12px;
   }
 }
 </style>
@@ -616,20 +775,41 @@ canvas{
 <body>
 
 <div class="topbar">
-  <div class="top-title">🦁 Orion's Kindergarten Safari</div>
+
+  <div class="top-title">
+    🦁 Orion's Kindergarten Safari
+  </div>
 
   <div class="top-actions">
-    <button class="small-btn" onclick="goMenu()">🏠 Menu</button>
-    <button class="small-btn" onclick="goFullscreen()">⛶</button>
-    <button class="small-btn" onclick="rotateScreen()">↔️</button>
+
+    <button class="small-btn" onclick="goMenu()">
+      🏠
+    </button>
+
+    <button class="small-btn" onclick="goFullscreen()">
+      ⛶
+    </button>
+
+    <button class="small-btn" onclick="rotateScreen()">
+      ↔️
+    </button>
+
   </div>
+
 </div>
 
-<!-- HOME -->
-<section id="home" class="screen home active">
-  <div class="home-animal">🦁</div>
 
-  <h1>Orion's Safari!</h1>
+<!-- HOME -->
+
+<section id="home" class="screen home active">
+
+  <div class="home-animal">
+    🦁
+  </div>
+
+  <h1>
+    Orion's Safari!
+  </h1>
 
   <div class="subtitle">
     Let's learn, play, tap, match, count and explore! 🌿🐘🦒
@@ -638,12 +818,17 @@ canvas{
   <button class="big-start" onclick="showMenu()">
     🌟 START PLAYING
   </button>
+
 </section>
 
+
 <!-- MENU -->
+
 <section id="menu" class="screen menu-screen">
 
-  <h1 class="menu-title">🌟 What Do You Want To Play?</h1>
+  <h1 class="menu-title">
+    🌟 What Do You Want To Play?
+  </h1>
 
   <p class="menu-subtitle">
     Choose a game, Orion! 👆
@@ -683,12 +868,12 @@ canvas{
 
     <button class="game-button" onclick="startCategory('food')">
       <div class="game-icon">🥕</div>
-      <div class="game-name">What Do Animals Eat?</div>
+      <div class="game-name">Animal Food</div>
     </button>
 
     <button class="game-button" onclick="startCategory('drawing')">
       <div class="game-icon">✏️</div>
-      <div class="game-name">Draw a Line</div>
+      <div class="game-name">Mama & Baby</div>
     </button>
 
     <button class="game-button" onclick="startCategory('letters')">
@@ -703,7 +888,7 @@ canvas{
 
     <button class="game-button" onclick="startCategory('matching')">
       <div class="game-icon">🧩</div>
-      <div class="game-name">Matching</div>
+      <div class="game-name">Match Pictures</div>
     </button>
 
     <button class="game-button" onclick="startCategory('missing')">
@@ -722,15 +907,20 @@ canvas{
     </button>
 
   </div>
+
 </section>
 
+
 <!-- ACTIVITY -->
+
 <section id="activity" class="screen activity-screen">
 
   <div class="activity-header">
+
     <div id="activityTitle" class="activity-title">
       🦁 Safari Game
     </div>
+
   </div>
 
   <div class="progress-wrap">
@@ -740,24 +930,38 @@ canvas{
   <div id="question" class="question"></div>
 
   <div class="activity-bottom">
-    <button class="back-btn" onclick="goMenu()">🏠 Choose Another Game</button>
-    <button class="listen-btn" onclick="speakCurrent()">🔊 Listen</button>
+
+    <button class="back-btn" onclick="goMenu()">
+      🏠 Choose Another Game
+    </button>
+
+    <button class="listen-btn" onclick="speakCurrent()">
+      🔊 Listen
+    </button>
+
   </div>
 
 </section>
 
+
 <!-- CELEBRATION -->
+
 <section id="celebration" class="screen celebration">
 
-  <div class="trophy">🏆</div>
+  <div class="trophy">
+    🏆
+  </div>
 
-  <h1 id="celebrationTitle">🎉 GOOD JOB, ORION! 🎉</h1>
+  <h1 id="celebrationTitle">
+    🎉 GOOD JOB, ORION! 🎉
+  </h1>
 
   <p id="celebrationText" class="subtitle">
     You finished your safari!
   </p>
 
   <div class="finish-buttons">
+
     <button class="big-start" onclick="goMenu()">
       🦁 Choose Another Game
     </button>
@@ -765,23 +969,34 @@ canvas{
     <button class="big-start" onclick="startEverything()">
       🎮 Play Everything Again
     </button>
+
   </div>
 
   <div id="confetti" class="confetti"></div>
 
 </section>
 
+
 <script>
 
-let currentCategory = "";
-let playEverything = false;
-let activityIndex = 0;
-let currentQuestion = 0;
-let currentSpeech = "";
+/* =========================
+   GAME STATE
+========================= */
 
-const categories = {
+let currentCategory="";
+let playEverything=false;
+let activityIndex=0;
+let currentQuestion=0;
+let currentSpeech="";
 
-body: {
+
+/* =========================
+   GAME DATA
+========================= */
+
+const categories={
+
+body:{
   title:"👦 Body Parts",
   type:"body",
   items:[
@@ -810,16 +1025,16 @@ colors:{
   title:"🌈 Colors",
   type:"colors",
   items:[
-    ["yellow","🟨"],
-    ["blue","🟦"],
-    ["green","🟩"],
-    ["pink","🩷"],
-    ["black","⬛"],
-    ["white","⬜"],
-    ["purple","🟪"],
-    ["orange","🟧"],
-    ["red","🟥"],
-    ["brown","🟫"]
+    ["yellow","#FFD92F","🟨"],
+    ["blue","#4AA3DF","🟦"],
+    ["green","#5BB85C","🟩"],
+    ["pink","#F28BB8","🩷"],
+    ["black","#222222","⬛"],
+    ["white","#FFFFFF","⬜"],
+    ["purple","#9B6BD6","🟪"],
+    ["orange","#F5A623","🟧"],
+    ["red","#E95B5B","🟥"],
+    ["brown","#9A6844","🟫"]
   ]
 },
 
@@ -882,14 +1097,14 @@ sounds:{
   title:"🔊 Animal Sounds",
   type:"sounds",
   items:[
-    ["lion","🦁","Roar!"],
-    ["dog","🐶","Woof!"],
-    ["cat","🐱","Meow!"],
-    ["horse","🐴","Neigh!"],
-    ["duck","🦆","Quack!"],
-    ["bee","🐝","Buzz!"],
-    ["chicken","🐔","Cluck!"],
-    ["bird","🐦","Tweet!"]
+    ["lion","🦁","🦁"],
+    ["dog","🐶","🐶"],
+    ["cat","🐱","🐱"],
+    ["horse","🐴","🐴"],
+    ["duck","🦆","🦆"],
+    ["bee","🐝","🐝"],
+    ["chicken","🐔","🐔"],
+    ["bird","🐦","🐦"]
   ]
 },
 
@@ -907,14 +1122,32 @@ food:{
   ]
 },
 
+/* MANY MAMA + BABY PAIRS */
+
 drawing:{
-  title:"✏️ Draw a Line",
+  title:"✏️ Mama & Baby",
   type:"drawing",
   items:[
-    ["🐱","👶","Connect Mama Cat to Baby Cat!"],
-    ["🐶","🐕","Connect Mama Dog to the Puppy!"],
-    ["🐴","🐎","Connect Mama Horse to the Foal!"],
-    ["🐔","🐣","Connect Mama Chicken to the Baby Chick!"]
+    ["🐱","🐈","cat"],
+    ["🐶","🐕","dog"],
+    ["🐴","🐎","horse"],
+    ["🐮","🐄","cow"],
+    ["🐑","🐑","sheep"],
+    ["🐐","🐐","goat"],
+    ["🐘","🐘","elephant"],
+    ["🦁","🦁","lion"],
+    ["🐯","🐯","tiger"],
+    ["🐻","🐻","bear"],
+    ["🐼","🐼","panda"],
+    ["🦒","🦒","giraffe"],
+    ["🐒","🐒","monkey"],
+    ["🐰","🐰","rabbit"],
+    ["🦆","🐥","duck"],
+    ["🐔","🐣","chicken"],
+    ["🐧","🐧","penguin"],
+    ["🦓","🦓","zebra"],
+    ["🦌","🦌","deer"],
+    ["🐢","🐢","turtle"]
   ]
 },
 
@@ -922,12 +1155,12 @@ letters:{
   title:"🔤 Letters",
   type:"letters",
   items:[
-    ["A","🍎","Apple"],
-    ["B","🐝","Bee"],
-    ["C","🐱","Cat"],
-    ["D","🐶","Dog"],
-    ["E","🥚","Egg"],
-    ["F","🐟","Fish"]
+    ["A","🍎"],
+    ["B","🐝"],
+    ["C","🐱"],
+    ["D","🐶"],
+    ["E","🥚"],
+    ["F","🐟"]
   ]
 },
 
@@ -935,23 +1168,33 @@ bigsmall:{
   title:"📏 Big or Small?",
   type:"bigsmall",
   items:[
-    ["big elephant","🐘","big"],
-    ["small dog","🐶","small"],
-    ["tall tree","🌳","tall"],
-    ["big lion","🦁","big"]
+    ["🐘","big"],
+    ["🐶","small"],
+    ["🌳","tall"],
+    ["🦁","big"],
+    ["🐰","small"],
+    ["🦒","tall"]
   ]
 },
 
+/* PICTURE-ONLY MATCHING */
+
 matching:{
-  title:"🧩 Matching",
+  title:"🧩 Match Pictures",
   type:"matching",
   items:[
-    ["🐶","dog"],
-    ["🦁","lion"],
-    ["🍎","apple"],
-    ["⭐","star"],
-    ["🟨","yellow"],
-    ["🐟","fish"]
+    ["🐶","🐶"],
+    ["🦁","🦁"],
+    ["🍎","🍎"],
+    ["⭐","⭐"],
+    ["🟨","🟨"],
+    ["🐟","🐟"],
+    ["🐱","🐱"],
+    ["🍌","🍌"],
+    ["🐘","🐘"],
+    ["🦒","🦒"],
+    ["🐰","🐰"],
+    ["🦆","🦆"]
   ]
 },
 
@@ -959,11 +1202,13 @@ missing:{
   title:"🧠 What's Missing?",
   type:"missing",
   items:[
-    ["🍎 🍌 🍎 ❓","banana"],
-    ["🐶 🐱 🐶 ❓","cat"],
-    ["⭐ 🌙 ⭐ ❓","moon"],
-    ["🔴 🔵 🔴 ❓","blue"],
-    ["🦁 🐘 🦁 ❓","elephant"]
+    ["🍎 🍌 🍎 ❓","🍌"],
+    ["🐶 🐱 🐶 ❓","🐱"],
+    ["⭐ 🌙 ⭐ ❓","🌙"],
+    ["🔴 🔵 🔴 ❓","🔵"],
+    ["🦁 🐘 🦁 ❓","🐘"],
+    ["🍎 🍎 🍌 ❓","🍎"],
+    ["🐱 🐶 🐱 ❓","🐶"]
   ]
 },
 
@@ -991,7 +1236,8 @@ hunt:{
 
 };
 
-let everythingList = [
+
+const everythingList=[
   "body",
   "colors",
   "shapes",
@@ -1007,252 +1253,287 @@ let everythingList = [
   "hunt"
 ];
 
+
+/* =========================
+   SCREEN CONTROL
+========================= */
+
 function hideAll(){
-  document.querySelectorAll(".screen").forEach(s=>{
-    s.classList.remove("active");
+
+  document.querySelectorAll(".screen").forEach(screen=>{
+    screen.classList.remove("active");
   });
+
 }
 
 function showMenu(){
+
   hideAll();
-  document.getElementById("menu").classList.add("active");
+
+  document.getElementById("menu")
+    .classList.add("active");
+
 }
 
 function goMenu(){
+
   hideAll();
-  document.getElementById("menu").classList.add("active");
+
+  document.getElementById("menu")
+    .classList.add("active");
+
   stopSpeech();
+
 }
 
 function startCategory(category){
+
   currentCategory=category;
   playEverything=false;
   activityIndex=0;
   currentQuestion=0;
+
   startActivity();
+
 }
 
 function startEverything(){
+
   playEverything=true;
   activityIndex=0;
-  currentQuestion=0;
   currentCategory=everythingList[0];
+  currentQuestion=0;
+
   startActivity();
+
 }
 
 function startActivity(){
 
   hideAll();
 
-  document.getElementById("activity").classList.add("active");
+  document.getElementById("activity")
+    .classList.add("active");
+
+  document.getElementById("activityTitle")
+    .textContent=
+    categories[currentCategory].title;
 
   currentQuestion=0;
 
-  document.getElementById("activityTitle").textContent =
-    categories[currentCategory].title;
-
   renderQuestion();
+
 }
+
+
+/* =========================
+   RENDER QUESTION
+========================= */
 
 function renderQuestion(){
 
   const data=categories[currentCategory];
+
   const item=data.items[currentQuestion];
 
-  currentSpeech="";
-
-  document.getElementById("progress").style.width =
+  document.getElementById("progress").style.width=
     ((currentQuestion+1)/data.items.length*100)+"%";
 
   const box=document.getElementById("question");
 
-  if(data.type==="body"){
+  if(data.type==="body")
     renderBody(box,item);
-  }
 
-  else if(data.type==="colors"){
+  else if(data.type==="colors")
     renderColor(box,item);
-  }
 
-  else if(data.type==="shapes"){
+  else if(data.type==="shapes")
     renderShape(box,item);
-  }
 
-  else if(data.type==="counting"){
+  else if(data.type==="counting")
     renderCounting(box,item);
-  }
 
-  else if(data.type==="animals"){
+  else if(data.type==="animals")
     renderAnimals(box,item);
-  }
 
-  else if(data.type==="sounds"){
+  else if(data.type==="sounds")
     renderSounds(box,item);
-  }
 
-  else if(data.type==="food"){
+  else if(data.type==="food")
     renderFood(box,item);
-  }
 
-  else if(data.type==="drawing"){
+  else if(data.type==="drawing")
     renderDrawing(box,item);
-  }
 
-  else if(data.type==="letters"){
+  else if(data.type==="letters")
     renderLetters(box,item);
-  }
 
-  else if(data.type==="bigsmall"){
+  else if(data.type==="bigsmall")
     renderBigSmall(box,item);
-  }
 
-  else if(data.type==="matching"){
+  else if(data.type==="matching")
     renderMatching(box,item);
-  }
 
-  else if(data.type==="missing"){
+  else if(data.type==="missing")
     renderMissing(box,item);
-  }
 
-  else if(data.type==="hunt"){
+  else if(data.type==="hunt")
     renderHunt(box,item);
-  }
+
 }
 
-/* BODY PARTS */
+
+/* =========================
+   BODY PARTS
+========================= */
 
 function renderBody(box,item){
 
   const name=item[0];
 
-  currentSpeech="Where is your "+name+"?";
+  currentSpeech=
+    "Where is your "+name+"?";
 
-  let options=[
-    item,
-    randomBodyOption(name),
-    randomBodyOption(name),
-    randomBodyOption(name)
-  ];
+  let options=[item];
 
-  options=uniqueBody(options,name);
+  while(options.length<4){
+
+    const x=
+      categories.body.items[
+        Math.floor(
+          Math.random()*categories.body.items.length
+        )
+      ];
+
+    if(!options.some(o=>o[0]===x[0]))
+      options.push(x);
+
+  }
 
   shuffle(options);
 
   box.innerHTML=`
-    <div class="question-text">Where is your ${name}? 👆</div>
-    <div class="visual">${item[1]}</div>
-    <div class="choices">
-      ${options.map((x,i)=>`
-        <button class="choice emoji-choice"
-          onclick="answerBody('${x[0]}',this,'${name}')">
-          ${x[1]}
-        </button>
-      `).join("")}
+
+    <div class="question-text">
+      Where is your ${name}? 👆
     </div>
+
+    <div class="visual">
+      ${item[1]}
+    </div>
+
+    <div class="choices">
+
+      ${options.map(x=>`
+
+        <button
+          class="choice picture-choice"
+          onclick="answerSimple('${x[0]}',this,'${name}')">
+
+          ${x[1]}
+
+        </button>
+
+      `).join("")}
+
+    </div>
+
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-function randomBodyOption(correct){
 
-  let list=categories.body.items
-    .filter(x=>x[0]!==correct);
-
-  return list[Math.floor(Math.random()*list.length)];
-}
-
-function uniqueBody(options,correct){
-
-  let result=[];
-  let used=new Set();
-
-  for(let x of options){
-    if(!used.has(x[0])){
-      used.add(x[0]);
-      result.push(x);
-    }
-  }
-
-  while(result.length<4){
-    let x=randomBodyOption(correct);
-
-    if(!used.has(x[0])){
-      used.add(x[0]);
-      result.push(x);
-    }
-  }
-
-  return result;
-}
-
-function answerBody(value,button,correct){
-
-  if(value===correct){
-    correctAnswer(button,"Yes! That's your "+correct+"! 👏");
-  }else{
-    wrongAnswer(button);
-  }
-}
-
-/* COLORS */
+/* =========================
+   COLORS — VISUAL ONLY
+========================= */
 
 function renderColor(box,item){
 
   const name=item[0];
 
-  const colorMap={
-    yellow:"#ffd92f",
-    blue:"#4aa3df",
-    green:"#5bb85c",
-    pink:"#f28bb8",
-    black:"#222",
-    white:"#fff",
-    purple:"#9b6bd6",
-    orange:"#f5a623",
-    red:"#e95b5b",
-    brown:"#9a6844"
-  };
+  const color=item[1];
 
-  currentSpeech="Find "+name;
+  currentSpeech=
+    "Where is the color "+name+"?";
 
-  let names=categories.colors.items.map(x=>x[0]);
-  let options=[name];
+  let options=[item];
 
   while(options.length<4){
-    let n=names[Math.floor(Math.random()*names.length)];
-    if(!options.includes(n)) options.push(n);
+
+    const x=
+      categories.colors.items[
+        Math.floor(
+          Math.random()*categories.colors.items.length
+        )
+      ];
+
+    if(!options.some(o=>o[0]===x[0]))
+      options.push(x);
+
   }
 
   shuffle(options);
 
   box.innerHTML=`
-    <div class="question-text">Can you find ${name}? 🌈</div>
 
-    <div class="color-box"
-      style="background:${colorMap[name]}">
+    <div class="question-text">
+
+      🔊 Where is the color
+      <strong>${name.toUpperCase()}</strong>?
+
+    </div>
+
+    <div
+      class="color-box"
+      style="background:${color}">
     </div>
 
     <div class="choices">
+
       ${options.map(x=>`
-        <button class="choice"
-          onclick="answerSimple('${x}',this,'${name}')">
-          ${x}
+
+        <button
+          class="choice"
+          aria-label="${x[0]}"
+          onclick="answerSimple('${x[0]}',this,'${name}')">
+
+          <div
+            style="
+              width:70px;
+              height:70px;
+              border-radius:18px;
+              background:${x[1]};
+              margin:auto;
+              border:3px solid #ffffffaa;
+              box-shadow:0 3px 8px #0002;
+            ">
+          </div>
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-/* SHAPES */
+
+/* =========================
+   SHAPES
+========================= */
 
 function renderShape(box,item){
 
   const name=item[0];
-  const symbol=item[1];
 
-  currentSpeech="Find the "+name;
+  currentSpeech=
+    "What shape is this?";
 
   let options=categories.shapes.items
     .map(x=>x[0]);
@@ -1260,256 +1541,423 @@ function renderShape(box,item){
   options=makeOptions(options,name);
 
   box.innerHTML=`
-    <div class="question-text">What shape is this?</div>
 
-    <div class="shape">${symbol}</div>
+    <div class="question-text">
+      What shape is this?
+    </div>
+
+    <div class="shape">
+      ${item[1]}
+    </div>
 
     <div class="choices">
+
       ${options.map(x=>`
-        <button class="choice"
+
+        <button
+          class="choice"
           onclick="answerSimple('${x}',this,'${name}')">
-          ${x}
+
+          ${shapePicture(x)}
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-/* COUNTING */
+function shapePicture(name){
+
+  const shapes={
+    circle:"🔵",
+    square:"🟦",
+    triangle:"🔺",
+    rectangle:"▭",
+    star:"⭐",
+    heart:"❤️"
+  };
+
+  return shapes[name] || "🔷";
+
+}
+
+
+/* =========================
+   COUNTING
+========================= */
 
 function renderCounting(box,item){
 
-  const name=item[0];
   const number=item[1];
+
   const emoji=item[2];
 
-  currentSpeech="How many "+name+"?";
+  currentSpeech=
+    "How many?";
 
-  let choices=[number-1,number,number+1];
-
-  if(number===2) choices=[1,2,3];
+  let choices=[
+    number-1,
+    number,
+    number+1
+  ];
 
   shuffle(choices);
 
   box.innerHTML=`
-    <div class="question-text">How many ${name}? 🔢</div>
+
+    <div class="question-text">
+      How many? 🔢
+    </div>
 
     <div class="count-items">
-      ${Array(number).fill(emoji).join(" ")}
+
+      ${Array(number)
+        .fill(emoji)
+        .join(" ")}
+
     </div>
 
     <div class="choices">
+
       ${choices.map(n=>`
-        <button class="choice"
+
+        <button
+          class="choice"
           onclick="answerSimple(${n},this,${number})">
+
           ${n}
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-/* ANIMALS */
+
+/* =========================
+   ANIMALS — PICTURES
+========================= */
 
 function renderAnimals(box,item){
 
   const name=item[0];
-  const emoji=item[1];
 
-  currentSpeech="Find the "+name;
+  currentSpeech=
+    "Can you find the "+name+"?";
 
   let options=[item];
 
   while(options.length<4){
-    let x=categories.animals.items[
-      Math.floor(Math.random()*categories.animals.items.length)
-    ];
 
-    if(!options.some(o=>o[0]===x[0])){
+    const x=
+      categories.animals.items[
+        Math.floor(
+          Math.random()*categories.animals.items.length
+        )
+      ];
+
+    if(!options.some(o=>o[0]===x[0]))
       options.push(x);
-    }
+
   }
 
   shuffle(options);
 
   box.innerHTML=`
-    <div class="question-text">Can you find the ${name}? 🐾</div>
+
+    <div class="question-text">
+      🐾 Can you find the ${name}?
+    </div>
 
     <div class="choices">
+
       ${options.map(x=>`
-        <button class="choice emoji-choice"
+
+        <button
+          class="choice picture-choice"
+          aria-label="${x[0]}"
           onclick="answerSimple('${x[0]}',this,'${name}')">
+
           ${x[1]}
-          <br>
-          <small>${x[0]}</small>
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-/* SOUNDS */
+
+/* =========================
+   ANIMAL SOUNDS — PICTURE
+   BASED
+========================= */
 
 function renderSounds(box,item){
 
   const animal=item[0];
+
   const emoji=item[1];
-  const sound=item[2];
 
-  currentSpeech="What sound does the "+animal+" make?";
+  currentSpeech=
+    "What sound does the "+animal+" make?";
 
-  let options=categories.sounds.items.map(x=>x[2]);
+  let options=[
+    "🦁",
+    "🐶",
+    "🐱",
+    "🐴",
+    "🦆",
+    "🐝",
+    "🐔",
+    "🐦"
+  ];
 
-  options=makeOptions(options,sound);
+  shuffle(options);
 
   box.innerHTML=`
+
     <div class="question-text">
-      What sound does the ${animal} make?
+      What sound does this animal make? 🔊
     </div>
 
-    <div class="visual">${emoji}</div>
+    <div class="visual">
+      ${emoji}
+    </div>
 
     <div class="choices">
+
       ${options.map(x=>`
-        <button class="choice"
-          onclick="answerSimple('${x}',this,'${sound}')">
-          🔊 ${x}
+
+        <button
+          class="choice picture-choice"
+          onclick="answerSound('${x}',this,'${item[2]}')">
+
+          ${x}
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-/* FOOD */
+
+/*
+Sound answer:
+item[2] contains the animal emoji
+*/
+
+function answerSound(value,button,correct){
+
+  if(value===correct){
+
+    correctAnswer(
+      button,
+      "Yes! That's the sound! 🔊👏"
+    );
+
+  }else{
+
+    wrongAnswer(button);
+
+  }
+
+}
+
+
+/* =========================
+   ANIMAL FOOD
+   PICTURE ONLY
+========================= */
 
 function renderFood(box,item){
 
   const animal=item[0];
+
   const animalEmoji=item[1];
+
   const food=item[2];
+
   const foodEmoji=item[3];
 
-  currentSpeech="What does the "+animal+" eat?";
+  currentSpeech=
+    "What does the "+animal+" eat?";
 
-  let foods=categories.food.items.map(x=>[
-    x[2],
-    x[3]
-  ]);
-
-  let options=[[food,foodEmoji]];
+  let options=[
+    [food,foodEmoji]
+  ];
 
   while(options.length<4){
-    let x=foods[Math.floor(Math.random()*foods.length)];
 
-    if(!options.some(o=>o[0]===x[0])){
-      options.push(x);
-    }
+    const x=
+      categories.food.items[
+        Math.floor(
+          Math.random()*categories.food.items.length
+        )
+      ];
+
+    if(!options.some(o=>o[0]===x[2]))
+      options.push([x[2],x[3]]);
+
   }
 
   shuffle(options);
 
   box.innerHTML=`
+
     <div class="question-text">
-      What does the ${animal} eat? 🥕
+      What does this animal eat? 🥕
     </div>
 
-    <div class="food-pair">
-      <span>${animalEmoji}</span>
-      <span>➡️</span>
-      <span>❓</span>
+    <div class="food-animal">
+      ${animalEmoji}
+    </div>
+
+    <div class="food-arrow">
+      ⬇️
     </div>
 
     <div class="choices">
+
       ${options.map(x=>`
-        <button class="choice"
+
+        <button
+          class="choice picture-choice"
+          aria-label="${x[0]}"
           onclick="answerSimple('${x[0]}',this,'${food}')">
-          <div style="font-size:48px">${x[1]}</div>
-          ${x[0]}
+
+          ${x[1]}
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-/* DRAWING */
+
+/* =========================
+   DRAWING — MANY PAIRS
+========================= */
 
 function renderDrawing(box,item){
 
-  currentSpeech=item[2];
+  currentSpeech=
+    "Connect Mama to her baby.";
 
   box.innerHTML=`
-    <div class="question-text">${item[2]}</div>
+
+    <div class="question-text">
+      ✏️ Connect Mama to her Baby!
+    </div>
 
     <div class="draw-instructions">
-      Use your finger or stylus ✏️
+      Use your finger or pen. Draw a line! 👆
     </div>
 
-    <div class="line-board">
+    <div class="draw-board">
 
-      <canvas id="drawCanvas"></canvas>
+      <div class="canvas-wrap">
 
-      <div style="
-        position:absolute;
-        left:35px;
-        top:125px;
-        font-size:70px;
-      ">${item[0]}</div>
+        <canvas id="drawCanvas"></canvas>
 
-      <div style="
-        position:absolute;
-        right:35px;
-        top:125px;
-        font-size:70px;
-      ">${item[1]}</div>
+        <div class="animal-side animal-left">
+          ${item[0]}
+        </div>
+
+        <div class="animal-side animal-right">
+          ${item[1]}
+        </div>
+
+      </div>
+
+      <button
+        class="clear-btn"
+        onclick="clearCanvas()">
+
+        🧹 Clear
+
+      </button>
+
+      <br>
+
+      <button
+        class="done-btn"
+        onclick="finishDrawing()">
+
+        💚 I Connected Them!
+
+      </button>
 
     </div>
-
-    <button class="clear-btn" onclick="clearCanvas()">
-      🧹 Clear
-    </button>
-
-    <button
-      class="big-start"
-      style="font-size:20px;margin-top:12px;padding:12px 28px"
-      onclick="finishDrawing()">
-      💚 I Did It!
-    </button>
 
     <div class="feedback" id="feedback"></div>
+
   `;
 
-  setTimeout(setupCanvas,50);
+  setTimeout(setupCanvas,60);
+
 }
 
-let canvas;
-let ctx;
+
+/* =========================
+   CANVAS DRAWING
+========================= */
+
+let canvas=null;
+let ctx=null;
 let drawing=false;
 let hasDrawn=false;
 
 function setupCanvas(){
 
-  canvas=document.getElementById("drawCanvas");
+  canvas=
+    document.getElementById("drawCanvas");
 
   if(!canvas)return;
 
-  const rect=canvas.getBoundingClientRect();
+  const rect=
+    canvas.getBoundingClientRect();
 
-  const ratio=window.devicePixelRatio||1;
+  const ratio=
+    window.devicePixelRatio || 1;
 
-  canvas.width=rect.width*ratio;
-  canvas.height=rect.height*ratio;
+  canvas.width=
+    rect.width*ratio;
 
-  ctx=canvas.getContext("2d");
+  canvas.height=
+    rect.height*ratio;
+
+  ctx=
+    canvas.getContext("2d");
 
   ctx.scale(ratio,ratio);
 
@@ -1518,20 +1966,38 @@ function setupCanvas(){
   ctx.lineJoin="round";
   ctx.strokeStyle="#4c8b4e";
 
-  canvas.addEventListener("pointerdown",startDrawing);
-  canvas.addEventListener("pointermove",drawLine);
-  canvas.addEventListener("pointerup",stopDrawing);
-  canvas.addEventListener("pointercancel",stopDrawing);
+  canvas.addEventListener(
+    "pointerdown",
+    startDrawing
+  );
+
+  canvas.addEventListener(
+    "pointermove",
+    drawLine
+  );
+
+  canvas.addEventListener(
+    "pointerup",
+    stopDrawing
+  );
+
+  canvas.addEventListener(
+    "pointercancel",
+    stopDrawing
+  );
+
 }
 
 function pointerPosition(e){
 
-  const rect=canvas.getBoundingClientRect();
+  const rect=
+    canvas.getBoundingClientRect();
 
-  return {
+  return{
     x:e.clientX-rect.left,
     y:e.clientY-rect.top
   };
+
 }
 
 function startDrawing(e){
@@ -1539,260 +2005,584 @@ function startDrawing(e){
   drawing=true;
   hasDrawn=true;
 
-  const p=pointerPosition(e);
+  if(canvas.setPointerCapture){
+
+    try{
+      canvas.setPointerCapture(e.pointerId);
+    }catch(err){}
+
+  }
+
+  const p=
+    pointerPosition(e);
 
   ctx.beginPath();
-  ctx.moveTo(p.x,p.y);
+
+  ctx.moveTo(
+    p.x,
+    p.y
+  );
+
 }
 
 function drawLine(e){
 
   if(!drawing)return;
 
-  const p=pointerPosition(e);
+  const p=
+    pointerPosition(e);
 
-  ctx.lineTo(p.x,p.y);
+  ctx.lineTo(
+    p.x,
+    p.y
+  );
+
   ctx.stroke();
+
 }
 
 function stopDrawing(){
+
   drawing=false;
+
 }
 
 function clearCanvas(){
 
-  if(!canvas||!ctx)return;
+  if(!canvas || !ctx)return;
 
-  const rect=canvas.getBoundingClientRect();
+  const rect=
+    canvas.getBoundingClientRect();
 
-  ctx.clearRect(0,0,rect.width,rect.height);
+  ctx.clearRect(
+    0,
+    0,
+    rect.width,
+    rect.height
+  );
 
   hasDrawn=false;
+
 }
 
 function finishDrawing(){
 
   if(!hasDrawn){
 
-    document.getElementById("feedback").textContent=
-      "Try drawing a line first! ✏️";
+    document.getElementById(
+      "feedback"
+    ).textContent=
+      "Draw a line first! ✏️";
 
     return;
+
   }
 
-  correctAnswer(null,"Great drawing, Orion! 🎨👏");
+  correctAnswer(
+    null,
+    "Great job connecting them! 🎨👏"
+  );
+
 }
 
-/* LETTERS */
+
+/* =========================
+   LETTERS
+========================= */
 
 function renderLetters(box,item){
 
   const letter=item[0];
-  const emoji=item[1];
-  const word=item[2];
 
-  currentSpeech="What letter is this?";
+  const picture=item[1];
+
+  currentSpeech=
+    "What letter is this?";
 
   let options=[letter];
 
-  let letters=categories.letters.items.map(x=>x[0]);
+  const letters=
+    categories.letters.items
+      .map(x=>x[0]);
 
   while(options.length<4){
-    let x=letters[Math.floor(Math.random()*letters.length)];
 
-    if(!options.includes(x)) options.push(x);
+    const x=
+      letters[
+        Math.floor(
+          Math.random()*letters.length
+        )
+      ];
+
+    if(!options.includes(x))
+      options.push(x);
+
   }
 
   shuffle(options);
 
   box.innerHTML=`
-    <div class="question-text">What letter is this?</div>
 
-    <div class="letter">${letter}</div>
+    <div class="question-text">
+      What letter is this?
+    </div>
 
-    <div style="font-size:55px">${emoji}</div>
+    <div class="letter">
+      ${letter}
+    </div>
 
-    <div style="font-size:23px;font-weight:bold">
-      ${word}
+    <div class="visual">
+      ${picture}
     </div>
 
     <div class="choices">
+
       ${options.map(x=>`
-        <button class="choice"
+
+        <button
+          class="choice"
           onclick="answerSimple('${x}',this,'${letter}')">
+
           ${x}
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-/* BIG / SMALL */
+
+/* =========================
+   BIG / SMALL
+========================= */
 
 function renderBigSmall(box,item){
 
-  const text=item[0];
-  const emoji=item[1];
-  const answer=item[2];
+  const emoji=item[0];
 
-  currentSpeech="Is it "+answer+"?";
+  const answer=item[1];
 
-  let options=["big","small","tall"];
+  currentSpeech=
+    "Is it big, small, or tall?";
+
+  let options=[
+    "big",
+    "small",
+    "tall"
+  ];
 
   shuffle(options);
 
+  let visualClass=
+    answer==="small"
+      ?"small-object"
+      :"big-object";
+
   box.innerHTML=`
+
     <div class="question-text">
       Which one?
     </div>
 
     <div class="big-small-area">
-      <div class="${answer==="small"?"small-object":"big-object"}">
+
+      <div class="${visualClass}">
         ${emoji}
       </div>
-    </div>
 
-    <div style="font-size:20px;font-weight:bold">
-      ${text}
     </div>
 
     <div class="choices">
+
       ${options.map(x=>`
-        <button class="choice"
+
+        <button
+          class="choice"
           onclick="answerSimple('${x}',this,'${answer}')">
-          ${x}
+
+          ${bigSmallPicture(x)}
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
-/* MATCHING */
+function bigSmallPicture(x){
+
+  if(x==="big")
+    return "🐘";
+
+  if(x==="small")
+    return "🐭";
+
+  return "🌳";
+
+}
+
+
+/* =========================
+   MATCHING — PICTURES ONLY
+========================= */
+
+let matchingLeft=null;
+let matchingRight=null;
 
 function renderMatching(box,item){
 
-  const emoji=item[0];
-  const answer=item[1];
+  matchingLeft=null;
+  matchingRight=null;
 
-  currentSpeech="What is this?";
+  currentSpeech=
+    "Match the same pictures.";
 
-  const all=[
-    ["🐶","dog"],
-    ["🦁","lion"],
-    ["🍎","apple"],
-    ["⭐","star"],
-    ["🟨","yellow"],
-    ["🐟","fish"],
-    ["🐱","cat"],
-    ["🍌","banana"]
+  const pairs=[
+    ["🐶","🐶"],
+    ["🦁","🦁"],
+    ["🍎","🍎"],
+    ["⭐","⭐"],
+    ["🐟","🐟"],
+    ["🐱","🐱"],
+    ["🍌","🍌"],
+    ["🐘","🐘"],
+    ["🦒","🦒"],
+    ["🐰","🐰"],
+    ["🦆","🦆"],
+    ["🐝","🐝"]
   ];
 
-  let options=[item];
+  let selected=[
+    item,
+    ...shuffle(
+      pairs.filter(
+        p=>p[0]!==item[0]
+      )
+    ).slice(0,3)
+  ];
 
-  while(options.length<4){
+  shuffle(selected);
 
-    let x=all[Math.floor(Math.random()*all.length)];
+  const left=selected.map(
+    (p,i)=>({
+      id:"L"+i,
+      picture:p[0],
+      pair:p[0]
+    })
+  );
 
-    if(!options.some(o=>o[1]===x[1])){
-      options.push(x);
-    }
-  }
-
-  shuffle(options);
+  const right=shuffle(
+    selected.map(
+      (p,i)=>({
+        id:"R"+i,
+        picture:p[1],
+        pair:p[0]
+      })
+    )
+  );
 
   box.innerHTML=`
+
     <div class="question-text">
-      What is this? 🧩
+      🧩 Match the same pictures!
     </div>
 
-    <div class="visual">${emoji}</div>
+    <div class="match-area">
 
-    <div class="choices">
-      ${options.map(x=>`
-        <button class="choice"
-          onclick="answerSimple('${x[1]}',this,'${answer}')">
-          ${x[1]}
-        </button>
-      `).join("")}
+      <div class="match-column">
+
+        ${left.map(x=>`
+
+          <button
+            class="match-card"
+            data-side="left"
+            data-pair="${x.pair}"
+            onclick="selectMatch(this,'left','${x.pair}')">
+
+            ${x.picture}
+
+          </button>
+
+        `).join("")}
+
+      </div>
+
+      <div class="match-column">
+
+        ${right.map(x=>`
+
+          <button
+            class="match-card"
+            data-side="right"
+            data-pair="${x.pair}"
+            onclick="selectMatch(this,'right','${x.pair}')">
+
+            ${x.picture}
+
+          </button>
+
+        `).join("")}
+
+      </div>
+
     </div>
 
-    <div class="feedback" id="feedback"></div>
+    <div class="feedback" id="feedback">
+      👆 Tap two pictures that belong together.
+    </div>
+
   `;
+
 }
 
-/* MISSING */
+function selectMatch(button,side,pair){
+
+  if(side==="left"){
+
+    document
+      .querySelectorAll(
+        '.match-card[data-side="left"]'
+      )
+      .forEach(b=>
+        b.classList.remove("match-selected")
+      );
+
+    matchingLeft={
+      button,
+      pair
+    };
+
+    button.classList.add(
+      "match-selected"
+    );
+
+  }else{
+
+    document
+      .querySelectorAll(
+        '.match-card[data-side="right"]'
+      )
+      .forEach(b=>
+        b.classList.remove("match-selected")
+      );
+
+    matchingRight={
+      button,
+      pair
+    };
+
+    button.classList.add(
+      "match-selected"
+    );
+
+  }
+
+  if(matchingLeft && matchingRight){
+
+    if(
+      matchingLeft.pair===
+      matchingRight.pair
+    ){
+
+      matchingLeft.button.classList.add(
+        "correct"
+      );
+
+      matchingRight.button.classList.add(
+        "correct"
+      );
+
+      document.getElementById(
+        "feedback"
+      ).textContent=
+        "Yes! They match! 🎉";
+
+      setTimeout(
+        nextQuestion,
+        800
+      );
+
+    }else{
+
+      document.getElementById(
+        "feedback"
+      ).textContent=
+        "Try another picture! 💚";
+
+      matchingLeft.button.classList.add(
+        "wrong"
+      );
+
+      matchingRight.button.classList.add(
+        "wrong"
+      );
+
+      setTimeout(()=>{
+
+        matchingLeft.button.classList.remove(
+          "wrong",
+          "match-selected"
+        );
+
+        matchingRight.button.classList.remove(
+          "wrong",
+          "match-selected"
+        );
+
+        matchingLeft=null;
+        matchingRight=null;
+
+      },500);
+
+    }
+
+  }
+
+}
+
+
+/* =========================
+   WHAT'S MISSING
+   PICTURE ONLY
+========================= */
 
 function renderMissing(box,item){
 
   const pattern=item[0];
+
   const answer=item[1];
 
-  currentSpeech="What is missing?";
+  currentSpeech=
+    "What is missing?";
 
-  let possible=[
+  const choices=[
     answer,
     randomMissing(answer),
     randomMissing(answer),
     randomMissing(answer)
   ];
 
-  possible=[...new Set(possible)];
+  const unique=[
+    ...new Set(choices)
+  ];
 
-  while(possible.length<4){
-    let x=randomMissing(answer);
-    if(!possible.includes(x)) possible.push(x);
+  while(unique.length<4){
+
+    const x=
+      randomMissing(answer);
+
+    if(!unique.includes(x))
+      unique.push(x);
+
   }
 
-  shuffle(possible);
+  shuffle(unique);
 
   box.innerHTML=`
+
     <div class="question-text">
-      What is missing? 🧠
+      🧠 What is missing?
     </div>
 
-    <div class="pattern">${pattern}</div>
+    <div class="pattern">
+      ${pattern}
+    </div>
 
     <div class="choices">
-      ${possible.map(x=>`
-        <button class="choice"
+
+      ${unique.map(x=>`
+
+        <button
+          class="choice picture-choice"
           onclick="answerSimple('${x}',this,'${answer}')">
-          ${x}
+
+          ${missingPicture(x)}
+
         </button>
+
       `).join("")}
+
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
+}
+
+function missingPicture(x){
+
+  const pictures={
+    apple:"🍎",
+    banana:"🍌",
+    cat:"🐱",
+    dog:"🐶",
+    moon:"🌙",
+    blue:"🔵",
+    elephant:"🐘",
+    lion:"🦁",
+    star:"⭐"
+  };
+
+  return pictures[x] || "❓";
+
 }
 
 function randomMissing(correct){
 
   const list=[
-    "apple","banana","cat","dog","moon",
-    "blue","elephant","lion","star"
+    "apple",
+    "banana",
+    "cat",
+    "dog",
+    "moon",
+    "blue",
+    "elephant",
+    "lion",
+    "star"
   ];
 
   let x;
 
   do{
-    x=list[Math.floor(Math.random()*list.length)];
+
+    x=
+      list[
+        Math.floor(
+          Math.random()*list.length
+        )
+      ];
+
   }while(x===correct);
 
   return x;
+
 }
 
-/* SAFARI HUNT */
+
+/* =========================
+   SAFARI HUNT
+========================= */
 
 function renderHunt(box,item){
 
   const targetName=item[0];
+
   const targetEmoji=item[1];
 
-  currentSpeech="Find the "+targetName;
+  currentSpeech=
+    "Find the "+targetName;
 
   const objects=[
     ["🌳",10,65],
@@ -1815,133 +2605,236 @@ function renderHunt(box,item){
     ["💧",70,87]
   ];
 
-  if(!objects.some(o=>o[0]===targetEmoji)){
-    objects.push([targetEmoji,50,65]);
+  if(
+    !objects.some(
+      o=>o[0]===targetEmoji
+    )
+  ){
+
+    objects.push([
+      targetEmoji,
+      50,
+      65
+    ]);
+
   }
 
   shuffle(objects);
 
   box.innerHTML=`
+
     <div class="safari-instruction">
-      Find the ${targetName}! ${targetEmoji}
+      🌿 Find the ${targetName}! ${targetEmoji}
     </div>
 
-    <div class="safari" id="safariScene">
+    <div class="safari">
 
       <div class="sun">☀️</div>
+
       <div class="cloud one">☁️</div>
+
       <div class="cloud two">☁️</div>
 
       <div class="tree t1">🌳</div>
+
       <div class="tree t2">🌴</div>
+
       <div class="tree t3">🌳</div>
 
-      ${objects.map((o,i)=>`
+      ${objects.map(o=>`
+
         <button
           class="safari-object"
-          style="left:${o[1]}%;top:${o[2]}%"
-          onclick="huntAnswer('${escapeQuotes(o[0])}',this,'${escapeQuotes(targetEmoji)}')">
+          style="
+            left:${o[1]}%;
+            top:${o[2]}%;
+          "
+          onclick="huntAnswer(
+            '${escapeQuotes(o[0])}',
+            this,
+            '${escapeQuotes(targetEmoji)}'
+          )">
+
           ${o[0]}
+
         </button>
+
       `).join("")}
 
     </div>
 
     <div class="feedback" id="feedback"></div>
+
   `;
+
 }
 
 function escapeQuotes(x){
-  return x.replace(/'/g,"\\'");
+
+  return x.replace(
+    /'/g,
+    "\\'"
+  );
+
 }
 
-function huntAnswer(value,button,correct){
+function huntAnswer(
+  value,
+  button,
+  correct
+){
 
   if(value===correct){
 
-    button.classList.add("correct");
+    button.classList.add(
+      "correct"
+    );
 
-    document.getElementById("feedback").textContent=
+    document.getElementById(
+      "feedback"
+    ).textContent=
       "You found it! 🎉👏";
 
-    setTimeout(nextQuestion,850);
+    setTimeout(
+      nextQuestion,
+      850
+    );
 
   }else{
 
-    button.classList.add("wrong");
+    button.classList.add(
+      "wrong"
+    );
 
-    document.getElementById("feedback").textContent=
+    document.getElementById(
+      "feedback"
+    ).textContent=
       "Keep looking! 👀🌿";
 
     setTimeout(()=>{
-      button.classList.remove("wrong");
+
+      button.classList.remove(
+        "wrong"
+      );
+
     },450);
+
   }
+
 }
 
-/* ANSWERS */
 
-function answerSimple(value,button,correct){
+/* =========================
+   ANSWERS
+========================= */
 
-  if(String(value)===String(correct)){
+function answerSimple(
+  value,
+  button,
+  correct
+){
 
-    correctAnswer(button,"Great job, Orion! 🎉");
+  if(
+    String(value)===
+    String(correct)
+  ){
+
+    correctAnswer(
+      button,
+      "Great job, Orion! 🎉"
+    );
 
   }else{
 
     wrongAnswer(button);
+
   }
+
 }
 
-function correctAnswer(button,message){
+function correctAnswer(
+  button,
+  message
+){
 
   if(button){
-    button.classList.add("correct");
+
+    button.classList.add(
+      "correct"
+    );
+
     button.disabled=true;
+
   }
 
-  const feedback=document.getElementById("feedback");
+  const feedback=
+    document.getElementById(
+      "feedback"
+    );
 
-  if(feedback){
-    feedback.textContent=message;
-  }
+  if(feedback)
+    feedback.textContent=
+      message;
 
-  setTimeout(nextQuestion,850);
+  setTimeout(
+    nextQuestion,
+    850
+  );
+
 }
 
 function wrongAnswer(button){
 
-  button.classList.add("wrong");
+  button.classList.add(
+    "wrong"
+  );
 
-  const feedback=document.getElementById("feedback");
+  const feedback=
+    document.getElementById(
+      "feedback"
+    );
 
-  if(feedback){
-    feedback.textContent="Try again! 💚";
-  }
+  if(feedback)
+    feedback.textContent=
+      "Try again! 💚";
 
   setTimeout(()=>{
-    button.classList.remove("wrong");
+
+    button.classList.remove(
+      "wrong"
+    );
+
   },450);
+
 }
 
-/* NEXT */
+
+/* =========================
+   NEXT QUESTION
+========================= */
 
 function nextQuestion(){
 
   stopSpeech();
 
-  const data=categories[currentCategory];
-
   currentQuestion++;
 
-  if(currentQuestion<data.items.length){
+  const data=
+    categories[currentCategory];
+
+  if(
+    currentQuestion<
+    data.items.length
+  ){
 
     renderQuestion();
 
   }else{
 
     finishCategory();
+
   }
+
 }
 
 function finishCategory(){
@@ -1950,163 +2843,275 @@ function finishCategory(){
 
     activityIndex++;
 
-    if(activityIndex<everythingList.length){
+    if(
+      activityIndex<
+      everythingList.length
+    ){
 
-      currentCategory=everythingList[activityIndex];
+      currentCategory=
+        everythingList[
+          activityIndex
+        ];
 
       currentQuestion=0;
 
-      setTimeout(startActivity,250);
+      setTimeout(
+        startActivity,
+        250
+      );
 
     }else{
 
       showFinalCelebration();
+
     }
 
   }else{
 
     showCategoryCelebration();
+
   }
+
 }
 
-/* CATEGORY FINISH */
+
+/* =========================
+   CELEBRATION
+========================= */
 
 function showCategoryCelebration(){
 
   hideAll();
 
-  document.getElementById("celebration").classList.add("active");
+  document.getElementById(
+    "celebration"
+  ).classList.add("active");
 
-  document.getElementById("celebrationTitle").textContent=
+  document.getElementById(
+    "celebrationTitle"
+  ).textContent=
     "🎉 GREAT JOB, ORION! 🎉";
 
-  document.getElementById("celebrationText").textContent=
-    "You finished "+categories[currentCategory].title+"!";
+  document.getElementById(
+    "celebrationText"
+  ).textContent=
+    "You finished "+
+    categories[currentCategory].title+
+    "!";
 
   makeConfetti();
-}
 
-/* EVERYTHING FINISH */
+}
 
 function showFinalCelebration(){
 
   hideAll();
 
-  document.getElementById("celebration").classList.add("active");
+  document.getElementById(
+    "celebration"
+  ).classList.add("active");
 
-  document.getElementById("celebrationTitle").textContent=
+  document.getElementById(
+    "celebrationTitle"
+  ).textContent=
     "🎉 GOOD JOB, ORION! 🎉";
 
-  document.getElementById("celebrationText").textContent=
+  document.getElementById(
+    "celebrationText"
+  ).textContent=
     "You finished the whole Safari! 🦁🌿🏆";
 
   makeConfetti();
-}
 
-/* CONFETTI */
+}
 
 function makeConfetti(){
 
-  const container=document.getElementById("confetti");
+  const container=
+    document.getElementById(
+      "confetti"
+    );
 
   container.innerHTML="";
 
   const pieces=[
-    "🎉","⭐","🌟","🎈","🦁","🐘","🦒",
-    "🍎","🍌","🌸","💚","💛","🎊"
+    "🎉",
+    "⭐",
+    "🌟",
+    "🎈",
+    "🦁",
+    "🐘",
+    "🦒",
+    "🍎",
+    "🍌",
+    "🌸",
+    "💚",
+    "💛",
+    "🎊"
   ];
 
   for(let i=0;i<55;i++){
 
-    const span=document.createElement("span");
+    const span=
+      document.createElement(
+        "span"
+      );
 
     span.textContent=
-      pieces[Math.floor(Math.random()*pieces.length)];
+      pieces[
+        Math.floor(
+          Math.random()*
+          pieces.length
+        )
+      ];
 
-    span.style.left=Math.random()*100+"%";
+    span.style.left=
+      Math.random()*100+"%";
 
     span.style.animationDelay=
       Math.random()*1.8+"s";
 
     span.style.animationDuration=
-      (2.2+Math.random()*2)+"s";
+      (2.2+
+      Math.random()*2)+"s";
 
-    container.appendChild(span);
+    container.appendChild(
+      span
+    );
+
   }
+
 }
 
-/* OPTIONS */
 
-function makeOptions(list,correct){
+/* =========================
+   OPTIONS
+========================= */
+
+function makeOptions(
+  list,
+  correct
+){
 
   let options=[correct];
 
   while(options.length<4){
 
-    let x=list[Math.floor(Math.random()*list.length)];
+    const x=
+      list[
+        Math.floor(
+          Math.random()*list.length
+        )
+      ];
 
-    if(!options.includes(x)){
+    if(!options.includes(x))
       options.push(x);
-    }
+
   }
 
   shuffle(options);
 
   return options;
+
 }
 
 function shuffle(array){
 
-  for(let i=array.length-1;i>0;i--){
+  for(
+    let i=array.length-1;
+    i>0;
+    i--
+  ){
 
-    const j=Math.floor(Math.random()*(i+1));
+    const j=
+      Math.floor(
+        Math.random()*(i+1)
+      );
 
-    [array[i],array[j]]=
-      [array[j],array[i]];
+    [
+      array[i],
+      array[j]
+    ]=[
+      array[j],
+      array[i]
+    ];
+
   }
 
   return array;
+
 }
 
-/* SPEECH */
+
+/* =========================
+   SPEECH
+========================= */
 
 function speakCurrent(){
 
-  if(!currentSpeech)return;
+  if(!currentSpeech)
+    return;
 
   stopSpeech();
 
-  const utterance=
-    new SpeechSynthesisUtterance(currentSpeech);
+  if(
+    "speechSynthesis"
+    in window
+  ){
 
-  utterance.rate=.8;
-  utterance.pitch=1.2;
+    const utterance=
+      new SpeechSynthesisUtterance(
+        currentSpeech
+      );
 
-  speechSynthesis.speak(utterance);
+    utterance.rate=.8;
+    utterance.pitch=1.2;
+
+    speechSynthesis.speak(
+      utterance
+    );
+
+  }
+
 }
 
 function stopSpeech(){
 
-  if("speechSynthesis" in window){
+  if(
+    "speechSynthesis"
+    in window
+  ){
+
     speechSynthesis.cancel();
+
   }
+
 }
 
-/* FULLSCREEN */
+
+/* =========================
+   FULLSCREEN
+========================= */
 
 function goFullscreen(){
 
-  const element=document.documentElement;
+  const element=
+    document.documentElement;
 
   if(!document.fullscreenElement){
 
-    if(element.requestFullscreen){
+    if(
+      element.requestFullscreen
+    ){
 
       element.requestFullscreen();
 
-    }else if(element.webkitRequestFullscreen){
+    }else if(
+      element.webkitRequestFullscreen
+    ){
 
       element.webkitRequestFullscreen();
+
     }
 
   }else{
@@ -2115,28 +3120,42 @@ function goFullscreen(){
 
       document.exitFullscreen();
 
-    }else if(document.webkitExitFullscreen){
+    }else if(
+      document.webkitExitFullscreen
+    ){
 
       document.webkitExitFullscreen();
+
     }
+
   }
+
 }
 
-/* ROTATION */
+
+/* =========================
+   ROTATION
+========================= */
 
 async function rotateScreen(){
 
   try{
 
-    if(screen.orientation && screen.orientation.lock){
+    if(
+      screen.orientation &&
+      screen.orientation.lock
+    ){
 
-      await screen.orientation.lock("landscape");
+      await screen.orientation.lock(
+        "landscape"
+      );
 
     }else{
 
       alert(
-        "Please rotate your phone sideways for a bigger Safari screen! 🦁↔️"
+        "Please turn your phone sideways for a bigger Safari screen! 🦁↔️"
       );
+
     }
 
   }catch(error){
@@ -2144,12 +3163,20 @@ async function rotateScreen(){
     alert(
       "Please turn your phone sideways for the best Safari view! 🦁↔️"
     );
+
   }
+
 }
 
-/* INITIAL */
 
-window.addEventListener("beforeunload",stopSpeech);
+/* =========================
+   STOP SPEECH
+========================= */
+
+window.addEventListener(
+  "beforeunload",
+  stopSpeech
+);
 
 </script>
 
