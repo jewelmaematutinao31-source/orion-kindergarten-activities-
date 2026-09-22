@@ -2,13 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#3f7d45">
-
-<title>Orion's Kindergarten Safari 🦁</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Orion's Safari Kindergarten 🌿🦁</title>
 
 <style>
 *{
@@ -19,754 +14,682 @@
 html,body{
   margin:0;
   padding:0;
-  min-height:100%;
-  font-family:"Comic Sans MS","Trebuchet MS",sans-serif;
+  width:100%;
+  height:100%;
+  font-family:Arial, Helvetica, sans-serif;
   background:#eaf7df;
-  color:#29452d;
-}
-
-body{
-  overflow-x:hidden;
+  color:#29452b;
+  overflow:hidden;
 }
 
 button{
   font-family:inherit;
+  border:none;
   cursor:pointer;
-  border:0;
-}
-
-.topbar{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#3f7d45;
-  color:white;
-  padding:9px 12px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-  box-shadow:0 3px 10px #0002;
-}
-
-.top-title{
-  font-size:18px;
-  font-weight:bold;
-}
-
-.top-actions{
-  display:flex;
-  gap:6px;
-}
-
-.small-btn{
-  background:white;
-  color:#315f35;
-  border-radius:14px;
-  padding:8px 11px;
-  font-size:13px;
-  font-weight:bold;
+  touch-action:manipulation;
 }
 
 .screen{
   display:none;
-  min-height:calc(100vh - 56px);
-  padding:18px;
+  width:100%;
+  height:100%;
+  overflow:auto;
 }
 
 .screen.active{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  display:block;
 }
 
 /* HOME */
-
-.home{
-  justify-content:center;
-  text-align:center;
+#home{
+  min-height:100%;
   background:
-    radial-gradient(circle at 15% 20%,#fff9 0 35px,transparent 36px),
-    radial-gradient(circle at 85% 15%,#fff9 0 30px,transparent 31px),
-    linear-gradient(#cdeeb5,#f7f1c5);
+    radial-gradient(circle at 10% 20%, #fff7b2 0 8%, transparent 9%),
+    radial-gradient(circle at 90% 15%, #d5f3bb 0 9%, transparent 10%),
+    linear-gradient(#dff6c9,#fff8dc);
+  text-align:center;
+  padding:25px 18px;
 }
 
-.home-animal{
-  font-size:90px;
+.homeAnimals{
+  font-size:clamp(38px,8vw,75px);
+  margin-top:8px;
   animation:bounce 2s infinite;
 }
 
-h1{
-  font-size:38px;
-  margin:8px 0;
-  color:#3d713e;
+@keyframes bounce{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
+}
+
+.logo{
+  font-size:clamp(34px,8vw,70px);
+  font-weight:900;
+  color:#477b38;
+  text-shadow:3px 3px 0 #fff;
+  margin:12px 0 4px;
 }
 
 .subtitle{
-  font-size:19px;
-  max-width:700px;
-  margin:5px auto 20px;
-}
-
-.big-start{
-  background:#f5a623;
-  color:white;
-  font-size:26px;
+  font-size:clamp(18px,4vw,30px);
+  color:#76592f;
   font-weight:bold;
-  padding:17px 40px;
-  border-radius:30px;
-  box-shadow:0 6px 0 #c97b0b;
 }
 
-.big-start:active{
-  transform:translateY(4px);
-  box-shadow:0 2px 0 #c97b0b;
+.startBtn{
+  margin-top:30px;
+  padding:18px 42px;
+  border-radius:30px;
+  background:#71b84c;
+  color:white;
+  font-size:clamp(20px,4vw,30px);
+  font-weight:900;
+  box-shadow:0 7px 0 #4e8933;
+}
+
+.startBtn:active{
+  transform:translateY(5px);
+  box-shadow:0 2px 0 #4e8933;
+}
+
+.homeHint{
+  margin:25px auto;
+  max-width:650px;
+  background:#ffffffd9;
+  border-radius:25px;
+  padding:18px;
+  font-size:17px;
+  line-height:1.5;
+}
+
+/* TOP BAR */
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:5px;
+  padding:7px;
+  background:#477d38;
+  color:white;
+}
+
+.topbar button{
+  background:#ffffff22;
+  color:white;
+  border-radius:12px;
+  padding:9px 12px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.topTitle{
+  font-size:15px;
+  font-weight:900;
 }
 
 /* MENU */
-
-.menu-screen{
-  background:linear-gradient(#e8f8d9,#fff7cf);
+#menu{
+  background:
+    linear-gradient(#e9f9d9,#fff7dc);
 }
 
-.menu-title{
-  text-align:center;
-  margin-bottom:4px;
+.menuContent{
+  padding:15px;
+  max-width:900px;
+  margin:auto;
 }
 
-.menu-subtitle{
+.menuTitle{
   text-align:center;
+  font-size:clamp(28px,6vw,45px);
+  margin:8px 0;
+  color:#4d7d39;
+}
+
+.menuSub{
+  text-align:center;
+  margin-bottom:15px;
   font-size:17px;
-  margin:0 0 15px;
 }
 
-.menu-grid{
-  width:min(1050px,100%);
+.menuGrid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
   gap:12px;
-  padding-bottom:20px;
+  padding-bottom:30px;
 }
 
-.game-button{
-  min-height:125px;
+.menuBtn{
+  min-height:115px;
   border-radius:24px;
   background:white;
-  box-shadow:0 5px 12px #0002;
-  border:4px solid #d8ebc9;
-  padding:10px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:5px;
-  font-weight:bold;
-  color:#355f38;
+  box-shadow:0 4px 12px #456c3925;
+  border:3px solid #d2e8bd;
+  padding:12px 7px;
+  font-size:17px;
+  font-weight:900;
+  color:#345b34;
 }
 
-.game-button:active{
-  transform:scale(.95);
+.menuBtn .icon{
+  display:block;
+  font-size:43px;
+  margin-bottom:6px;
 }
 
-.game-icon{
-  font-size:45px;
-}
-
-.game-name{
-  font-size:16px;
-}
-
-.everything{
-  grid-column:1/-1;
-  background:#f5a623;
-  color:white;
-  border-color:#df8d11;
-  min-height:90px;
+.menuBtn:active{
+  transform:scale(.96);
+  background:#f4ffe9;
 }
 
 /* ACTIVITY */
-
-.activity-screen{
+.activity{
+  min-height:100%;
   background:
-    radial-gradient(circle at 10% 15%,#fff8 0 25px,transparent 26px),
-    radial-gradient(circle at 90% 20%,#fff8 0 32px,transparent 33px),
-    linear-gradient(#e9f7df,#fff8d7);
+    linear-gradient(#f4ffe9,#fff9df);
 }
 
-.activity-header{
-  width:min(1050px,100%);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:7px;
+.activityInner{
+  width:min(1100px,100%);
+  margin:auto;
+  padding:12px 15px 30px;
 }
 
-.activity-title{
-  font-size:25px;
-  font-weight:bold;
+.activityHeader{
+  text-align:center;
+  background:#ffffffdc;
+  border-radius:22px;
+  padding:10px;
+  margin-bottom:10px;
 }
 
-.progress-wrap{
-  width:min(1050px,100%);
-  height:15px;
-  background:#d2dfcf;
-  border-radius:20px;
-  overflow:hidden;
-  margin-bottom:13px;
-}
-
-.progress{
-  height:100%;
-  width:0%;
-  background:#69a84f;
-  transition:.3s;
+.activityTitle{
+  margin:0;
+  font-size:clamp(24px,5vw,38px);
+  color:#4c7d39;
 }
 
 .question{
-  width:min(1050px,100%);
-  background:#ffffffdf;
-  border-radius:30px;
-  padding:18px;
-  box-shadow:0 5px 15px #0002;
-  text-align:center;
+  font-size:clamp(20px,4vw,29px);
+  font-weight:900;
+  margin:8px 0;
 }
 
-.question-text{
-  font-size:29px;
-  font-weight:bold;
-  margin-bottom:12px;
+.listenBtn{
+  background:#f3b84b;
+  color:#4b3415;
+  padding:9px 16px;
+  border-radius:20px;
+  font-weight:900;
+  font-size:15px;
 }
 
+.progressOuter{
+  height:12px;
+  background:#dce8d4;
+  border-radius:20px;
+  overflow:hidden;
+  margin:8px 0;
+}
+
+.progressInner{
+  height:100%;
+  width:0%;
+  background:#70b84c;
+  transition:.3s;
+}
+
+/* GENERAL CHOICES */
 .choices{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:12px;
-  width:100%;
+  gap:15px;
+  max-width:850px;
+  margin:15px auto;
 }
 
 .choice{
-  min-height:105px;
-  border-radius:22px;
-  background:#fff;
-  border:4px solid #d9e9cf;
-  box-shadow:0 4px 8px #0002;
-  font-size:24px;
-  font-weight:bold;
-  color:#345b37;
-  padding:10px;
+  min-height:120px;
+  background:white;
+  border-radius:24px;
+  border:4px solid #d9e9cc;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:65px;
+  box-shadow:0 4px 10px #345b3420;
 }
 
 .choice:active{
   transform:scale(.95);
 }
 
-.picture-choice{
-  font-size:68px;
-}
-
 .feedback{
-  min-height:38px;
-  font-size:23px;
-  font-weight:bold;
-  margin-top:10px;
-}
-
-.activity-bottom{
-  width:min(1050px,100%);
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:12px;
-  flex-wrap:wrap;
-}
-
-.back-btn{
-  background:#fff;
-  color:#466b49;
-  padding:11px 18px;
-  border-radius:20px;
-  font-weight:bold;
-  box-shadow:0 3px 8px #0002;
-}
-
-.listen-btn{
-  background:#8b6bb7;
-  color:white;
-  padding:11px 18px;
-  border-radius:20px;
-  font-weight:bold;
-}
-
-/* VISUALS */
-
-.visual{
-  font-size:110px;
-  line-height:1;
-  margin:5px;
-}
-
-.color-box{
-  width:145px;
-  height:145px;
-  border-radius:28px;
-  margin:10px auto 20px;
-  box-shadow:
-    inset 0 0 0 6px #ffffffaa,
-    0 5px 12px #0002;
-}
-
-.shape{
-  width:145px;
-  height:145px;
-  margin:10px auto 20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:90px;
-}
-
-.count-items{
-  min-height:125px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:4px;
-  font-size:55px;
-  max-width:850px;
-  margin:0 auto 12px;
-}
-
-.letter{
-  font-size:110px;
-  font-weight:bold;
-  color:#e68a27;
-}
-
-/* FOOD */
-
-.food-animal{
-  font-size:105px;
-  margin:5px;
-}
-
-.food-arrow{
-  font-size:45px;
-  margin:5px;
-}
-
-/* DRAWING */
-
-.draw-instructions{
-  font-size:21px;
-  font-weight:bold;
-  margin:4px 0 10px;
-}
-
-.draw-board{
-  width:min(1000px,100%);
-  background:#fff;
-  border-radius:25px;
-  padding:12px;
-  box-shadow:0 4px 12px #0002;
-}
-
-.canvas-wrap{
-  position:relative;
-  width:100%;
-}
-
-canvas{
-  width:100%;
-  height:360px;
-  display:block;
-  background:
-    radial-gradient(circle,#dbead2 1px,transparent 1px);
-  background-size:20px 20px;
-  border:3px dashed #91b985;
-  border-radius:18px;
-  touch-action:none;
-}
-
-.animal-side{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  font-size:65px;
-  pointer-events:none;
-}
-
-.animal-left{
-  left:18px;
-}
-
-.animal-right{
-  right:18px;
-}
-
-.clear-btn{
-  background:#e77d67;
-  color:white;
-  padding:10px 18px;
-  border-radius:18px;
-  font-weight:bold;
-  margin-top:9px;
-}
-
-.done-btn{
-  background:#5e9f55;
-  color:white;
-  padding:12px 25px;
-  border-radius:20px;
-  font-size:20px;
-  font-weight:bold;
-  margin-top:9px;
-}
-
-/* MATCHING */
-
-.match-area{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
-  width:min(800px,100%);
-  margin:auto;
-}
-
-.match-column{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-
-.match-card{
-  min-height:100px;
-  background:white;
-  border:4px solid #d9e9cf;
-  border-radius:22px;
-  box-shadow:0 4px 8px #0002;
-  font-size:65px;
-}
-
-.match-card:active{
-  transform:scale(.95);
-}
-
-.match-selected{
-  border-color:#f5a623;
-  background:#fff5d9;
-  transform:scale(1.04);
-}
-
-/* BIG SMALL */
-
-.big-small-area{
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  gap:55px;
-  min-height:220px;
-}
-
-.big-object{
-  font-size:155px;
-}
-
-.small-object{
-  font-size:65px;
-}
-
-/* MISSING */
-
-.pattern{
-  font-size:75px;
-  letter-spacing:7px;
-  margin:20px;
-}
-
-.missing-picture{
-  font-size:70px;
-}
-
-/* SAFARI */
-
-.safari-instruction{
-  font-size:23px;
-  font-weight:bold;
-  margin:5px 0 10px;
-}
-
-.safari{
-  width:min(1100px,100%);
-  min-height:450px;
-  border-radius:30px;
-  overflow:hidden;
-  position:relative;
-  background:
-    linear-gradient(#8ed5ed 0 42%,#9bd36d 42% 100%);
-  border:6px solid #78a85c;
-  box-shadow:0 6px 15px #0002;
-}
-
-.sun{
-  position:absolute;
-  right:30px;
-  top:20px;
-  font-size:70px;
-}
-
-.cloud{
-  position:absolute;
-  font-size:55px;
-}
-
-.cloud.one{
-  left:8%;
-  top:25px;
-}
-
-.cloud.two{
-  left:48%;
-  top:55px;
-}
-
-.tree{
-  position:absolute;
-  bottom:20px;
-  font-size:85px;
-}
-
-.tree.t1{
-  left:10px;
-}
-
-.tree.t2{
-  right:15px;
-}
-
-.tree.t3{
-  left:43%;
-  bottom:0;
-}
-
-.safari-object{
-  position:absolute;
-  border:0;
-  background:transparent;
-  font-size:55px;
-  padding:3px;
-  z-index:5;
-}
-
-.safari-object:active{
-  transform:scale(1.25);
-}
-
-/* CELEBRATION */
-
-.celebration{
-  justify-content:center;
   text-align:center;
-  background:
-    radial-gradient(circle at 20% 20%,#ffeb88 0 25px,transparent 26px),
-    radial-gradient(circle at 80% 30%,#b8e7ff 0 30px,transparent 31px),
-    linear-gradient(#dff7ce,#fff2c4);
+  min-height:45px;
+  font-size:25px;
+  font-weight:900;
+  padding:8px;
 }
-
-.trophy{
-  font-size:105px;
-  animation:bounce 1s infinite;
-}
-
-.finish-buttons{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.confetti{
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  overflow:hidden;
-  z-index:5000;
-}
-
-.confetti span{
-  position:absolute;
-  top:-30px;
-  font-size:28px;
-  animation:fall 3s linear forwards;
-}
-
-/* FEEDBACK */
 
 .correct{
-  animation:correct .55s ease;
-  background:#d9f7c9 !important;
-  border-color:#62a94c !important;
+  color:#388438;
 }
 
 .wrong{
-  animation:shake .35s ease;
-  background:#ffdcdc !important;
-  border-color:#e78a8a !important;
+  color:#c45a43;
 }
 
-/* ANIMATION */
-
-@keyframes bounce{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
+/* BODY */
+.bodyChoices .choice{
+  font-size:42px;
+  min-height:90px;
 }
 
-@keyframes correct{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.08)}
-  100%{transform:scale(1)}
+/* COLOR */
+.colorSample{
+  width:min(280px,55vw);
+  height:min(220px,35vh);
+  border-radius:35px;
+  margin:15px auto;
+  border:8px solid white;
+  box-shadow:0 5px 15px #0002;
 }
 
-@keyframes shake{
-  0%,100%{transform:translateX(0)}
-  25%{transform:translateX(-8px)}
-  75%{transform:translateX(8px)}
+.colorChoices{
+  grid-template-columns:repeat(5,1fr);
+  max-width:650px;
 }
 
-@keyframes fall{
-  to{
-    transform:translateY(110vh) rotate(720deg);
-  }
+.colorChoice{
+  min-height:80px;
+  border-radius:20px;
+  border:5px solid white;
+  box-shadow:0 3px 9px #0002;
 }
 
-/* MOBILE */
-
-@media(max-width:600px){
-
-  h1{
-    font-size:31px;
+@media(max-width:550px){
+  .colorChoices{
+    grid-template-columns:repeat(5,1fr);
+    gap:7px;
   }
-
-  .question-text{
-    font-size:24px;
-  }
-
-  .activity-title{
-    font-size:19px;
-  }
-
-  .visual{
-    font-size:85px;
-  }
-
-  .choice{
-    min-height:92px;
-  }
-
-  .picture-choice{
-    font-size:52px;
-  }
-
-  .menu-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .game-button{
-    min-height:110px;
-  }
-
-  .game-icon{
-    font-size:38px;
-  }
-
-  .color-box{
-    width:115px;
-    height:115px;
-  }
-
-  canvas{
-    height:320px;
-  }
-
-  .animal-side{
-    font-size:52px;
-  }
-
-  .animal-left{
-    left:10px;
-  }
-
-  .animal-right{
-    right:10px;
-  }
-
-  .match-area{
-    gap:10px;
-  }
-
-  .match-card{
-    font-size:52px;
-  }
-
-  .safari{
-    min-height:390px;
-  }
-
-  .safari-object{
-    font-size:45px;
+  .colorChoice{
+    min-height:55px;
   }
 }
 
-/* LANDSCAPE PHONE */
+/* COUNTING */
+.countObjects{
+  text-align:center;
+  background:white;
+  border-radius:28px;
+  padding:15px;
+  margin:10px auto;
+  max-width:800px;
+  min-height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:8px;
+  font-size:clamp(45px,9vw,80px);
+}
 
+.numberChoices{
+  grid-template-columns:repeat(5,1fr);
+  max-width:600px;
+}
+
+.numberChoice{
+  min-height:75px;
+  font-size:30px;
+}
+
+/* BIG SMALL */
+.bigSmallChoice{
+  font-size:70px;
+}
+
+/* FOOD */
+.foodAnimal{
+  text-align:center;
+  font-size:clamp(90px,18vw,150px);
+  background:white;
+  border-radius:30px;
+  padding:8px;
+  max-width:350px;
+  margin:auto;
+}
+
+.foodChoice{
+  font-size:70px;
+}
+
+/* MISSING */
+.pattern{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  background:white;
+  border-radius:28px;
+  padding:20px;
+  max-width:850px;
+  margin:15px auto;
+  font-size:clamp(48px,9vw,75px);
+}
+
+.patternItem{
+  width:75px;
+  height:75px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:15px;
+  background:#f1f8e9;
+}
+
+.missingChoices{
+  max-width:650px;
+}
+
+/* MATCH PICTURES */
+.pictureMatchBoard{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  max-width:700px;
+  margin:auto;
+}
+
+.matchColumn{
+  display:grid;
+  gap:10px;
+}
+
+.matchPicture{
+  min-height:90px;
+  background:white;
+  border:4px solid #d5e7c7;
+  border-radius:20px;
+  font-size:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.matchPicture.selected{
+  border-color:#e8a43c;
+  background:#fff6d9;
+}
+
+.matchPicture.matched{
+  border-color:#71b84c;
+  background:#e9f8dc;
+  opacity:.75;
+}
+
+/* MAMA BABY */
+.lineMatchWrap{
+  position:relative;
+  width:100%;
+  max-width:1000px;
+  margin:auto;
+  background:#fffdf1;
+  border-radius:25px;
+  border:4px solid #d4e5c5;
+  overflow:hidden;
+  padding:15px 10px;
+}
+
+.lineLabels{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  text-align:center;
+  font-size:18px;
+  font-weight:900;
+  color:#557743;
+  margin-bottom:7px;
+}
+
+.mamaBabyBoard{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px 35%;
+  min-height:420px;
+}
+
+.mamaColumn,.babyColumn{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  gap:7px;
+  z-index:3;
+}
+
+.mamaItem,.babyItem{
+  height:60px;
+  background:white;
+  border:3px solid #d9e7ce;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:43px;
+  position:relative;
+  user-select:none;
+}
+
+.endpoint{
+  position:absolute;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  background:#71b84c;
+  border:3px solid white;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.mamaItem .endpoint{
+  right:-11px;
+}
+
+.babyItem .endpoint{
+  left:-11px;
+  background:#e9a43c;
+}
+
+#connectionCanvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:4;
+  touch-action:none;
+}
+
+.lineControls{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:12px auto;
+  flex-wrap:wrap;
+}
+
+.controlBtn{
+  background:#6daa49;
+  color:white;
+  padding:12px 20px;
+  border-radius:20px;
+  font-weight:900;
+  font-size:16px;
+}
+
+.clearBtn{
+  background:#d9865b;
+}
+
+/* TRACING */
+.traceBoard{
+  width:min(900px,100%);
+  height:min(60vh,520px);
+  min-height:300px;
+  background:white;
+  border:5px solid #d5e8c7;
+  border-radius:30px;
+  position:relative;
+  margin:10px auto;
+  overflow:hidden;
+  touch-action:none;
+}
+
+.traceCanvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  touch-action:none;
+}
+
+.traceTools{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:8px;
+}
+
+/* PREWRITING */
+.preGuide{
+  font-size:90px;
+  color:#a9c39a;
+}
+
+/* LETTER / NUMBER */
+.traceGlyph{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:min(58vw,330px);
+  font-weight:900;
+  color:transparent;
+  -webkit-text-stroke:5px #a9c69b;
+  text-shadow:
+    2px 0 #a9c69b,
+    -2px 0 #a9c69b,
+    0 2px #a9c69b,
+    0 -2px #a9c69b;
+  opacity:.75;
+  pointer-events:none;
+}
+
+.traceDots{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  pointer-events:none;
+  color:#b0c8a4;
+  font-weight:900;
+  font-size:min(58vw,330px);
+  opacity:.35;
+}
+
+/* HUNT */
+.huntScene{
+  min-height:500px;
+  background:
+    radial-gradient(circle at 10% 15%, #fff0a8 0 5%,transparent 6%),
+    linear-gradient(#bce6f3 0 35%,#a9d87b 35% 70%,#5f9a4e 70%);
+  border-radius:30px;
+  position:relative;
+  overflow:hidden;
+  max-width:1000px;
+  margin:auto;
+}
+
+.huntItem{
+  position:absolute;
+  font-size:clamp(35px,7vw,65px);
+  background:none;
+  padding:3px;
+  z-index:2;
+}
+
+.huntTarget{
+  animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.18)}
+}
+
+/* FINISH */
+.finish{
+  text-align:center;
+  padding:30px 15px;
+  max-width:700px;
+  margin:auto;
+}
+
+.finishEmoji{
+  font-size:100px;
+  animation:bounce 1.5s infinite;
+}
+
+.finish h2{
+  font-size:40px;
+  color:#4f7d3d;
+}
+
+.finish p{
+  font-size:21px;
+}
+
+.nextBtn{
+  background:#70b84c;
+  color:white;
+  padding:14px 25px;
+  border-radius:22px;
+  font-size:19px;
+  font-weight:900;
+  margin:5px;
+}
+
+.menuReturn{
+  background:#e9a345;
+}
+
+/* SAFETY */
 @media(orientation:landscape) and (max-height:600px){
-
-  .screen{
-    min-height:calc(100vh - 50px);
-    padding:8px;
+  .activityInner{
+    padding-top:5px;
   }
 
-  .question{
-    padding:10px;
+  .activityHeader{
+    padding:5px;
   }
 
-  .question-text{
-    font-size:22px;
-    margin-bottom:5px;
+  .countObjects{
+    min-height:120px;
+    margin:5px auto;
   }
 
   .choice{
-    min-height:65px;
+    min-height:85px;
   }
 
-  .color-box{
-    width:85px;
-    height:85px;
-    margin:3px auto 8px;
-  }
-
-  .visual{
-    font-size:65px;
-  }
-
-  canvas{
-    height:250px;
-  }
-
-  .menu-grid{
-    grid-template-columns:repeat(4,1fr);
-  }
-
-  .game-button{
-    min-height:80px;
-  }
-
-  .game-icon{
-    font-size:29px;
-  }
-
-  .game-name{
-    font-size:12px;
+  .traceBoard{
+    height:70vh;
   }
 }
 </style>
@@ -774,2409 +697,1789 @@ canvas{
 
 <body>
 
-<div class="topbar">
-
-  <div class="top-title">
-    🦁 Orion's Kindergarten Safari
-  </div>
-
-  <div class="top-actions">
-
-    <button class="small-btn" onclick="goMenu()">
-      🏠
-    </button>
-
-    <button class="small-btn" onclick="goFullscreen()">
-      ⛶
-    </button>
-
-    <button class="small-btn" onclick="rotateScreen()">
-      ↔️
-    </button>
-
-  </div>
-
-</div>
-
-
 <!-- HOME -->
+<section id="home" class="screen active">
+  <div class="homeAnimals">🦁 🐘 🦒 🐼 🐰 🐴 🐧</div>
+  <div class="logo">Orion's Safari 🌿</div>
+  <div class="subtitle">My Little Kindergarten Adventure</div>
 
-<section id="home" class="screen home active">
+  <button class="startBtn" onclick="showMenu()">START PLAYING 🎮</button>
 
-  <div class="home-animal">
-    🦁
+  <div class="homeHint">
+    🌟 Touch the pictures<br>
+    🌟 Listen to the questions<br>
+    🌟 Draw with your finger or stylus<br>
+    🌟 Have fun learning!
   </div>
 
-  <h1>
-    Orion's Safari!
-  </h1>
-
-  <div class="subtitle">
-    Let's learn, play, tap, match, count and explore! 🌿🐘🦒
-  </div>
-
-  <button class="big-start" onclick="showMenu()">
-    🌟 START PLAYING
-  </button>
-
+  <div style="font-size:55px">🦋 🌳 🍎 🐒 🐕 🐱</div>
 </section>
 
 
 <!-- MENU -->
+<section id="menu" class="screen">
 
-<section id="menu" class="screen menu-screen">
-
-  <h1 class="menu-title">
-    🌟 What Do You Want To Play?
-  </h1>
-
-  <p class="menu-subtitle">
-    Choose a game, Orion! 👆
-  </p>
-
-  <div class="menu-grid">
-
-    <button class="game-button" onclick="startCategory('body')">
-      <div class="game-icon">👦</div>
-      <div class="game-name">Body Parts</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('colors')">
-      <div class="game-icon">🌈</div>
-      <div class="game-name">Colors</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('shapes')">
-      <div class="game-icon">🔷</div>
-      <div class="game-name">Shapes</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('counting')">
-      <div class="game-icon">🔢</div>
-      <div class="game-name">Counting</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('animals')">
-      <div class="game-icon">🐾</div>
-      <div class="game-name">Find Animals</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('sounds')">
-      <div class="game-icon">🔊</div>
-      <div class="game-name">Animal Sounds</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('food')">
-      <div class="game-icon">🥕</div>
-      <div class="game-name">Animal Food</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('drawing')">
-      <div class="game-icon">✏️</div>
-      <div class="game-name">Mama & Baby</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('letters')">
-      <div class="game-icon">🔤</div>
-      <div class="game-name">Letters</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('bigsmall')">
-      <div class="game-icon">📏</div>
-      <div class="game-name">Big or Small?</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('matching')">
-      <div class="game-icon">🧩</div>
-      <div class="game-name">Match Pictures</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('missing')">
-      <div class="game-icon">🧠</div>
-      <div class="game-name">What's Missing?</div>
-    </button>
-
-    <button class="game-button" onclick="startCategory('hunt')">
-      <div class="game-icon">🌿</div>
-      <div class="game-name">Safari Hunt</div>
-    </button>
-
-    <button class="game-button everything" onclick="startEverything()">
-      <div class="game-icon">🎮✨</div>
-      <div class="game-name">PLAY EVERYTHING!</div>
-    </button>
-
+  <div class="topbar">
+    <button onclick="showHome()">🏠 Home</button>
+    <div class="topTitle">ORION'S SAFARI 🌿</div>
+    <div>
+      <button onclick="goFullscreen()">⛶</button>
+      <button onclick="rotateScreen()">↔️</button>
+    </div>
   </div>
 
+  <div class="menuContent">
+    <h1 class="menuTitle">🌿 Choose an Activity 🌿</h1>
+    <div class="menuSub">Let's learn and play, Orion! 🦁💚</div>
+
+    <div class="menuGrid">
+
+      <button class="menuBtn" onclick="startActivity('body')">
+        <span class="icon">👦</span>Body Parts
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('colors')">
+        <span class="icon">🌈</span>Colors
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('shapes')">
+        <span class="icon">🔷</span>Shapes
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('counting')">
+        <span class="icon">🔢</span>Counting
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('animals')">
+        <span class="icon">🐾</span>Find Animals
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('sounds')">
+        <span class="icon">🔊</span>Animal Sounds
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('food')">
+        <span class="icon">🥕</span>Animal Food
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('mamababy')">
+        <span class="icon">🐘</span>Mama & Baby
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('matching')">
+        <span class="icon">🧩</span>Match Pictures
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('prewriting')">
+        <span class="icon">✏️</span>Pre-Writing
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('numbers')">
+        <span class="icon">🔢</span>Number Tracing
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('letters')">
+        <span class="icon">🔤</span>Letter Tracing
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('bigsmall')">
+        <span class="icon">📏</span>Big or Small
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('missing')">
+        <span class="icon">🧠</span>What's Missing?
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('hunt')">
+        <span class="icon">🌿</span>Big Safari Hunt
+      </button>
+
+      <button class="menuBtn" onclick="startActivity('everything')">
+        <span class="icon">🎮</span>Play Everything
+      </button>
+
+    </div>
+  </div>
 </section>
 
 
-<!-- ACTIVITY -->
+<!-- ACTIVITY SCREEN -->
+<section id="activity" class="screen">
 
-<section id="activity" class="screen activity-screen">
+  <div class="topbar">
+    <button onclick="showMenu()">🏠</button>
+    <div id="topActivityTitle" class="topTitle">Orion's Safari</div>
+    <div>
+      <button onclick="goFullscreen()">⛶</button>
+      <button onclick="rotateScreen()">↔️</button>
+    </div>
+  </div>
 
-  <div class="activity-header">
+  <div class="activityInner">
 
-    <div id="activityTitle" class="activity-title">
-      🦁 Safari Game
+    <div class="activityHeader">
+      <h1 id="activityTitle" class="activityTitle"></h1>
+      <div id="question" class="question"></div>
+      <button id="listenBtn" class="listenBtn" onclick="speakQuestion()">🔊 Listen</button>
+      <div class="progressOuter">
+        <div id="progressInner" class="progressInner"></div>
+      </div>
     </div>
 
-  </div>
+    <div id="activityContent"></div>
 
-  <div class="progress-wrap">
-    <div id="progress" class="progress"></div>
-  </div>
-
-  <div id="question" class="question"></div>
-
-  <div class="activity-bottom">
-
-    <button class="back-btn" onclick="goMenu()">
-      🏠 Choose Another Game
-    </button>
-
-    <button class="listen-btn" onclick="speakCurrent()">
-      🔊 Listen
-    </button>
+    <div id="feedback" class="feedback"></div>
 
   </div>
-
-</section>
-
-
-<!-- CELEBRATION -->
-
-<section id="celebration" class="screen celebration">
-
-  <div class="trophy">
-    🏆
-  </div>
-
-  <h1 id="celebrationTitle">
-    🎉 GOOD JOB, ORION! 🎉
-  </h1>
-
-  <p id="celebrationText" class="subtitle">
-    You finished your safari!
-  </p>
-
-  <div class="finish-buttons">
-
-    <button class="big-start" onclick="goMenu()">
-      🦁 Choose Another Game
-    </button>
-
-    <button class="big-start" onclick="startEverything()">
-      🎮 Play Everything Again
-    </button>
-
-  </div>
-
-  <div id="confetti" class="confetti"></div>
-
 </section>
 
 
 <script>
 
-/* =========================
-   GAME STATE
-========================= */
-
-let currentCategory="";
-let playEverything=false;
-let activityIndex=0;
-let currentQuestion=0;
-let currentSpeech="";
-
-
-/* =========================
-   GAME DATA
-========================= */
-
-const categories={
-
-body:{
-  title:"👦 Body Parts",
-  type:"body",
-  items:[
-    ["nose","👃"],
-    ["eyes","👀"],
-    ["ears","👂"],
-    ["mouth","👄"],
-    ["teeth","🦷"],
-    ["head","🙂"],
-    ["hair","💇"],
-    ["neck","🧣"],
-    ["arms","💪"],
-    ["hands","🖐️"],
-    ["fingers","☝️"],
-    ["tummy","🫃"],
-    ["legs","🦵"],
-    ["feet","🦶"],
-    ["toes","🦶"],
-    ["cheeks","😊"],
-    ["chin","🙂"],
-    ["bottom","🍑"]
-  ]
-},
-
-colors:{
-  title:"🌈 Colors",
-  type:"colors",
-  items:[
-    ["yellow","#FFD92F","🟨"],
-    ["blue","#4AA3DF","🟦"],
-    ["green","#5BB85C","🟩"],
-    ["pink","#F28BB8","🩷"],
-    ["black","#222222","⬛"],
-    ["white","#FFFFFF","⬜"],
-    ["purple","#9B6BD6","🟪"],
-    ["orange","#F5A623","🟧"],
-    ["red","#E95B5B","🟥"],
-    ["brown","#9A6844","🟫"]
-  ]
-},
-
-shapes:{
-  title:"🔷 Shapes",
-  type:"shapes",
-  items:[
-    ["circle","●"],
-    ["square","■"],
-    ["triangle","▲"],
-    ["rectangle","▰"],
-    ["star","★"],
-    ["heart","♥"]
-  ]
-},
-
-counting:{
-  title:"🔢 Counting",
-  type:"counting",
-  items:[
-    ["apples",2,"🍎"],
-    ["chicks",3,"🐥"],
-    ["balloons",4,"🎈"],
-    ["stars",5,"⭐"],
-    ["fish",6,"🐟"],
-    ["butterflies",7,"🦋"],
-    ["bananas",3,"🍌"],
-    ["flowers",5,"🌸"],
-    ["ducks",4,"🦆"],
-    ["lions",6,"🦁"]
-  ]
-},
-
-animals:{
-  title:"🐾 Find the Animals",
-  type:"animals",
-  items:[
-    ["lion","🦁"],
-    ["elephant","🐘"],
-    ["giraffe","🦒"],
-    ["monkey","🐒"],
-    ["panda","🐼"],
-    ["rabbit","🐰"],
-    ["dog","🐶"],
-    ["cat","🐱"],
-    ["horse","🐴"],
-    ["penguin","🐧"],
-    ["polar bear","🐻‍❄️"],
-    ["bird","🐦"],
-    ["fish","🐟"],
-    ["bee","🐝"],
-    ["duck","🦆"],
-    ["chicken","🐔"],
-    ["leopard","🐆"],
-    ["zebra","🦓"]
-  ]
-},
-
-sounds:{
-  title:"🔊 Animal Sounds",
-  type:"sounds",
-  items:[
-    ["lion","🦁","🦁"],
-    ["dog","🐶","🐶"],
-    ["cat","🐱","🐱"],
-    ["horse","🐴","🐴"],
-    ["duck","🦆","🦆"],
-    ["bee","🐝","🐝"],
-    ["chicken","🐔","🐔"],
-    ["bird","🐦","🐦"]
-  ]
-},
-
-food:{
-  title:"🥕 What Do Animals Eat?",
-  type:"food",
-  items:[
-    ["rabbit","🐰","carrot","🥕"],
-    ["dog","🐶","bone","🦴"],
-    ["monkey","🐒","banana","🍌"],
-    ["panda","🐼","bamboo","🎋"],
-    ["horse","🐴","grass","🌿"],
-    ["fish","🐟","worm","🪱"],
-    ["bee","🐝","flower","🌸"]
-  ]
-},
-
-/* MANY MAMA + BABY PAIRS */
-
-drawing:{
-  title:"✏️ Mama & Baby",
-  type:"drawing",
-  items:[
-    ["🐱","🐈","cat"],
-    ["🐶","🐕","dog"],
-    ["🐴","🐎","horse"],
-    ["🐮","🐄","cow"],
-    ["🐑","🐑","sheep"],
-    ["🐐","🐐","goat"],
-    ["🐘","🐘","elephant"],
-    ["🦁","🦁","lion"],
-    ["🐯","🐯","tiger"],
-    ["🐻","🐻","bear"],
-    ["🐼","🐼","panda"],
-    ["🦒","🦒","giraffe"],
-    ["🐒","🐒","monkey"],
-    ["🐰","🐰","rabbit"],
-    ["🦆","🐥","duck"],
-    ["🐔","🐣","chicken"],
-    ["🐧","🐧","penguin"],
-    ["🦓","🦓","zebra"],
-    ["🦌","🦌","deer"],
-    ["🐢","🐢","turtle"]
-  ]
-},
-
-letters:{
-  title:"🔤 Letters",
-  type:"letters",
-  items:[
-    ["A","🍎"],
-    ["B","🐝"],
-    ["C","🐱"],
-    ["D","🐶"],
-    ["E","🥚"],
-    ["F","🐟"]
-  ]
-},
-
-bigsmall:{
-  title:"📏 Big or Small?",
-  type:"bigsmall",
-  items:[
-    ["🐘","big"],
-    ["🐶","small"],
-    ["🌳","tall"],
-    ["🦁","big"],
-    ["🐰","small"],
-    ["🦒","tall"]
-  ]
-},
-
-/* PICTURE-ONLY MATCHING */
-
-matching:{
-  title:"🧩 Match Pictures",
-  type:"matching",
-  items:[
-    ["🐶","🐶"],
-    ["🦁","🦁"],
-    ["🍎","🍎"],
-    ["⭐","⭐"],
-    ["🟨","🟨"],
-    ["🐟","🐟"],
-    ["🐱","🐱"],
-    ["🍌","🍌"],
-    ["🐘","🐘"],
-    ["🦒","🦒"],
-    ["🐰","🐰"],
-    ["🦆","🦆"]
-  ]
-},
-
-missing:{
-  title:"🧠 What's Missing?",
-  type:"missing",
-  items:[
-    ["🍎 🍌 🍎 ❓","🍌"],
-    ["🐶 🐱 🐶 ❓","🐱"],
-    ["⭐ 🌙 ⭐ ❓","🌙"],
-    ["🔴 🔵 🔴 ❓","🔵"],
-    ["🦁 🐘 🦁 ❓","🐘"],
-    ["🍎 🍎 🍌 ❓","🍎"],
-    ["🐱 🐶 🐱 ❓","🐶"]
-  ]
-},
-
-hunt:{
-  title:"🌿 Big Safari Hunt",
-  type:"hunt",
-  items:[
-    ["butterfly","🦋"],
-    ["lion","🦁"],
-    ["banana","🍌"],
-    ["red flower","🌹"],
-    ["elephant","🐘"],
-    ["monkey","🐒"],
-    ["yellow flower","🌼"],
-    ["bird","🐦"],
-    ["giraffe","🦒"],
-    ["carrot","🥕"],
-    ["bee","🐝"],
-    ["pond","💧"],
-    ["turtle","🐢"],
-    ["apple","🍎"],
-    ["zebra","🦓"]
-  ]
-}
-
-};
-
-
-const everythingList=[
-  "body",
-  "colors",
-  "shapes",
-  "counting",
-  "animals",
-  "sounds",
-  "food",
-  "drawing",
-  "letters",
-  "bigsmall",
-  "matching",
-  "missing",
-  "hunt"
-];
-
-
-/* =========================
-   SCREEN CONTROL
-========================= */
+/* =========================================================
+   BASIC NAVIGATION
+========================================================= */
 
 function hideAll(){
+  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+}
 
-  document.querySelectorAll(".screen").forEach(screen=>{
-    screen.classList.remove("active");
-  });
-
+function showHome(){
+  speechSynthesis.cancel();
+  hideAll();
+  document.getElementById("home").classList.add("active");
 }
 
 function showMenu(){
+  speechSynthesis.cancel();
+  hideAll();
+  document.getElementById("menu").classList.add("active");
+}
+
+function goFullscreen(){
+  const el=document.documentElement;
+  if(el.requestFullscreen){
+    el.requestFullscreen().catch(()=>{});
+  }else if(el.webkitRequestFullscreen){
+    el.webkitRequestFullscreen();
+  }
+}
+
+async function rotateScreen(){
+  try{
+    if(screen.orientation && screen.orientation.lock){
+      await screen.orientation.lock("landscape");
+    }else{
+      alert("Please turn the phone sideways ↔️");
+    }
+  }catch(e){
+    alert("Please turn the phone sideways ↔️");
+  }
+}
+
+
+/* =========================================================
+   DATA
+========================================================= */
+
+const bodyParts=[
+  ["👀","eyes"],
+  ["👂","ears"],
+  ["👃","nose"],
+  ["👄","mouth"],
+  ["🦷","teeth"],
+  ["💇","hair"],
+  ["🧠","head"],
+  ["🫵","fingers"],
+  ["💪","arm"],
+  ["✋","hands"],
+  ["😊","cheeks"],
+  ["🙂","chin"],
+  ["🧍","neck"],
+  ["🫃","tummy"],
+  ["🦵","legs"],
+  ["🦶","feet"],
+  ["🦶","toes"],
+  ["🍑","bottom"]
+];
+
+const colors=[
+  ["#ffdf32","yellow"],
+  ["#4d9de0","blue"],
+  ["#62b84f","green"],
+  ["#f58bb2","pink"],
+  ["#222222","black"],
+  ["#ffffff","white"],
+  ["#9b68c9","purple"],
+  ["#f28c28","orange"],
+  ["#e84b3c","red"],
+  ["#9a633c","brown"]
+];
+
+const shapes=[
+  ["●","circle"],
+  ["■","square"],
+  ["▲","triangle"],
+  ["▭","rectangle"],
+  ["★","star"],
+  ["♥","heart"]
+];
+
+const counting=[
+  ["🍎",2],
+  ["🐥",3],
+  ["🎈",4],
+  ["⭐",5],
+  ["🐟",6],
+  ["🦋",7],
+  ["🍌",3],
+  ["🌸",5],
+  ["🦆",4],
+  ["🦁",6]
+];
+
+const animals=[
+  ["🦁","lion"],
+  ["🐘","elephant"],
+  ["🦒","giraffe"],
+  ["🐒","monkey"],
+  ["🐼","panda"],
+  ["🐰","rabbit"],
+  ["🐶","dog"],
+  ["🐱","cat"],
+  ["🐴","horse"],
+  ["🐧","penguin"],
+  ["🐻‍❄️","polar bear"],
+  ["🐦","bird"],
+  ["🐟","fish"],
+  ["🐝","bee"],
+  ["🦆","duck"],
+  ["🐔","chicken"],
+  ["🐆","leopard"],
+  ["🦓","zebra"]
+];
+
+const sounds=[
+  ["🦁","Roar!","lion"],
+  ["🐶","Woof!","dog"],
+  ["🐱","Meow!","cat"],
+  ["🐴","Neigh!","horse"],
+  ["🦆","Quack!","duck"],
+  ["🐝","Buzz!","bee"],
+  ["🐔","Cluck!","chicken"],
+  ["🐦","Tweet!","bird"]
+];
+
+const foods=[
+  ["🐰","🥕","rabbit"],
+  ["🐶","🦴","dog"],
+  ["🐒","🍌","monkey"],
+  ["🐼","🎋","panda"],
+  ["🐴","🌿","horse"],
+  ["🐟","🪱","fish"],
+  ["🐝","🌸","bee"]
+];
+
+const mamaPairs=[
+  ["🐱","🐈","cat"],
+  ["🐶","🐕","dog"],
+  ["🐴","🐎","horse"],
+  ["🐄","🐮","cow"],
+  ["🐑","🐑","sheep"],
+  ["🐐","🐐","goat"],
+  ["🐘","🐘","elephant"],
+  ["🦁","🦁","lion"],
+  ["🐯","🐯","tiger"],
+  ["🐻","🐻","bear"],
+  ["🐼","🐼","panda"],
+  ["🦒","🦒","giraffe"],
+  ["🐒","🐒","monkey"],
+  ["🐰","🐇","rabbit"],
+  ["🦆","🐥","duck"],
+  ["🐔","🐤","chicken"],
+  ["🐧","🐧","penguin"],
+  ["🦓","🦓","zebra"],
+  ["🦌","🦌","deer"],
+  ["🐢","🐢","turtle"]
+];
+
+const bigSmall=[
+  ["🐘","big"],
+  ["🐶","small"],
+  ["🦒","tall"],
+  ["🦁","big"],
+  ["🐰","small"],
+  ["🌳","tall"]
+];
+
+const missing=[
+  ["🍎","🍌","🍎","🍌","🍎","🍌","?","🍌","🍎"],
+  ["🐶","🐱","🐶","🐱","🐶","?","🐶","🐱"],
+  ["🔴","🔵","🔴","🔵","?","🔵","🔴"],
+  ["⭐","🌙","⭐","🌙","⭐","?"],
+  ["🦁","🐘","🦁","🐘","?","🐘"],
+  ["🍎","🍎","🍌","🍎","🍎","?"]
+];
+
+const missingAnswers=[
+  "🍎",
+  "🐱",
+  "🔴",
+  "🌙",
+  "🦁",
+  "🍌"
+];
+
+const prewriting=[
+  ["horizontal","───────"],
+  ["vertical","│"],
+  ["diagonal","╱╱╱╱"],
+  ["diagonal2","╲╲╲╲"],
+  ["wavy","〰〰〰"],
+  ["curves","∩ ∩ ∩"],
+  ["curves2","∪ ∪ ∪"],
+  ["circle","○"],
+  ["square","□"],
+  ["triangle","△"],
+  ["star","☆"],
+  ["heart","♡"]
+];
+
+const letterList="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+const numberList=[
+  "1","2","3","4","5","6","7","8","9","10"
+];
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let currentType="";
+let currentIndex=0;
+let currentData=[];
+let playEverything=false;
+let everythingQueue=[];
+let everythingPosition=0;
+
+let selectedMatch=null;
+let matchPairs=[];
+let mamaRound=[];
+let mamaConnections=[];
+
+let traceCanvas=null;
+let traceCtx=null;
+let drawing=false;
+let traceDistance=0;
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function shuffle(array){
+  return [...array].sort(()=>Math.random()-.5);
+}
+
+function setTitle(title,question){
+  document.getElementById("activityTitle").textContent=title;
+  document.getElementById("topActivityTitle").textContent=title;
+  document.getElementById("question").textContent=question||"";
+}
+
+function setFeedback(text="",type=""){
+  const f=document.getElementById("feedback");
+  f.textContent=text;
+  f.className="feedback "+type;
+}
+
+function updateProgress(){
+  let total=currentData.length||1;
+  let pct=((currentIndex)/total)*100;
+  document.getElementById("progressInner").style.width=pct+"%";
+}
+
+function speak(text){
+  if(!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(text);
+  u.rate=.82;
+  u.pitch=1.1;
+  speechSynthesis.speak(u);
+}
+
+function speakQuestion(){
+  const q=document.getElementById("question").textContent;
+  if(q) speak(q);
+}
+
+function success(message="Great job! 🌟"){
+  setFeedback(message,"correct");
+  setTimeout(nextQuestion,800);
+}
+
+function wrong(){
+  setFeedback("Try again! 💚","wrong");
+}
+
+
+/* =========================================================
+   START ACTIVITY
+========================================================= */
+
+function startActivity(type){
+
+  speechSynthesis.cancel();
+
+  currentType=type;
+  currentIndex=0;
+  playEverything=(type==="everything");
+
+  if(type==="everything"){
+    everythingQueue=[
+      "body",
+      "colors",
+      "shapes",
+      "counting",
+      "animals",
+      "sounds",
+      "food",
+      "mamababy",
+      "matching",
+      "prewriting",
+      "numbers",
+      "letters",
+      "bigsmall",
+      "missing",
+      "hunt"
+    ];
+    everythingPosition=0;
+    currentType=everythingQueue[0];
+  }
 
   hideAll();
+  document.getElementById("activity").classList.add("active");
 
-  document.getElementById("menu")
-    .classList.add("active");
-
+  prepareActivity(currentType);
 }
 
-function goMenu(){
 
-  hideAll();
+/* =========================================================
+   PREPARE
+========================================================= */
 
-  document.getElementById("menu")
-    .classList.add("active");
+function prepareActivity(type){
 
-  stopSpeech();
+  currentIndex=0;
+  setFeedback("");
 
-}
-
-function startCategory(category){
-
-  currentCategory=category;
-  playEverything=false;
-  activityIndex=0;
-  currentQuestion=0;
-
-  startActivity();
-
-}
-
-function startEverything(){
-
-  playEverything=true;
-  activityIndex=0;
-  currentCategory=everythingList[0];
-  currentQuestion=0;
-
-  startActivity();
-
-}
-
-function startActivity(){
-
-  hideAll();
-
-  document.getElementById("activity")
-    .classList.add("active");
-
-  document.getElementById("activityTitle")
-    .textContent=
-    categories[currentCategory].title;
-
-  currentQuestion=0;
+  if(type==="body") currentData=shuffle(bodyParts);
+  else if(type==="colors") currentData=shuffle(colors);
+  else if(type==="shapes") currentData=shuffle(shapes);
+  else if(type==="counting") currentData=shuffle(counting);
+  else if(type==="animals") currentData=shuffle(animals);
+  else if(type==="sounds") currentData=shuffle(sounds);
+  else if(type==="food") currentData=shuffle(foods);
+  else if(type==="mamababy"){
+    prepareMamaBaby();
+    return;
+  }
+  else if(type==="matching"){
+    prepareMatching();
+    return;
+  }
+  else if(type==="prewriting"){
+    currentData=prewriting;
+  }
+  else if(type==="numbers"){
+    currentData=numberList;
+  }
+  else if(type==="letters"){
+    currentData=letterList;
+  }
+  else if(type==="bigsmall") currentData=shuffle(bigSmall);
+  else if(type==="missing") currentData=shuffle(
+    missing.map((x,i)=>({pattern:x,answer:missingAnswers[missing.indexOf(x)]}))
+  );
+  else if(type==="hunt"){
+    currentData=Array.from({length:10},(_,i)=>i);
+  }
 
   renderQuestion();
-
 }
 
 
-/* =========================
-   RENDER QUESTION
-========================= */
+/* =========================================================
+   RENDER QUESTIONS
+========================================================= */
 
 function renderQuestion(){
 
-  const data=categories[currentCategory];
+  const box=document.getElementById("activityContent");
+  box.innerHTML="";
+  setFeedback("");
+  updateProgress();
 
-  const item=data.items[currentQuestion];
-
-  document.getElementById("progress").style.width=
-    ((currentQuestion+1)/data.items.length*100)+"%";
-
-  const box=document.getElementById("question");
-
-  if(data.type==="body")
-    renderBody(box,item);
-
-  else if(data.type==="colors")
-    renderColor(box,item);
-
-  else if(data.type==="shapes")
-    renderShape(box,item);
-
-  else if(data.type==="counting")
-    renderCounting(box,item);
-
-  else if(data.type==="animals")
-    renderAnimals(box,item);
-
-  else if(data.type==="sounds")
-    renderSounds(box,item);
-
-  else if(data.type==="food")
-    renderFood(box,item);
-
-  else if(data.type==="drawing")
-    renderDrawing(box,item);
-
-  else if(data.type==="letters")
-    renderLetters(box,item);
-
-  else if(data.type==="bigsmall")
-    renderBigSmall(box,item);
-
-  else if(data.type==="matching")
-    renderMatching(box,item);
-
-  else if(data.type==="missing")
-    renderMissing(box,item);
-
-  else if(data.type==="hunt")
-    renderHunt(box,item);
-
+  if(currentType==="body"){
+    renderBody();
+  }
+  else if(currentType==="colors"){
+    renderColors();
+  }
+  else if(currentType==="shapes"){
+    renderShapes();
+  }
+  else if(currentType==="counting"){
+    renderCounting();
+  }
+  else if(currentType==="animals"){
+    renderAnimals();
+  }
+  else if(currentType==="sounds"){
+    renderSounds();
+  }
+  else if(currentType==="food"){
+    renderFood();
+  }
+  else if(currentType==="prewriting"){
+    renderPrewriting();
+  }
+  else if(currentType==="numbers"){
+    renderNumberTracing();
+  }
+  else if(currentType==="letters"){
+    renderLetterTracing();
+  }
+  else if(currentType==="bigsmall"){
+    renderBigSmall();
+  }
+  else if(currentType==="missing"){
+    renderMissing();
+  }
+  else if(currentType==="hunt"){
+    renderHunt();
+  }
 }
 
 
-/* =========================
-   BODY PARTS
-========================= */
+/* =========================================================
+   BODY
+========================================================= */
 
-function renderBody(box,item){
+function renderBody(){
 
-  const name=item[0];
+  const target=currentData[currentIndex];
+  const distractors=shuffle(bodyParts)
+    .filter(x=>x[1]!==target[1])
+    .slice(0,3);
 
-  currentSpeech=
-    "Where is your "+name+"?";
+  const options=shuffle([target,...distractors]);
 
-  let options=[item];
+  setTitle(
+    "👦 Body Parts",
+    "Can you find the "+target[1]+"?"
+  );
 
-  while(options.length<4){
-
-    const x=
-      categories.body.items[
-        Math.floor(
-          Math.random()*categories.body.items.length
-        )
-      ];
-
-    if(!options.some(o=>o[0]===x[0]))
-      options.push(x);
-
-  }
-
-  shuffle(options);
+  const box=document.getElementById("activityContent");
 
   box.innerHTML=`
-
-    <div class="question-text">
-      Where is your ${name}? 👆
-    </div>
-
-    <div class="visual">
-      ${item[1]}
-    </div>
-
-    <div class="choices">
-
+    <div class="choices bodyChoices">
       ${options.map(x=>`
-
-        <button
-          class="choice picture-choice"
-          onclick="answerSimple('${x[0]}',this,'${name}')">
-
-          ${x[1]}
-
+        <button class="choice" onclick="checkBody('${x[1]}','${target[1]}')">
+          ${x[0]}
         </button>
-
       `).join("")}
-
     </div>
-
-    <div class="feedback" id="feedback"></div>
-
   `;
 
+  speakQuestion();
+}
+
+function checkBody(chosen,target){
+  if(chosen===target) success("Yes! That's the "+target+"! 🌟");
+  else wrong();
 }
 
 
-/* =========================
-   COLORS — VISUAL ONLY
-========================= */
+/* =========================================================
+   COLORS
+========================================================= */
 
-function renderColor(box,item){
+function renderColors(){
 
-  const name=item[0];
+  const target=currentData[currentIndex];
+  const options=shuffle([target,...shuffle(colors).filter(x=>x[1]!==target[1]).slice(0,4)]);
 
-  const color=item[1];
+  setTitle(
+    "🌈 Colors",
+    "Where is the color "+target[1].toUpperCase()+"?"
+  );
 
-  currentSpeech=
-    "Where is the color "+name+"?";
-
-  let options=[item];
-
-  while(options.length<4){
-
-    const x=
-      categories.colors.items[
-        Math.floor(
-          Math.random()*categories.colors.items.length
-        )
-      ];
-
-    if(!options.some(o=>o[0]===x[0]))
-      options.push(x);
-
-  }
-
-  shuffle(options);
+  const box=document.getElementById("activityContent");
 
   box.innerHTML=`
+    <div class="colorSample" style="background:${target[0]}"></div>
 
-    <div class="question-text">
-
-      🔊 Where is the color
-      <strong>${name.toUpperCase()}</strong>?
-
-    </div>
-
-    <div
-      class="color-box"
-      style="background:${color}">
-    </div>
-
-    <div class="choices">
-
+    <div class="choices colorChoices">
       ${options.map(x=>`
-
         <button
-          class="choice"
-          aria-label="${x[0]}"
-          onclick="answerSimple('${x[0]}',this,'${name}')">
-
-          <div
-            style="
-              width:70px;
-              height:70px;
-              border-radius:18px;
-              background:${x[1]};
-              margin:auto;
-              border:3px solid #ffffffaa;
-              box-shadow:0 3px 8px #0002;
-            ">
-          </div>
-
+          class="colorChoice"
+          aria-label="${x[1]}"
+          style="background:${x[0]}"
+          onclick="checkColor('${x[1]}','${target[1]}')">
         </button>
-
       `).join("")}
-
     </div>
-
-    <div class="feedback" id="feedback"></div>
-
   `;
 
+  speakQuestion();
+}
+
+function checkColor(chosen,target){
+  if(chosen===target) success("That's it! 🌈✨");
+  else wrong();
 }
 
 
-/* =========================
+/* =========================================================
    SHAPES
-========================= */
+========================================================= */
 
-function renderShape(box,item){
+function renderShapes(){
 
-  const name=item[0];
+  const target=currentData[currentIndex];
+  const options=shuffle([target,...shuffle(shapes).filter(x=>x[1]!==target[1]).slice(0,3)]);
 
-  currentSpeech=
-    "What shape is this?";
+  setTitle(
+    "🔷 Shapes",
+    "Can you find the "+target[1]+"?"
+  );
 
-  let options=categories.shapes.items
-    .map(x=>x[0]);
-
-  options=makeOptions(options,name);
-
-  box.innerHTML=`
-
-    <div class="question-text">
-      What shape is this?
-    </div>
-
-    <div class="shape">
-      ${item[1]}
-    </div>
-
+  document.getElementById("activityContent").innerHTML=`
     <div class="choices">
-
       ${options.map(x=>`
-
-        <button
-          class="choice"
-          onclick="answerSimple('${x}',this,'${name}')">
-
-          ${shapePicture(x)}
-
+        <button class="choice" style="font-size:70px"
+          onclick="checkShape('${x[1]}','${target[1]}')">
+          ${x[0]}
         </button>
-
       `).join("")}
-
     </div>
-
-    <div class="feedback" id="feedback"></div>
-
   `;
 
+  speakQuestion();
 }
 
-function shapePicture(name){
-
-  const shapes={
-    circle:"🔵",
-    square:"🟦",
-    triangle:"🔺",
-    rectangle:"▭",
-    star:"⭐",
-    heart:"❤️"
-  };
-
-  return shapes[name] || "🔷";
-
+function checkShape(chosen,target){
+  if(chosen===target) success("Great shape finding! ⭐");
+  else wrong();
 }
 
 
-/* =========================
+/* =========================================================
    COUNTING
-========================= */
+========================================================= */
 
-function renderCounting(box,item){
+function renderCounting(){
 
-  const number=item[1];
+  const target=currentData[currentIndex];
+  const emoji=target[0];
+  const amount=target[1];
 
-  const emoji=item[2];
+  let nums=new Set([amount]);
 
-  currentSpeech=
-    "How many?";
-
-  let choices=[
-    number-1,
-    number,
-    number+1
-  ];
-
-  shuffle(choices);
-
-  box.innerHTML=`
-
-    <div class="question-text">
-      How many? 🔢
-    </div>
-
-    <div class="count-items">
-
-      ${Array(number)
-        .fill(emoji)
-        .join(" ")}
-
-    </div>
-
-    <div class="choices">
-
-      ${choices.map(n=>`
-
-        <button
-          class="choice"
-          onclick="answerSimple(${n},this,${number})">
-
-          ${n}
-
-        </button>
-
-      `).join("")}
-
-    </div>
-
-    <div class="feedback" id="feedback"></div>
-
-  `;
-
-}
-
-
-/* =========================
-   ANIMALS — PICTURES
-========================= */
-
-function renderAnimals(box,item){
-
-  const name=item[0];
-
-  currentSpeech=
-    "Can you find the "+name+"?";
-
-  let options=[item];
-
-  while(options.length<4){
-
-    const x=
-      categories.animals.items[
-        Math.floor(
-          Math.random()*categories.animals.items.length
-        )
-      ];
-
-    if(!options.some(o=>o[0]===x[0]))
-      options.push(x);
-
+  while(nums.size<5){
+    nums.add(Math.floor(Math.random()*9)+1);
   }
 
-  shuffle(options);
+  setTitle(
+    "🔢 Counting",
+    "How many do you see?"
+  );
 
-  box.innerHTML=`
+  document.getElementById("activityContent").innerHTML=`
+    <div class="countObjects">
+      ${emoji.repeat(amount)}
+    </div>
 
-    <div class="question-text">
-      🐾 Can you find the ${name}?
+    <div class="choices numberChoices">
+      ${shuffle([...nums]).map(n=>`
+        <button class="choice numberChoice"
+          onclick="checkCount(${n},${amount})">${n}</button>
+      `).join("")}
+    </div>
+  `;
+
+  speakQuestion();
+}
+
+function checkCount(chosen,target){
+  if(chosen===target) success("You counted them! 🎉");
+  else wrong();
+}
+
+
+/* =========================================================
+   ANIMALS
+========================================================= */
+
+function renderAnimals(){
+
+  const target=currentData[currentIndex];
+  const options=shuffle([
+    target,
+    ...shuffle(animals).filter(x=>x[1]!==target[1]).slice(0,3)
+  ]);
+
+  setTitle(
+    "🐾 Find the Animal",
+    "Can you find the "+target[1]+"?"
+  );
+
+  document.getElementById("activityContent").innerHTML=`
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="checkAnimal('${x[1]}','${target[1]}')">
+          ${x[0]}
+        </button>
+      `).join("")}
+    </div>
+  `;
+
+  speakQuestion();
+}
+
+function checkAnimal(chosen,target){
+  if(chosen===target) success("You found it! 🐾");
+  else wrong();
+}
+
+
+/* =========================================================
+   ANIMAL SOUNDS
+========================================================= */
+
+function renderSounds(){
+
+  const target=currentData[currentIndex];
+
+  const options=shuffle([
+    target,
+    ...shuffle(sounds).filter(x=>x[2]!==target[2]).slice(0,3)
+  ]);
+
+  setTitle(
+    "🔊 Animal Sounds",
+    "Who makes this sound: "+target[1]
+  );
+
+  document.getElementById("activityContent").innerHTML=`
+    <div style="text-align:center;font-size:75px;background:white;border-radius:30px;padding:15px;max-width:300px;margin:auto">
+      🔊
+    </div>
+
+    <div style="text-align:center;font-size:27px;font-weight:900;margin:12px">
+      ${target[1]}
     </div>
 
     <div class="choices">
-
       ${options.map(x=>`
-
-        <button
-          class="choice picture-choice"
-          aria-label="${x[0]}"
-          onclick="answerSimple('${x[0]}',this,'${name}')">
-
-          ${x[1]}
-
+        <button class="choice"
+          onclick="checkSound('${x[2]}','${target[2]}')">
+          ${x[0]}
         </button>
-
       `).join("")}
-
     </div>
-
-    <div class="feedback" id="feedback"></div>
-
   `;
 
+  speak(target[1]+" "+target[1]==="lion"?"roar":"");
+  setTimeout(()=>speak(target[1]==="lion"?"Roar!":target[1]==="dog"?"Woof!":target[1]==="cat"?"Meow!":target[1]==="horse"?"Neigh!":target[1]==="duck"?"Quack!":target[1]==="bee"?"Buzz!":target[1]==="chicken"?"Cluck!":"Tweet!"),300);
+}
+
+function checkSound(chosen,target){
+  if(chosen===target) success("Yes! You know that animal! 🔊");
+  else wrong();
 }
 
 
-/* =========================
-   ANIMAL SOUNDS — PICTURE
-   BASED
-========================= */
-
-function renderSounds(box,item){
-
-  const animal=item[0];
-
-  const emoji=item[1];
-
-  currentSpeech=
-    "What sound does the "+animal+" make?";
-
-  let options=[
-    "🦁",
-    "🐶",
-    "🐱",
-    "🐴",
-    "🦆",
-    "🐝",
-    "🐔",
-    "🐦"
-  ];
-
-  shuffle(options);
-
-  box.innerHTML=`
-
-    <div class="question-text">
-      What sound does this animal make? 🔊
-    </div>
-
-    <div class="visual">
-      ${emoji}
-    </div>
-
-    <div class="choices">
-
-      ${options.map(x=>`
-
-        <button
-          class="choice picture-choice"
-          onclick="answerSound('${x}',this,'${item[2]}')">
-
-          ${x}
-
-        </button>
-
-      `).join("")}
-
-    </div>
-
-    <div class="feedback" id="feedback"></div>
-
-  `;
-
-}
-
-
-/*
-Sound answer:
-item[2] contains the animal emoji
-*/
-
-function answerSound(value,button,correct){
-
-  if(value===correct){
-
-    correctAnswer(
-      button,
-      "Yes! That's the sound! 🔊👏"
-    );
-
-  }else{
-
-    wrongAnswer(button);
-
-  }
-
-}
-
-
-/* =========================
+/* =========================================================
    ANIMAL FOOD
-   PICTURE ONLY
-========================= */
+========================================================= */
 
-function renderFood(box,item){
+function renderFood(){
 
-  const animal=item[0];
+  const target=currentData[currentIndex];
 
-  const animalEmoji=item[1];
-
-  const food=item[2];
-
-  const foodEmoji=item[3];
-
-  currentSpeech=
-    "What does the "+animal+" eat?";
-
-  let options=[
-    [food,foodEmoji]
+  const possibleFoods=[
+    ["🥕","rabbit"],
+    ["🦴","dog"],
+    ["🍌","monkey"],
+    ["🎋","panda"],
+    ["🌿","horse"],
+    ["🪱","fish"],
+    ["🌸","bee"],
+    ["🍎","bird"],
+    ["🥬","🐰"]
   ];
 
-  while(options.length<4){
+  const correct=target[1];
 
-    const x=
-      categories.food.items[
-        Math.floor(
-          Math.random()*categories.food.items.length
-        )
-      ];
+  const options=shuffle([
+    target,
+    ...shuffle(foods).filter(x=>x[2]!==correct).slice(0,3)
+  ]);
 
-    if(!options.some(o=>o[0]===x[2]))
-      options.push([x[2],x[3]]);
+  setTitle(
+    "🥕 Animal Food",
+    "What food belongs to this animal?"
+  );
 
-  }
-
-  shuffle(options);
-
-  box.innerHTML=`
-
-    <div class="question-text">
-      What does this animal eat? 🥕
-    </div>
-
-    <div class="food-animal">
-      ${animalEmoji}
-    </div>
-
-    <div class="food-arrow">
-      ⬇️
-    </div>
+  document.getElementById("activityContent").innerHTML=`
+    <div class="foodAnimal">${target[0]}</div>
 
     <div class="choices">
-
       ${options.map(x=>`
-
-        <button
-          class="choice picture-choice"
-          aria-label="${x[0]}"
-          onclick="answerSimple('${x[0]}',this,'${food}')">
-
+        <button class="choice foodChoice"
+          onclick="checkFood('${x[2]}','${correct}')">
           ${x[1]}
-
         </button>
-
       `).join("")}
-
     </div>
-
-    <div class="feedback" id="feedback"></div>
-
   `;
 
+  speakQuestion();
+}
+
+function checkFood(chosen,target){
+  if(chosen===target) success("Yummy! That's right! 🥕");
+  else wrong();
 }
 
 
-/* =========================
-   DRAWING — MANY PAIRS
-========================= */
+/* =========================================================
+   MAMA & BABY LINE MATCHING
+========================================================= */
 
-function renderDrawing(box,item){
+function prepareMamaBaby(){
 
-  currentSpeech=
-    "Connect Mama to her baby.";
+  currentIndex=0;
+
+  const shuffledPairs=shuffle(mamaPairs);
+
+  mamaRound=shuffledPairs.slice(0,6);
+  const babies=shuffle(mamaRound.map((p,i)=>({
+    emoji:p[1],
+    pairIndex:i
+  })));
+
+  setTitle(
+    "🐘 Mama & Baby",
+    "Draw a line from each Mama to her Baby!"
+  );
+
+  const box=document.getElementById("activityContent");
 
   box.innerHTML=`
+    <div class="lineMatchWrap">
 
-    <div class="question-text">
-      ✏️ Connect Mama to her Baby!
-    </div>
-
-    <div class="draw-instructions">
-      Use your finger or pen. Draw a line! 👆
-    </div>
-
-    <div class="draw-board">
-
-      <div class="canvas-wrap">
-
-        <canvas id="drawCanvas"></canvas>
-
-        <div class="animal-side animal-left">
-          ${item[0]}
-        </div>
-
-        <div class="animal-side animal-right">
-          ${item[1]}
-        </div>
-
+      <div class="lineLabels">
+        <div>🐾 MAMA</div>
+        <div>🐾 BABY</div>
       </div>
 
-      <button
-        class="clear-btn"
-        onclick="clearCanvas()">
+      <div class="mamaBabyBoard" id="mamaBabyBoard">
 
-        🧹 Clear
+        <div class="mamaColumn" id="mamaColumn">
+          ${mamaRound.map((p,i)=>`
+            <div class="mamaItem"
+                 data-index="${i}"
+                 data-side="mama">
+              ${p[0]}
+              <span class="endpoint"></span>
+            </div>
+          `).join("")}
+        </div>
 
-      </button>
+        <div class="babyColumn" id="babyColumn">
+          ${babies.map((b,i)=>`
+            <div class="babyItem"
+                 data-index="${b.pairIndex}"
+                 data-side="baby">
+              ${b.emoji}
+              <span class="endpoint"></span>
+            </div>
+          `).join("")}
+        </div>
 
-      <br>
+        <canvas id="connectionCanvas"></canvas>
 
-      <button
-        class="done-btn"
-        onclick="finishDrawing()">
-
-        💚 I Connected Them!
-
-      </button>
-
+      </div>
     </div>
 
-    <div class="feedback" id="feedback"></div>
+    <div class="lineControls">
+      <button class="controlBtn clearBtn" onclick="clearMamaLines()">↩️ Clear Lines</button>
+      <button class="controlBtn" onclick="checkMamaLines()">✅ Done!</button>
+    </div>
 
+    <div style="text-align:center;font-size:16px">
+      💚 Touch a Mama, then drag to her Baby.
+    </div>
   `;
 
-  setTimeout(setupCanvas,60);
-
+  setupMamaCanvas();
+  speakQuestion();
 }
 
+function setupMamaCanvas(){
 
-/* =========================
-   CANVAS DRAWING
-========================= */
+  const board=document.getElementById("mamaBabyBoard");
+  const canvas=document.getElementById("connectionCanvas");
 
-let canvas=null;
-let ctx=null;
-let drawing=false;
-let hasDrawn=false;
+  const rect=board.getBoundingClientRect();
 
-function setupCanvas(){
+  canvas.width=rect.width*devicePixelRatio;
+  canvas.height=rect.height*devicePixelRatio;
 
-  canvas=
-    document.getElementById("drawCanvas");
+  canvas.style.width=rect.width+"px";
+  canvas.style.height=rect.height+"px";
 
-  if(!canvas)return;
+  const ctx=canvas.getContext("2d");
+  ctx.scale(devicePixelRatio,devicePixelRatio);
 
-  const rect=
-    canvas.getBoundingClientRect();
+  mamaConnections=[];
+  let active=null;
 
-  const ratio=
-    window.devicePixelRatio || 1;
+  function pointFromEvent(e){
+    const r=canvas.getBoundingClientRect();
+    return {
+      x:e.clientX-r.left,
+      y:e.clientY-r.top
+    };
+  }
 
-  canvas.width=
-    rect.width*ratio;
+  function endpointFor(el){
 
-  canvas.height=
-    rect.height*ratio;
+    const er=el.getBoundingClientRect();
+    const br=board.getBoundingClientRect();
 
-  ctx=
-    canvas.getContext("2d");
+    return {
+      x:er.left+er.width/2-br.left,
+      y:er.top+er.height/2-br.top
+    };
+  }
 
-  ctx.scale(ratio,ratio);
+  function nearestBaby(point){
 
-  ctx.lineWidth=6;
-  ctx.lineCap="round";
-  ctx.lineJoin="round";
-  ctx.strokeStyle="#4c8b4e";
+    const babies=[...document.querySelectorAll(".babyItem")];
 
-  canvas.addEventListener(
-    "pointerdown",
-    startDrawing
-  );
+    let best=null;
+    let bestDist=70;
 
-  canvas.addEventListener(
-    "pointermove",
-    drawLine
-  );
+    babies.forEach(el=>{
+      const p=endpointFor(el);
+      const d=Math.hypot(p.x-point.x,p.y-point.y);
 
-  canvas.addEventListener(
-    "pointerup",
-    stopDrawing
-  );
+      if(d<bestDist){
+        best=el;
+        bestDist=d;
+      }
+    });
 
-  canvas.addEventListener(
-    "pointercancel",
-    stopDrawing
-  );
+    return best;
+  }
 
-}
+  canvas.onpointerdown=function(e){
 
-function pointerPosition(e){
+    e.preventDefault();
 
-  const rect=
-    canvas.getBoundingClientRect();
+    const p=pointFromEvent(e);
 
-  return{
-    x:e.clientX-rect.left,
-    y:e.clientY-rect.top
+    const mamas=[...document.querySelectorAll(".mamaItem")];
+
+    let best=null;
+    let dist=65;
+
+    mamas.forEach(el=>{
+      const ep=endpointFor(el);
+      const d=Math.hypot(ep.x-p.x,ep.y-p.y);
+
+      if(d<dist){
+        best=el;
+        dist=d;
+      }
+    });
+
+    if(!best)return;
+
+    active={
+      mama:best,
+      start:endpointFor(best),
+      current:p
+    };
+
+    canvas.setPointerCapture(e.pointerId);
   };
 
-}
+  canvas.onpointermove=function(e){
 
-function startDrawing(e){
+    if(!active)return;
 
-  drawing=true;
-  hasDrawn=true;
+    e.preventDefault();
 
-  if(canvas.setPointerCapture){
+    active.current=pointFromEvent(e);
+    redrawMamaCanvas(ctx,canvas,active);
+  };
 
-    try{
-      canvas.setPointerCapture(e.pointerId);
-    }catch(err){}
+  canvas.onpointerup=function(e){
 
-  }
+    if(!active)return;
 
-  const p=
-    pointerPosition(e);
+    const end=pointFromEvent(e);
+    const baby=nearestBaby(end);
 
-  ctx.beginPath();
+    if(baby){
 
-  ctx.moveTo(
-    p.x,
-    p.y
-  );
+      const mamaIndex=Number(active.mama.dataset.index);
+      const babyIndex=Number(baby.dataset.index);
 
-}
+      mamaConnections=mamaConnections.filter(c=>c.mama!==mamaIndex);
 
-function drawLine(e){
-
-  if(!drawing)return;
-
-  const p=
-    pointerPosition(e);
-
-  ctx.lineTo(
-    p.x,
-    p.y
-  );
-
-  ctx.stroke();
-
-}
-
-function stopDrawing(){
-
-  drawing=false;
-
-}
-
-function clearCanvas(){
-
-  if(!canvas || !ctx)return;
-
-  const rect=
-    canvas.getBoundingClientRect();
-
-  ctx.clearRect(
-    0,
-    0,
-    rect.width,
-    rect.height
-  );
-
-  hasDrawn=false;
-
-}
-
-function finishDrawing(){
-
-  if(!hasDrawn){
-
-    document.getElementById(
-      "feedback"
-    ).textContent=
-      "Draw a line first! ✏️";
-
-    return;
-
-  }
-
-  correctAnswer(
-    null,
-    "Great job connecting them! 🎨👏"
-  );
-
-}
-
-
-/* =========================
-   LETTERS
-========================= */
-
-function renderLetters(box,item){
-
-  const letter=item[0];
-
-  const picture=item[1];
-
-  currentSpeech=
-    "What letter is this?";
-
-  let options=[letter];
-
-  const letters=
-    categories.letters.items
-      .map(x=>x[0]);
-
-  while(options.length<4){
-
-    const x=
-      letters[
-        Math.floor(
-          Math.random()*letters.length
-        )
-      ];
-
-    if(!options.includes(x))
-      options.push(x);
-
-  }
-
-  shuffle(options);
-
-  box.innerHTML=`
-
-    <div class="question-text">
-      What letter is this?
-    </div>
-
-    <div class="letter">
-      ${letter}
-    </div>
-
-    <div class="visual">
-      ${picture}
-    </div>
-
-    <div class="choices">
-
-      ${options.map(x=>`
-
-        <button
-          class="choice"
-          onclick="answerSimple('${x}',this,'${letter}')">
-
-          ${x}
-
-        </button>
-
-      `).join("")}
-
-    </div>
-
-    <div class="feedback" id="feedback"></div>
-
-  `;
-
-}
-
-
-/* =========================
-   BIG / SMALL
-========================= */
-
-function renderBigSmall(box,item){
-
-  const emoji=item[0];
-
-  const answer=item[1];
-
-  currentSpeech=
-    "Is it big, small, or tall?";
-
-  let options=[
-    "big",
-    "small",
-    "tall"
-  ];
-
-  shuffle(options);
-
-  let visualClass=
-    answer==="small"
-      ?"small-object"
-      :"big-object";
-
-  box.innerHTML=`
-
-    <div class="question-text">
-      Which one?
-    </div>
-
-    <div class="big-small-area">
-
-      <div class="${visualClass}">
-        ${emoji}
-      </div>
-
-    </div>
-
-    <div class="choices">
-
-      ${options.map(x=>`
-
-        <button
-          class="choice"
-          onclick="answerSimple('${x}',this,'${answer}')">
-
-          ${bigSmallPicture(x)}
-
-        </button>
-
-      `).join("")}
-
-    </div>
-
-    <div class="feedback" id="feedback"></div>
-
-  `;
-
-}
-
-function bigSmallPicture(x){
-
-  if(x==="big")
-    return "🐘";
-
-  if(x==="small")
-    return "🐭";
-
-  return "🌳";
-
-}
-
-
-/* =========================
-   MATCHING — PICTURES ONLY
-========================= */
-
-let matchingLeft=null;
-let matchingRight=null;
-
-function renderMatching(box,item){
-
-  matchingLeft=null;
-  matchingRight=null;
-
-  currentSpeech=
-    "Match the same pictures.";
-
-  const pairs=[
-    ["🐶","🐶"],
-    ["🦁","🦁"],
-    ["🍎","🍎"],
-    ["⭐","⭐"],
-    ["🐟","🐟"],
-    ["🐱","🐱"],
-    ["🍌","🍌"],
-    ["🐘","🐘"],
-    ["🦒","🦒"],
-    ["🐰","🐰"],
-    ["🦆","🦆"],
-    ["🐝","🐝"]
-  ];
-
-  let selected=[
-    item,
-    ...shuffle(
-      pairs.filter(
-        p=>p[0]!==item[0]
-      )
-    ).slice(0,3)
-  ];
-
-  shuffle(selected);
-
-  const left=selected.map(
-    (p,i)=>({
-      id:"L"+i,
-      picture:p[0],
-      pair:p[0]
-    })
-  );
-
-  const right=shuffle(
-    selected.map(
-      (p,i)=>({
-        id:"R"+i,
-        picture:p[1],
-        pair:p[0]
-      })
-    )
-  );
-
-  box.innerHTML=`
-
-    <div class="question-text">
-      🧩 Match the same pictures!
-    </div>
-
-    <div class="match-area">
-
-      <div class="match-column">
-
-        ${left.map(x=>`
-
-          <button
-            class="match-card"
-            data-side="left"
-            data-pair="${x.pair}"
-            onclick="selectMatch(this,'left','${x.pair}')">
-
-            ${x.picture}
-
-          </button>
-
-        `).join("")}
-
-      </div>
-
-      <div class="match-column">
-
-        ${right.map(x=>`
-
-          <button
-            class="match-card"
-            data-side="right"
-            data-pair="${x.pair}"
-            onclick="selectMatch(this,'right','${x.pair}')">
-
-            ${x.picture}
-
-          </button>
-
-        `).join("")}
-
-      </div>
-
-    </div>
-
-    <div class="feedback" id="feedback">
-      👆 Tap two pictures that belong together.
-    </div>
-
-  `;
-
-}
-
-function selectMatch(button,side,pair){
-
-  if(side==="left"){
-
-    document
-      .querySelectorAll(
-        '.match-card[data-side="left"]'
-      )
-      .forEach(b=>
-        b.classList.remove("match-selected")
-      );
-
-    matchingLeft={
-      button,
-      pair
-    };
-
-    button.classList.add(
-      "match-selected"
-    );
-
-  }else{
-
-    document
-      .querySelectorAll(
-        '.match-card[data-side="right"]'
-      )
-      .forEach(b=>
-        b.classList.remove("match-selected")
-      );
-
-    matchingRight={
-      button,
-      pair
-    };
-
-    button.classList.add(
-      "match-selected"
-    );
-
-  }
-
-  if(matchingLeft && matchingRight){
-
-    if(
-      matchingLeft.pair===
-      matchingRight.pair
-    ){
-
-      matchingLeft.button.classList.add(
-        "correct"
-      );
-
-      matchingRight.button.classList.add(
-        "correct"
-      );
-
-      document.getElementById(
-        "feedback"
-      ).textContent=
-        "Yes! They match! 🎉";
-
-      setTimeout(
-        nextQuestion,
-        800
-      );
-
-    }else{
-
-      document.getElementById(
-        "feedback"
-      ).textContent=
-        "Try another picture! 💚";
-
-      matchingLeft.button.classList.add(
-        "wrong"
-      );
-
-      matchingRight.button.classList.add(
-        "wrong"
-      );
-
-      setTimeout(()=>{
-
-        matchingLeft.button.classList.remove(
-          "wrong",
-          "match-selected"
-        );
-
-        matchingRight.button.classList.remove(
-          "wrong",
-          "match-selected"
-        );
-
-        matchingLeft=null;
-        matchingRight=null;
-
-      },500);
-
+      mamaConnections.push({
+        mama:mamaIndex,
+        baby:babyIndex
+      });
     }
 
-  }
-
-}
-
-
-/* =========================
-   WHAT'S MISSING
-   PICTURE ONLY
-========================= */
-
-function renderMissing(box,item){
-
-  const pattern=item[0];
-
-  const answer=item[1];
-
-  currentSpeech=
-    "What is missing?";
-
-  const choices=[
-    answer,
-    randomMissing(answer),
-    randomMissing(answer),
-    randomMissing(answer)
-  ];
-
-  const unique=[
-    ...new Set(choices)
-  ];
-
-  while(unique.length<4){
-
-    const x=
-      randomMissing(answer);
-
-    if(!unique.includes(x))
-      unique.push(x);
-
-  }
-
-  shuffle(unique);
-
-  box.innerHTML=`
-
-    <div class="question-text">
-      🧠 What is missing?
-    </div>
-
-    <div class="pattern">
-      ${pattern}
-    </div>
-
-    <div class="choices">
-
-      ${unique.map(x=>`
-
-        <button
-          class="choice picture-choice"
-          onclick="answerSimple('${x}',this,'${answer}')">
-
-          ${missingPicture(x)}
-
-        </button>
-
-      `).join("")}
-
-    </div>
-
-    <div class="feedback" id="feedback"></div>
-
-  `;
-
-}
-
-function missingPicture(x){
-
-  const pictures={
-    apple:"🍎",
-    banana:"🍌",
-    cat:"🐱",
-    dog:"🐶",
-    moon:"🌙",
-    blue:"🔵",
-    elephant:"🐘",
-    lion:"🦁",
-    star:"⭐"
+    active=null;
+    redrawMamaCanvas(ctx,canvas,null);
   };
 
-  return pictures[x] || "❓";
-
+  window._mamaCanvas=canvas;
+  window._mamaCtx=ctx;
 }
 
-function randomMissing(correct){
+function redrawMamaCanvas(ctx,canvas,active){
 
-  const list=[
-    "apple",
-    "banana",
-    "cat",
-    "dog",
-    "moon",
-    "blue",
-    "elephant",
-    "lion",
-    "star"
-  ];
+  const board=document.getElementById("mamaBabyBoard");
+  if(!board)return;
 
-  let x;
+  const rect=canvas.getBoundingClientRect();
 
-  do{
+  ctx.clearRect(0,0,rect.width,rect.height);
 
-    x=
-      list[
-        Math.floor(
-          Math.random()*list.length
-        )
-      ];
+  function endpointFor(el){
 
-  }while(x===correct);
+    const er=el.getBoundingClientRect();
+    const br=board.getBoundingClientRect();
 
-  return x;
-
-}
-
-
-/* =========================
-   SAFARI HUNT
-========================= */
-
-function renderHunt(box,item){
-
-  const targetName=item[0];
-
-  const targetEmoji=item[1];
-
-  currentSpeech=
-    "Find the "+targetName;
-
-  const objects=[
-    ["🌳",10,65],
-    ["🌴",82,63],
-    ["🌸",22,76],
-    ["🌼",70,75],
-    ["🪨",55,82],
-    ["🍎",38,73],
-    ["🍌",63,67],
-    ["🥕",48,76],
-    ["🦋",30,25],
-    ["🐝",75,30],
-    ["🐢",60,86],
-    ["🦁",15,75],
-    ["🐒",83,76],
-    ["🐘",52,68],
-    ["🦒",88,55],
-    ["🐦",42,35],
-    ["🦓",28,84],
-    ["💧",70,87]
-  ];
-
-  if(
-    !objects.some(
-      o=>o[0]===targetEmoji
-    )
-  ){
-
-    objects.push([
-      targetEmoji,
-      50,
-      65
-    ]);
-
+    return {
+      x:er.left+er.width/2-br.left,
+      y:er.top+er.height/2-br.top
+    };
   }
 
-  shuffle(objects);
+  mamaConnections.forEach(c=>{
 
-  box.innerHTML=`
+    const mama=document.querySelector(
+      `.mamaItem[data-index="${c.mama}"]`
+    );
 
-    <div class="safari-instruction">
-      🌿 Find the ${targetName}! ${targetEmoji}
+    const baby=document.querySelector(
+      `.babyItem[data-index="${c.baby}"]`
+    );
+
+    if(!mama||!baby)return;
+
+    const a=endpointFor(mama);
+    const b=endpointFor(baby);
+
+    ctx.beginPath();
+    ctx.moveTo(a.x,a.y);
+    ctx.lineTo(b.x,b.y);
+    ctx.lineWidth=7;
+    ctx.lineCap="round";
+    ctx.strokeStyle="#71a94f";
+    ctx.stroke();
+  });
+
+  if(active){
+
+    ctx.beginPath();
+    ctx.moveTo(active.start.x,active.start.y);
+    ctx.lineTo(active.current.x,active.current.y);
+    ctx.lineWidth=7;
+    ctx.lineCap="round";
+    ctx.strokeStyle="#e9a23d";
+    ctx.stroke();
+  }
+}
+
+function clearMamaLines(){
+  mamaConnections=[];
+  if(window._mamaCtx && window._mamaCanvas)
+    redrawMamaCanvas(window._mamaCtx,window._mamaCanvas,null);
+}
+
+function checkMamaLines(){
+
+  if(mamaConnections.length<mamaRound.length){
+    setFeedback("Connect all the Mamas first! 💚","wrong");
+    return;
+  }
+
+  const correct=mamaConnections.every(c=>c.mama===c.baby);
+
+  if(correct){
+    setFeedback("Amazing! All the Mamas found their babies! 🥰","correct");
+    setTimeout(nextQuestion,1200);
+  }else{
+    setFeedback("Some babies need another look! Try again. 💚","wrong");
+  }
+}
+
+
+/* =========================================================
+   MATCH PICTURES
+========================================================= */
+
+function prepareMatching(){
+
+  const selected=shuffle(animals).slice(0,6);
+
+  matchPairs=selected;
+  selectedMatch=null;
+
+  const right=shuffle(selected);
+
+  setTitle(
+    "🧩 Match Pictures",
+    "Find the two pictures that are the same!"
+  );
+
+  document.getElementById("activityContent").innerHTML=`
+
+    <div class="pictureMatchBoard">
+
+      <div class="matchColumn" id="matchLeft">
+        ${selected.map((x,i)=>`
+          <button class="matchPicture"
+            data-side="left"
+            data-value="${x[1]}"
+            onclick="selectMatch(this)">
+            ${x[0]}
+          </button>
+        `).join("")}
+      </div>
+
+      <div class="matchColumn" id="matchRight">
+        ${right.map((x,i)=>`
+          <button class="matchPicture"
+            data-side="right"
+            data-value="${x[1]}"
+            onclick="selectMatch(this)">
+            ${x[0]}
+          </button>
+        `).join("")}
+      </div>
+
     </div>
 
-    <div class="safari">
-
-      <div class="sun">☀️</div>
-
-      <div class="cloud one">☁️</div>
-
-      <div class="cloud two">☁️</div>
-
-      <div class="tree t1">🌳</div>
-
-      <div class="tree t2">🌴</div>
-
-      <div class="tree t3">🌳</div>
-
-      ${objects.map(o=>`
-
-        <button
-          class="safari-object"
-          style="
-            left:${o[1]}%;
-            top:${o[2]}%;
-          "
-          onclick="huntAnswer(
-            '${escapeQuotes(o[0])}',
-            this,
-            '${escapeQuotes(targetEmoji)}'
-          )">
-
-          ${o[0]}
-
-        </button>
-
-      `).join("")}
-
+    <div style="text-align:center;margin-top:12px;font-size:17px">
+      👆 Tap one picture, then tap its matching picture.
     </div>
-
-    <div class="feedback" id="feedback"></div>
-
   `;
 
+  speakQuestion();
 }
 
-function escapeQuotes(x){
+function selectMatch(el){
 
-  return x.replace(
-    /'/g,
-    "\\'"
-  );
+  if(el.classList.contains("matched"))return;
 
-}
+  if(!selectedMatch){
 
-function huntAnswer(
-  value,
-  button,
-  correct
-){
+    selectedMatch=el;
+    el.classList.add("selected");
+    return;
+  }
 
-  if(value===correct){
+  if(selectedMatch===el){
+    el.classList.remove("selected");
+    selectedMatch=null;
+    return;
+  }
 
-    button.classList.add(
-      "correct"
-    );
+  const first=selectedMatch;
+  const second=el;
 
-    document.getElementById(
-      "feedback"
-    ).textContent=
-      "You found it! 🎉👏";
+  if(first.dataset.value===second.dataset.value &&
+     first.dataset.side!==second.dataset.side){
 
-    setTimeout(
-      nextQuestion,
-      850
-    );
+    first.classList.remove("selected");
+    first.classList.add("matched");
+
+    second.classList.add("matched");
+
+    selectedMatch=null;
+
+    const remaining=[
+      ...document.querySelectorAll(".matchPicture:not(.matched)")
+    ];
+
+    if(remaining.length===0){
+      setFeedback("You matched them all! 🧩🎉","correct");
+      setTimeout(nextQuestion,1000);
+    }else{
+      setFeedback("Match! ⭐","correct");
+    }
 
   }else{
 
-    button.classList.add(
-      "wrong"
-    );
-
-    document.getElementById(
-      "feedback"
-    ).textContent=
-      "Keep looking! 👀🌿";
-
-    setTimeout(()=>{
-
-      button.classList.remove(
-        "wrong"
-      );
-
-    },450);
-
+    first.classList.remove("selected");
+    selectedMatch=null;
+    setFeedback("Look carefully! 💚","wrong");
   }
-
 }
 
 
-/* =========================
-   ANSWERS
-========================= */
+/* =========================================================
+   PRE-WRITING
+========================================================= */
 
-function answerSimple(
-  value,
-  button,
-  correct
-){
+function renderPrewriting(){
 
-  if(
-    String(value)===
-    String(correct)
-  ){
+  const target=currentData[currentIndex];
 
-    correctAnswer(
-      button,
-      "Great job, Orion! 🎉"
-    );
+  setTitle(
+    "✏️ Pre-Writing",
+    "Trace the "+target[0]+"!"
+  );
 
+  document.getElementById("activityContent").innerHTML=`
+    <div class="traceBoard" id="traceBoard">
+
+      <div class="traceGlyph preGuide">
+        ${target[1]}
+      </div>
+
+      <canvas id="traceCanvas" class="traceCanvas"></canvas>
+    </div>
+
+    <div class="traceTools">
+      <button class="controlBtn clearBtn" onclick="clearTrace()">↩️ Clear</button>
+      <button class="controlBtn" onclick="finishTrace()">⭐ Done</button>
+    </div>
+  `;
+
+  setupTraceCanvas();
+  speakQuestion();
+}
+
+
+/* =========================================================
+   NUMBER TRACING
+========================================================= */
+
+function renderNumberTracing(){
+
+  const target=currentData[currentIndex];
+
+  setTitle(
+    "🔢 Number Tracing",
+    "Trace the number "+target
+  );
+
+  const amount=Math.min(Number(target),10);
+
+  document.getElementById("activityContent").innerHTML=`
+    <div style="text-align:center;font-size:45px;margin:4px">
+      ${"⭐".repeat(amount)}
+    </div>
+
+    <div class="traceBoard" id="traceBoard">
+
+      <div class="traceGlyph">
+        ${target}
+      </div>
+
+      <canvas id="traceCanvas" class="traceCanvas"></canvas>
+    </div>
+
+    <div class="traceTools">
+      <button class="controlBtn clearBtn" onclick="clearTrace()">↩️ Clear</button>
+      <button class="controlBtn" onclick="finishTrace()">⭐ Done</button>
+    </div>
+  `;
+
+  setupTraceCanvas();
+  speakQuestion();
+}
+
+
+/* =========================================================
+   LETTER TRACING
+========================================================= */
+
+function renderLetterTracing(){
+
+  const target=currentData[currentIndex];
+
+  setTitle(
+    "🔤 Letter Tracing",
+    "Trace the letter "+target
+  );
+
+  const pictures={
+    A:"🍎",
+    B:"🐝",
+    C:"🐱",
+    D:"🐶",
+    E:"🐘",
+    F:"🐟",
+    G:"🦒",
+    H:"🐴",
+    I:"🍦",
+    J:"🧃",
+    K:"🐨",
+    L:"🦁",
+    M:"🐒",
+    N:"🥜",
+    O:"🐙",
+    P:"🐼",
+    Q:"👸",
+    R:"🐰",
+    S:"⭐",
+    T:"🐯",
+    U:"☂️",
+    V:"🌋",
+    W:"🐳",
+    X:"❌",
+    Y:"🪀",
+    Z:"🦓"
+  };
+
+  document.getElementById("activityContent").innerHTML=`
+    <div style="text-align:center;font-size:45px">
+      ${pictures[target]||"🌟"}
+    </div>
+
+    <div class="traceBoard" id="traceBoard">
+
+      <div class="traceGlyph">
+        ${target}
+      </div>
+
+      <canvas id="traceCanvas" class="traceCanvas"></canvas>
+    </div>
+
+    <div class="traceTools">
+      <button class="controlBtn clearBtn" onclick="clearTrace()">↩️ Clear</button>
+      <button class="controlBtn" onclick="finishTrace()">⭐ Done</button>
+    </div>
+  `;
+
+  setupTraceCanvas();
+  speakQuestion();
+}
+
+
+/* =========================================================
+   TRACE CANVAS
+========================================================= */
+
+function setupTraceCanvas(){
+
+  traceCanvas=document.getElementById("traceCanvas");
+  if(!traceCanvas)return;
+
+  const board=document.getElementById("traceBoard");
+  const rect=board.getBoundingClientRect();
+
+  traceCanvas.width=rect.width*devicePixelRatio;
+  traceCanvas.height=rect.height*devicePixelRatio;
+
+  traceCanvas.style.width=rect.width+"px";
+  traceCanvas.style.height=rect.height+"px";
+
+  traceCtx=traceCanvas.getContext("2d");
+  traceCtx.scale(devicePixelRatio,devicePixelRatio);
+
+  drawing=false;
+  traceDistance=0;
+
+  traceCanvas.onpointerdown=function(e){
+
+    e.preventDefault();
+    drawing=true;
+    traceDistance=0;
+
+    const p=getTracePoint(e);
+
+    traceCtx.beginPath();
+    traceCtx.moveTo(p.x,p.y);
+
+    traceCanvas.setPointerCapture(e.pointerId);
+  };
+
+  traceCanvas.onpointermove=function(e){
+
+    if(!drawing)return;
+
+    e.preventDefault();
+
+    const p=getTracePoint(e);
+
+    traceCtx.lineTo(p.x,p.y);
+    traceCtx.lineWidth=9;
+    traceCtx.lineCap="round";
+    traceCtx.lineJoin="round";
+    traceCtx.strokeStyle="#62a34a";
+    traceCtx.stroke();
+
+    traceDistance+=12;
+  };
+
+  traceCanvas.onpointerup=function(e){
+
+    drawing=false;
+
+    if(traceDistance>70){
+      setFeedback("Great tracing! ✏️🌟","correct");
+    }
+  };
+
+  traceCanvas.onpointercancel=function(){
+    drawing=false;
+  };
+}
+
+function getTracePoint(e){
+
+  const r=traceCanvas.getBoundingClientRect();
+
+  return {
+    x:e.clientX-r.left,
+    y:e.clientY-r.top
+  };
+}
+
+function clearTrace(){
+
+  if(!traceCtx||!traceCanvas)return;
+
+  traceCtx.clearRect(
+    0,
+    0,
+    traceCanvas.width,
+    traceCanvas.height
+  );
+
+  setFeedback("");
+  traceDistance=0;
+}
+
+function finishTrace(){
+
+  if(traceDistance>50){
+    setFeedback("Wonderful tracing! 🌟","correct");
+    setTimeout(nextQuestion,900);
   }else{
-
-    wrongAnswer(button);
-
+    setFeedback("Use your finger or stylus to trace it! ✏️","wrong");
   }
-
 }
 
-function correctAnswer(
-  button,
-  message
-){
 
-  if(button){
+/* =========================================================
+   BIG / SMALL
+========================================================= */
 
-    button.classList.add(
-      "correct"
-    );
+function renderBigSmall(){
 
-    button.disabled=true;
+  const target=currentData[currentIndex];
 
-  }
+  let question="Which one is "+target[1]+"?";
 
-  const feedback=
-    document.getElementById(
-      "feedback"
-    );
-
-  if(feedback)
-    feedback.textContent=
-      message;
-
-  setTimeout(
-    nextQuestion,
-    850
+  setTitle(
+    "📏 Big or Small",
+    question
   );
 
+  const correctEmoji=target[0];
+
+  const distractor=shuffle(bigSmall)
+    .find(x=>x[0]!==correctEmoji);
+
+  document.getElementById("activityContent").innerHTML=`
+    <div class="choices">
+      <button class="choice bigSmallChoice"
+        onclick="checkBigSmall('${correctEmoji}', '${correctEmoji}')">
+        ${correctEmoji}
+      </button>
+
+      <button class="choice bigSmallChoice"
+        onclick="checkBigSmall('${distractor[0]}', '${correctEmoji}')">
+        ${distractor[0]}
+      </button>
+    </div>
+  `;
+
+  speakQuestion();
 }
 
-function wrongAnswer(button){
+function checkBigSmall(chosen,target){
+  if(chosen===target)success("That's right! 📏");
+  else wrong();
+}
 
-  button.classList.add(
-    "wrong"
+
+/* =========================================================
+   WHAT'S MISSING
+========================================================= */
+
+function renderMissing(){
+
+  const target=currentData[currentIndex];
+
+  setTitle(
+    "🧠 What's Missing?",
+    "Which picture is missing?"
   );
 
-  const feedback=
-    document.getElementById(
-      "feedback"
-    );
+  const options=shuffle([
+    target.answer,
+    ...shuffle([
+      "🍎","🍌","🐶","🐱","🔴","🔵","⭐","🌙","🦁","🐘"
+    ]).filter(x=>x!==target.answer).slice(0,3)
+  ]);
 
-  if(feedback)
-    feedback.textContent=
-      "Try again! 💚";
+  document.getElementById("activityContent").innerHTML=`
+    <div class="pattern">
+      ${target.pattern.map(x=>`
+        <div class="patternItem">${x}</div>
+      `).join("")}
+    </div>
 
-  setTimeout(()=>{
+    <div class="choices missingChoices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="checkMissing('${x}','${target.answer}')">
+          ${x}
+        </button>
+      `).join("")}
+    </div>
+  `;
 
-    button.classList.remove(
-      "wrong"
-    );
+  speakQuestion();
+}
 
-  },450);
-
+function checkMissing(chosen,target){
+  if(chosen===target)success("You found the missing picture! 🧠✨");
+  else wrong();
 }
 
 
-/* =========================
+/* =========================================================
+   BIG SAFARI HUNT
+========================================================= */
+
+function renderHunt(){
+
+  const target=animals[currentIndex%animals.length];
+
+  setTitle(
+    "🌿 Big Safari Hunt",
+    "Can you find the "+target[1]+"?"
+  );
+
+  const sceneAnimals=shuffle(animals)
+    .filter(x=>x[1]!==target[1])
+    .slice(0,9);
+
+  const all=[target,...sceneAnimals];
+
+  let html=`<div class="huntScene">`;
+
+  all.forEach((a,i)=>{
+
+    const left=5+Math.random()*85;
+    const top=8+Math.random()*78;
+
+    html+=`
+      <button
+        class="huntItem ${i===0?"huntTarget":""}"
+        style="left:${left}%;top:${top}%"
+        onclick="checkHunt('${a[1]}','${target[1]}')">
+        ${a[0]}
+      </button>
+    `;
+  });
+
+  html+=`
+    <div style="position:absolute;left:5%;bottom:3%;font-size:55px">🌳</div>
+    <div style="position:absolute;right:4%;bottom:4%;font-size:55px">🌴</div>
+    <div style="position:absolute;left:40%;top:7%;font-size:40px">🦋</div>
+    <div style="position:absolute;right:30%;top:15%;font-size:40px">🦋</div>
+  `;
+
+  html+="</div>";
+
+  document.getElementById("activityContent").innerHTML=html;
+
+  speakQuestion();
+}
+
+function checkHunt(chosen,target){
+  if(chosen===target)success("Safari find! You got it! 🦁🎉");
+  else wrong();
+}
+
+
+/* =========================================================
    NEXT QUESTION
-========================= */
+========================================================= */
 
 function nextQuestion(){
 
-  stopSpeech();
-
-  currentQuestion++;
-
-  const data=
-    categories[currentCategory];
-
-  if(
-    currentQuestion<
-    data.items.length
-  ){
-
-    renderQuestion();
-
-  }else{
-
-    finishCategory();
-
-  }
-
-}
-
-function finishCategory(){
+  setFeedback("");
 
   if(playEverything){
 
-    activityIndex++;
+    everythingPosition++;
 
-    if(
-      activityIndex<
-      everythingList.length
-    ){
+    if(everythingPosition>=everythingQueue.length){
 
-      currentCategory=
-        everythingList[
-          activityIndex
-        ];
-
-      currentQuestion=0;
-
-      setTimeout(
-        startActivity,
-        250
-      );
-
-    }else{
-
-      showFinalCelebration();
-
+      showFinish();
+      return;
     }
 
-  }else{
+    currentType=everythingQueue[everythingPosition];
 
-    showCategoryCelebration();
-
-  }
-
-}
-
-
-/* =========================
-   CELEBRATION
-========================= */
-
-function showCategoryCelebration(){
-
-  hideAll();
-
-  document.getElementById(
-    "celebration"
-  ).classList.add("active");
-
-  document.getElementById(
-    "celebrationTitle"
-  ).textContent=
-    "🎉 GREAT JOB, ORION! 🎉";
-
-  document.getElementById(
-    "celebrationText"
-  ).textContent=
-    "You finished "+
-    categories[currentCategory].title+
-    "!";
-
-  makeConfetti();
-
-}
-
-function showFinalCelebration(){
-
-  hideAll();
-
-  document.getElementById(
-    "celebration"
-  ).classList.add("active");
-
-  document.getElementById(
-    "celebrationTitle"
-  ).textContent=
-    "🎉 GOOD JOB, ORION! 🎉";
-
-  document.getElementById(
-    "celebrationText"
-  ).textContent=
-    "You finished the whole Safari! 🦁🌿🏆";
-
-  makeConfetti();
-
-}
-
-function makeConfetti(){
-
-  const container=
-    document.getElementById(
-      "confetti"
-    );
-
-  container.innerHTML="";
-
-  const pieces=[
-    "🎉",
-    "⭐",
-    "🌟",
-    "🎈",
-    "🦁",
-    "🐘",
-    "🦒",
-    "🍎",
-    "🍌",
-    "🌸",
-    "💚",
-    "💛",
-    "🎊"
-  ];
-
-  for(let i=0;i<55;i++){
-
-    const span=
-      document.createElement(
-        "span"
-      );
-
-    span.textContent=
-      pieces[
-        Math.floor(
-          Math.random()*
-          pieces.length
-        )
-      ];
-
-    span.style.left=
-      Math.random()*100+"%";
-
-    span.style.animationDelay=
-      Math.random()*1.8+"s";
-
-    span.style.animationDuration=
-      (2.2+
-      Math.random()*2)+"s";
-
-    container.appendChild(
-      span
-    );
-
-  }
-
-}
-
-
-/* =========================
-   OPTIONS
-========================= */
-
-function makeOptions(
-  list,
-  correct
-){
-
-  let options=[correct];
-
-  while(options.length<4){
-
-    const x=
-      list[
-        Math.floor(
-          Math.random()*list.length
-        )
-      ];
-
-    if(!options.includes(x))
-      options.push(x);
-
-  }
-
-  shuffle(options);
-
-  return options;
-
-}
-
-function shuffle(array){
-
-  for(
-    let i=array.length-1;
-    i>0;
-    i--
-  ){
-
-    const j=
-      Math.floor(
-        Math.random()*(i+1)
-      );
-
-    [
-      array[i],
-      array[j]
-    ]=[
-      array[j],
-      array[i]
-    ];
-
-  }
-
-  return array;
-
-}
-
-
-/* =========================
-   SPEECH
-========================= */
-
-function speakCurrent(){
-
-  if(!currentSpeech)
+    prepareActivity(currentType);
     return;
+  }
 
-  stopSpeech();
+  currentIndex++;
+
+  if(currentIndex>=currentData.length){
+
+    showFinish();
+    return;
+  }
+
+  if(currentType==="mamababy"){
+    prepareMamaBaby();
+    return;
+  }
+
+  if(currentType==="matching"){
+    prepareMatching();
+    return;
+  }
+
+  renderQuestion();
+}
+
+
+/* =========================================================
+   FINISH
+========================================================= */
+
+function showFinish(){
+
+  document.getElementById("activityContent").innerHTML=`
+    <div class="finish">
+
+      <div class="finishEmoji">🦁🎉</div>
+
+      <h2>Great Job, Orion!</h2>
+
+      <p>
+        You finished this safari activity! 🌿
+      </p>
+
+      <p style="font-size:55px">
+        ⭐ ⭐ ⭐ ⭐ ⭐
+      </p>
+
+      <button class="nextBtn" onclick="showMenu()">
+        🌿 Choose Another Activity
+      </button>
+
+      <button class="nextBtn menuReturn" onclick="showHome()">
+        🏠 Home
+      </button>
+
+    </div>
+  `;
+
+  document.getElementById("activityTitle").textContent="🎉 Finished!";
+  document.getElementById("question").textContent="";
+  document.getElementById("listenBtn").style.display="none";
+  document.getElementById("progressInner").style.width="100%";
+
+  speak("Great job Orion! You finished the activity!");
+}
+
+
+/* =========================================================
+   RESET LISTEN BUTTON
+========================================================= */
+
+const oldPrepare=prepareActivity;
+
+const originalPrepare=prepareActivity;
+
+
+/* Make sure Listen button returns for normal activities */
+function resetListen(){
+  document.getElementById("listenBtn").style.display="inline-block";
+}
+
+
+/* =========================================================
+   PATCH PREPARE TO RESET LISTEN
+========================================================= */
+
+const _oldPrepare=prepareActivity;
+
+prepareActivity=function(type){
+  resetListen();
+  _oldPrepare(type);
+};
+
+
+/* =========================================================
+   HANDLE RESIZE FOR CANVASES
+========================================================= */
+
+window.addEventListener("resize",()=>{
+
+  if(currentType==="mamababy" &&
+     document.getElementById("connectionCanvas")){
+
+    setupMamaCanvas();
+  }
 
   if(
-    "speechSynthesis"
-    in window
+    (currentType==="prewriting" ||
+     currentType==="numbers" ||
+     currentType==="letters") &&
+    document.getElementById("traceCanvas")
   ){
 
-    const utterance=
-      new SpeechSynthesisUtterance(
-        currentSpeech
-      );
-
-    utterance.rate=.8;
-    utterance.pitch=1.2;
-
-    speechSynthesis.speak(
-      utterance
-    );
-
+    const oldDistance=traceDistance;
+    setupTraceCanvas();
+    traceDistance=oldDistance;
   }
-
-}
-
-function stopSpeech(){
-
-  if(
-    "speechSynthesis"
-    in window
-  ){
-
-    speechSynthesis.cancel();
-
-  }
-
-}
+});
 
 
-/* =========================
-   FULLSCREEN
-========================= */
+/* =========================================================
+   INITIAL
+========================================================= */
 
-function goFullscreen(){
-
-  const element=
-    document.documentElement;
-
-  if(!document.fullscreenElement){
-
-    if(
-      element.requestFullscreen
-    ){
-
-      element.requestFullscreen();
-
-    }else if(
-      element.webkitRequestFullscreen
-    ){
-
-      element.webkitRequestFullscreen();
-
-    }
-
-  }else{
-
-    if(document.exitFullscreen){
-
-      document.exitFullscreen();
-
-    }else if(
-      document.webkitExitFullscreen
-    ){
-
-      document.webkitExitFullscreen();
-
-    }
-
-  }
-
-}
-
-
-/* =========================
-   ROTATION
-========================= */
-
-async function rotateScreen(){
-
-  try{
-
-    if(
-      screen.orientation &&
-      screen.orientation.lock
-    ){
-
-      await screen.orientation.lock(
-        "landscape"
-      );
-
-    }else{
-
-      alert(
-        "Please turn your phone sideways for a bigger Safari screen! 🦁↔️"
-      );
-
-    }
-
-  }catch(error){
-
-    alert(
-      "Please turn your phone sideways for the best Safari view! 🦁↔️"
-    );
-
-  }
-
-}
-
-
-/* =========================
-   STOP SPEECH
-========================= */
-
-window.addEventListener(
-  "beforeunload",
-  stopSpeech
-);
+showHome();
 
 </script>
 
