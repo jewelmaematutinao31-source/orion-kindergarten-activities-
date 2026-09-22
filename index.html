@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#7fcf72">
+<title>Orion's Kindergarten Safari 🌿🦁</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+  background: #fff8df;
+  color: #4b3925;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  touch-action: manipulation;
+}
+
+#app {
+  min-height: 100dvh;
+}
+
+/* ---------------- TOP BAR ---------------- */
+
+.topbar {
+  background: linear-gradient(135deg, #75c96b, #a7df75);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(70,80,30,.15);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 0 rgba(0,0,0,.12);
+}
+
+.controls {
+  display: flex;
+  gap: 7px;
+}
+
+.control-btn {
+  background: white;
+  color: #47723d;
+  border-radius: 14px;
+  padding: 9px 11px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(0,0,0,.12);
+}
+
+/* ---------------- HOME ---------------- */
+
+.screen {
+  display: none;
+  min-height: calc(100dvh - 60px);
+}
+
+.screen.active {
+  display: block;
+}
+
+.home {
+  padding: 22px 16px 40px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 10% 10%, #fff 0 25px, transparent 26px),
+    radial-gradient(circle at 90% 15%, #fff 0 20px, transparent 21px),
+    #fff8df;
+}
+
+.jungle-title {
+  font-size: clamp(32px, 8vw, 58px);
+  color: #4d8a3d;
+  margin: 12px 0 5px;
+}
+
+.subtitle {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.big-lion {
+  font-size: clamp(75px, 25vw, 150px);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  50% { transform: translateY(-8px); }
+}
+
+.start-btn {
+  background: #ffb83d;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 17px 35px;
+  border-radius: 25px;
+  box-shadow: 0 6px 0 #d58d1d;
+}
+
+.start-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #d58d1d;
+}
+
+.activity-preview {
+  max-width: 750px;
+  margin: 30px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.preview-card {
+  background: white;
+  border-radius: 20px;
+  padding: 15px 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  font-size: 15px;
+}
+
+.preview-card span {
+  display: block;
+  font-size: 38px;
+  margin-bottom: 5px;
+}
+
+/* ---------------- ACTIVITY ---------------- */
+
+.activity-wrap {
+  width: min(950px, 94%);
+  margin: auto;
+  padding: 16px 0 40px;
+}
+
+.progress-area {
+  background: white;
+  border-radius: 18px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.07);
+}
+
+.progress-text {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #e5e5e5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #73c96b;
+  border-radius: 20px;
+  transition: width .3s;
+}
+
+.card {
+  background: white;
+  border-radius: 28px;
+  padding: 22px 16px;
+  box-shadow: 0 7px 20px rgba(80,70,30,.12);
+  text-align: center;
+  min-height: 500px;
+}
+
+.activity-number {
+  color: #74a950;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.question {
+  font-size: clamp(24px, 6vw, 38px);
+  margin: 10px auto 20px;
+  line-height: 1.2;
+}
+
+.listen-btn {
+  background: #8ecae6;
+  color: white;
+  border-radius: 18px;
+  padding: 10px 18px;
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 14px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.option {
+  background: #fff4bd;
+  border: 4px solid #f4d76b;
+  border-radius: 22px;
+  min-height: 105px;
+  padding: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform .15s;
+}
+
+.option:active {
+  transform: scale(.95);
+}
+
+.option .emoji {
+  display: block;
+  font-size: 55px;
+  margin-bottom: 5px;
+}
+
+.correct {
+  background: #b9efad !important;
+  border-color: #58af4c !important;
+}
+
+.wrong {
+  background: #ffd1d1 !important;
+  border-color: #ed7777 !important;
+}
+
+.feedback {
+  min-height: 42px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 18px 0 5px;
+}
+
+.next-btn {
+  display: none;
+  background: #65bd59;
+  color: white;
+  padding: 13px 28px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+/* ---------------- CONNECTING ---------------- */
+
+.connect-board {
+  position: relative;
+  max-width: 800px;
+  height: 390px;
+  margin: auto;
+  background: #eef9df;
+  border: 4px dashed #9acb72;
+  border-radius: 25px;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.connect-item {
+  position: absolute;
+  width: 105px;
+  min-height: 80px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 3;
+}
+
+.connect-label {
+  font-size: 12px;
+  display: block;
+}
+
+#startCat {
+  left: 5%;
+  top: 30px;
+}
+
+#babyCat {
+  right: 5%;
+  bottom: 35px;
+}
+
+#startDog {
+  left: 5%;
+  bottom: 35px;
+}
+
+#babyDog {
+  right: 5%;
+  top: 30px;
+}
+
+#connectCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* ---------------- TRACE ---------------- */
+
+.trace-area {
+  max-width: 700px;
+  margin: auto;
+}
+
+.trace-letter {
+  font-size: clamp(130px, 30vw, 230px);
+  color: #dcebd2;
+  font-weight: bold;
+  line-height: 1;
+  border: 5px dashed #8fc57a;
+  border-radius: 25px;
+  background: #fffdf1;
+  margin: 10px auto;
+  padding: 20px;
+  user-select: none;
+}
+
+.trace-canvas {
+  width: 100%;
+  height: 230px;
+  background: #fffdf1;
+  border: 4px dashed #f0bd52;
+  border-radius: 25px;
+  touch-action: none;
+}
+
+/* ---------------- FOOD ---------------- */
+
+.food-question {
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.food-animal {
+  font-size: 90px;
+}
+
+/* ---------------- COMPLETE ---------------- */
+
+.complete {
+  text-align: center;
+  padding: 35px 18px;
+}
+
+.complete-animal {
+  font-size: 110px;
+}
+
+.complete h1 {
+  font-size: 40px;
+  color: #62a64f;
+}
+
+.stars {
+  font-size: 42px;
+  letter-spacing: 7px;
+}
+
+.restart-btn {
+  background: #ffae3d;
+  color: white;
+  padding: 15px 28px;
+  border-radius: 22px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+/* ---------------- LANDSCAPE ---------------- */
+
+@media (orientation: landscape) and (max-height: 600px) {
+
+  .topbar {
+    padding: 7px 14px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .activity-wrap {
+    padding-top: 8px;
+  }
+
+  .card {
+    min-height: calc(100dvh - 110px);
+    padding: 12px 20px;
+  }
+
+  .question {
+    margin: 5px auto 10px;
+    font-size: 25px;
+  }
+
+  .option {
+    min-height: 75px;
+    padding: 5px;
+  }
+
+  .option .emoji {
+    font-size: 40px;
+    margin: 0;
+  }
+
+  .feedback {
+    margin: 7px;
+  }
+
+  .next-btn {
+    padding: 9px 24px;
+  }
+}
+
+/* ---------------- VERY SMALL PHONES ---------------- */
+
+@media (max-width: 380px) {
+
+  .option {
+    min-height: 90px;
+    font-size: 16px;
+  }
+
+  .option .emoji {
+    font-size: 45px;
+  }
+
+  .question {
+    font-size: 23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<header class="topbar">
+  <div class="logo">🦁 Orion's Safari 🌿</div>
+
+  <div class="controls">
+    <button class="control-btn" onclick="goFullscreen()">⛶</button>
+    <button class="control-btn" onclick="rotateScreen()">🔄</button>
+    <button class="control-btn" onclick="speakCurrent()">🔊</button>
+  </div>
+</header>
+
+<!-- HOME -->
+
+<section id="home" class="screen active home">
+
+  <div class="big-lion">🦁</div>
+
+  <h1 class="jungle-title">Kindergarten Safari!</h1>
+
+  <div class="subtitle">
+    🌈 Let's learn, play, and explore! 🌿
+  </div>
+
+  <button class="start-btn" onclick="startActivities()">
+    🚙 Let's Go!
+  </button>
+
+  <div class="activity-preview">
+
+    <div class="preview-card">
+      <span>✏️</span>
+      Draw & Match
+    </div>
+
+    <div class="preview-card">
+      <span>🍎</span>
+      What Do Animals Eat?
+    </div>
+
+    <div class="preview-card">
+      <span>🔢</span>
+      Counting
+    </div>
+
+    <div class="preview-card">
+      <span>🌈</span>
+      Colors & Shapes
+    </div>
+
+    <div class="preview-card">
+      <span>👃</span>
+      Body Parts
+    </div>
+
+    <div class="preview-card">
+      <span>🔤</span>
+      Letters
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ACTIVITY -->
+
+<section id="activity" class="screen">
+
+  <div class="activity-wrap">
+
+    <div class="progress-area">
+      <div class="progress-text" id="progressText">
+        Safari Activity 1
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="card" id="activityCard"></div>
+
+  </div>
+
+</section>
+
+
+<!-- COMPLETE -->
+
+<section id="complete" class="screen complete">
+
+  <div class="complete-animal">🦁</div>
+
+  <h1>Safari Finished! 🎉</h1>
+
+  <p style="font-size:24px;">
+    Great job, little explorer! 🌿
+  </p>
+
+  <div class="stars">
+    ⭐ ⭐ ⭐
+  </div>
+
+  <p style="font-size:21px;">
+    You learned, matched, counted, and explored!
+  </p>
+
+  <button class="restart-btn" onclick="startActivities()">
+    🔄 Play Again
+  </button>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   ORION'S KINDERGARTEN SAFARI
+========================================================= */
+
+let current = 0;
+let locked = false;
+
+const activities = [
+
+  /* 1 BODY PARTS */
+
+  {
+    type: "choice",
+    question: "Where is your NOSE? 👃",
+    options: [
+      ["👃", "Nose", true],
+      ["👂", "Ears", false],
+      ["🦶", "Feet", false],
+      ["✋", "Hands", false]
+    ]
+  },
+
+  /* 2 COLORS */
+
+  {
+    type: "choice",
+    question: "Can you find YELLOW? 🌈",
+    options: [
+      ["🔵", "Blue", false],
+      ["🟡", "Yellow", true],
+      ["🟢", "Green", false],
+      ["🩷", "Pink", false]
+    ]
+  },
+
+  /* 3 SHAPES */
+
+  {
+    type: "choice",
+    question: "Which one is a CIRCLE? ⭕",
+    options: [
+      ["🔺", "Triangle", false],
+      ["🟥", "Square", false],
+      ["⚪", "Circle", true],
+      ["⭐", "Star", false]
+    ]
+  },
+
+  /* 4 COUNTING */
+
+  {
+    type: "choice",
+    question: "How many apples? 🍎",
+    options: [
+      ["🍎🍎", "2", true],
+      ["🍎🍎🍎🍎", "4", false],
+      ["🍎", "1", false],
+      ["🍎🍎🍎", "3", false]
+    ]
+  },
+
+  /* 5 ANIMALS */
+
+  {
+    type: "choice",
+    question: "Which animal says ROAR? 🦁",
+    options: [
+      ["🐶", "Dog", false],
+      ["🦁", "Lion", true],
+      ["🐟", "Fish", false],
+      ["🐰", "Rabbit", false]
+    ]
+  },
+
+  /* 6 ANIMAL FOOD */
+
+  {
+    type: "choice",
+    question: "What does the RABBIT eat? 🐰",
+    options: [
+      ["🥕", "Carrot", true],
+      ["🦴", "Bone", false],
+      ["🍖", "Meat", false],
+      ["🐟", "Fish", false]
+    ]
+  },
+
+  /* 7 ANIMAL FOOD */
+
+  {
+    type: "choice",
+    question: "What does the DOG like to eat? 🐶",
+    options: [
+      ["🍌", "Banana", false],
+      ["🦴", "Bone", true],
+      ["🌿", "Grass", false],
+      ["🎋", "Bamboo", false]
+    ]
+  },
+
+  /* 8 ANIMAL FOOD */
+
+  {
+    type: "choice",
+    question: "What does the MONKEY eat? 🐒",
+    options: [
+      ["🍌", "Banana", true],
+      ["🦴", "Bone", false],
+      ["🥕", "Carrot", false],
+      ["🐟", "Fish", false]
+    ]
+  },
+
+  /* 9 BIG / SMALL */
+
+  {
+    type: "choice",
+    question: "Which animal is BIG? 🐘",
+    options: [
+      ["🐜", "Ant", false],
+      ["🐭", "Mouse", false],
+      ["🐘", "Elephant", true],
+      ["🐞", "Ladybug", false]
+    ]
+  },
+
+  /* 10 LETTER */
+
+  {
+    type: "choice",
+    question: "Can you find the letter A? 🔤",
+    options: [
+      ["B", "B", false],
+      ["A", "A", true],
+      ["C", "C", false],
+      ["D", "D", false]
+    ]
+  },
+
+  /* 11 ANIMAL FOOD */
+
+  {
+    type: "choice",
+    question: "What does the PANDA eat? 🐼",
+    options: [
+      ["🍌", "Banana", false],
+      ["🎋", "Bamboo", true],
+      ["🥕", "Carrot", false],
+      ["🦴", "Bone", false]
+    ]
+  },
+
+  /* 12 SHAPE */
+
+  {
+    type: "choice",
+    question: "Which one is a TRIANGLE? 🔺",
+    options: [
+      ["⚪", "Circle", false],
+      ["🟥", "Square", false],
+      ["🔺", "Triangle", true],
+      ["⭐", "Star", false]
+    ]
+  }
+
+];
+
+
+/* =========================================================
+   START
+========================================================= */
+
+function startActivities() {
+
+  current = 0;
+  locked = false;
+
+  document.getElementById("home").classList.remove("active");
+  document.getElementById("complete").classList.remove("active");
+  document.getElementById("activity").classList.add("active");
+
+  showActivity();
+
+}
+
+
+/* =========================================================
+   SHOW ACTIVITY
+========================================================= */
+
+function showActivity() {
+
+  locked = false;
+
+  const item = activities[current];
+
+  document.getElementById("progressText").textContent =
+    "🌿 Safari Activity " + (current + 1) +
+    " of " + activities.length;
+
+  document.getElementById("progressFill").style.width =
+    ((current) / activities.length * 100) + "%";
+
+  const card = document.getElementById("activityCard");
+
+  if (item.type === "choice") {
+
+    let html = `
+      <div class="activity-number">
+        🌿 ACTIVITY ${current + 1}
+      </div>
+
+      <div class="question">
+        ${item.question}
+      </div>
+
+      <button class="listen-btn" onclick="speakCurrent()">
+        🔊 Listen
+      </button>
+
+      <div class="options">
+    `;
+
+    item.options.forEach((option, index) => {
+
+      html += `
+        <button class="option"
+          onclick="answer(${index})">
+
+          <span class="emoji">${option[0]}</span>
+
+          ${option[1]}
+
+        </button>
+      `;
+
+    });
+
+    html += `
+      </div>
+
+      <div class="feedback" id="feedback"></div>
+
+      <button class="next-btn"
+        id="nextButton"
+        onclick="nextActivity()">
+        Next! ➡️
+      </button>
+    `;
+
+    card.innerHTML = html;
+
+  }
+
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+function answer(index) {
+
+  if (locked) return;
+
+  const item = activities[current];
+  const buttons = document.querySelectorAll(".option");
+  const feedback = document.getElementById("feedback");
+
+  if (item.options[index][2]) {
+
+    locked = true;
+
+    buttons[index].classList.add("correct");
+
+    feedback.textContent = "🎉 Great job! ⭐";
+
+    feedback.style.color = "#4d9b43";
+
+    document.getElementById("nextButton").style.display = "block";
+
+    speak("Great job!");
+
+  } else {
+
+    buttons[index].classList.add("wrong");
+
+    feedback.textContent = "💛 Try again!";
+
+    feedback.style.color = "#e28745";
+
+    speak("Try again!");
+
+    setTimeout(() => {
+      buttons[index].classList.remove("wrong");
+    }, 500);
+
+  }
+
+}
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+function nextActivity() {
+
+  current++;
+
+  if (current >= activities.length) {
+
+    document.getElementById("activity").classList.remove("active");
+    document.getElementById("complete").classList.add("active");
+
+    document.getElementById("progressFill").style.width = "100%";
+
+    speak("You finished! Great job!");
+
+  } else {
+
+    showActivity();
+
+  }
+
+}
+
+
+/* =========================================================
+   SPEECH
+========================================================= */
+
+function speak(text) {
+
+  if (!("speechSynthesis" in window)) return;
+
+  window.speechSynthesis.cancel();
+
+  const utterance = new SpeechSynthesisUtterance(text);
+
+  utterance.rate = 0.8;
+  utterance.pitch = 1.2;
+
+  window.speechSynthesis.speak(utterance);
+
+}
+
+
+function speakCurrent() {
+
+  if (!document.getElementById("activity").classList.contains("active")) {
+    speak("Welcome to Orion's Kindergarten Safari!");
+    return;
+  }
+
+  const item = activities[current];
+
+  if (item && item.question) {
+
+    let words = item.question
+      .replace(/[^\w\s?!.]/g, "");
+
+    speak(words);
+
+  }
+
+}
+
+
+/* =========================================================
+   FULL SCREEN
+========================================================= */
+
+function goFullscreen() {
+
+  const element = document.documentElement;
+
+  if (!document.fullscreenElement) {
+
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    } else {
+      alert(
+        "Full screen is not supported by this browser. " +
+        "You can still use the activity normally."
+      );
+    }
+
+  } else {
+
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+
+  }
+
+}
+
+
+/* =========================================================
+   ROTATE
+========================================================= */
+
+async function rotateScreen() {
+
+  try {
+
+    if (screen.orientation && screen.orientation.lock) {
+
+      await screen.orientation.lock("landscape");
+
+    } else {
+
+      alert(
+        "Please rotate your phone sideways 📱↔️"
+      );
+
+    }
+
+  } catch (error) {
+
+    alert(
+      "Please rotate your phone sideways 📱↔️"
+    );
+
+  }
+
+}
+
+
+/* =========================================================
+   KEYBOARD SUPPORT
+========================================================= */
+
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Enter") {
+
+    const next = document.getElementById("nextButton");
+
+    if (next && next.style.display === "block") {
+      nextActivity();
+    }
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
