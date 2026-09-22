@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#3f7d45">
 <title>Orion's Kindergarten Safari 🦁</title>
 
 <style>
@@ -16,8 +18,9 @@ html,body{
   padding:0;
   width:100%;
   min-height:100%;
-  font-family:Arial, sans-serif;
-  background:#f5f0d8;
+  font-family:"Comic Sans MS","Trebuchet MS",sans-serif;
+  background:#e9f7df;
+  color:#29452d;
 }
 
 body{
@@ -33,459 +36,509 @@ button{
 .topbar{
   position:sticky;
   top:0;
-  z-index:100;
-  background:#2f6b3b;
+  z-index:1000;
+  background:#3f7d45;
   color:white;
   padding:10px 14px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   gap:8px;
-  box-shadow:0 2px 8px rgba(0,0,0,.2);
+  box-shadow:0 3px 10px #0002;
 }
 
-.logo{
-  font-size:20px;
+.top-title{
+  font-size:18px;
   font-weight:bold;
 }
 
-.top-buttons{
+.top-actions{
   display:flex;
   gap:6px;
 }
 
-.top-buttons button{
-  background:white;
-  color:#2f6b3b;
-  border-radius:10px;
-  padding:8px 10px;
-  font-size:16px;
+.small-btn{
+  background:#fff;
+  color:#315f35;
+  border-radius:14px;
+  padding:8px 11px;
+  font-size:13px;
   font-weight:bold;
-}
-
-#app{
-  min-height:calc(100vh - 58px);
-  padding:14px;
 }
 
 .screen{
-  max-width:1100px;
-  margin:auto;
+  display:none;
+  min-height:calc(100vh - 58px);
+  padding:18px;
 }
 
-.hidden{
-  display:none !important;
-}
-
-/* HOME */
-
-.home{
-  min-height:calc(100vh - 90px);
+.screen.active{
   display:flex;
-  justify-content:center;
+  flex-direction:column;
   align-items:center;
 }
 
-.home-card{
-  width:100%;
-  max-width:700px;
+.home{
+  justify-content:center;
   text-align:center;
-  background:#fffdf3;
-  border-radius:30px;
-  padding:28px 18px;
-  box-shadow:0 8px 25px rgba(0,0,0,.12);
+  background:
+    radial-gradient(circle at 15% 20%,#fff9 0 35px,transparent 36px),
+    radial-gradient(circle at 85% 15%,#fff9 0 30px,transparent 31px),
+    linear-gradient(#cdeeb5,#f7f1c5);
 }
 
-.big-lion{
-  font-size:90px;
-  animation:bounce 1.7s infinite;
+.home-animal{
+  font-size:85px;
+  animation:bounce 2s infinite;
 }
 
-.home h1{
-  color:#2f6b3b;
-  font-size:clamp(30px,7vw,55px);
-  margin:10px 0;
+h1{
+  font-size:38px;
+  margin:8px 0;
+  color:#3d713e;
 }
 
-.home p{
-  font-size:20px;
-  color:#555;
+h2{
+  font-size:29px;
+  margin:8px 0 16px;
 }
 
-.start-btn{
-  background:#f3a928;
+.subtitle{
+  font-size:19px;
+  max-width:650px;
+  margin:5px auto 20px;
+}
+
+.big-start{
+  background:#f5a623;
   color:white;
-  font-size:25px;
+  font-size:27px;
   font-weight:bold;
-  padding:17px 35px;
-  border-radius:20px;
-  box-shadow:0 5px 0 #c97e10;
-  margin-top:15px;
+  padding:18px 45px;
+  border-radius:30px;
+  box-shadow:0 6px 0 #c97b0b;
 }
 
-.start-btn:active{
+.big-start:active{
   transform:translateY(4px);
-  box-shadow:0 1px 0 #c97e10;
+  box-shadow:0 2px 0 #c97b0b;
 }
 
-/* PROGRESS */
-
-.progress-area{
-  max-width:1100px;
-  margin:0 auto 12px;
+.menu-screen{
+  background:
+    linear-gradient(#e8f8d9,#fff7cf);
 }
 
-.progress-text{
+.menu-title{
   text-align:center;
-  font-weight:bold;
-  color:#2f6b3b;
   margin-bottom:5px;
 }
 
-.progress{
-  height:13px;
-  background:#ddd;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.progress-bar{
-  height:100%;
-  width:0%;
-  background:#f3a928;
-  transition:.4s;
-}
-
-/* ACTIVITY */
-
-.activity-card{
-  background:#fffdf3;
-  border-radius:28px;
-  padding:18px;
-  box-shadow:0 7px 22px rgba(0,0,0,.12);
+.menu-subtitle{
   text-align:center;
-  min-height:calc(100vh - 125px);
+  font-size:17px;
+  margin:0 0 16px;
 }
 
-.category{
-  display:inline-block;
-  background:#dcefd8;
-  color:#2f6b3b;
-  padding:7px 14px;
-  border-radius:20px;
+.menu-grid{
+  width:min(1000px,100%);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:12px;
+  padding-bottom:20px;
+}
+
+.game-button{
+  min-height:125px;
+  border-radius:24px;
+  background:white;
+  box-shadow:0 5px 12px #0002;
+  border:4px solid #d8ebc9;
+  padding:10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
   font-weight:bold;
+  color:#355f38;
+  transition:.15s;
+}
+
+.game-button:active{
+  transform:scale(.95);
+}
+
+.game-icon{
+  font-size:45px;
+}
+
+.game-name{
+  font-size:16px;
+}
+
+.everything{
+  grid-column:1/-1;
+  background:#f5a623;
+  color:white;
+  border-color:#df8d11;
+  min-height:90px;
+}
+
+.everything .game-icon{
+  font-size:38px;
+}
+
+.activity-screen{
+  background:
+    radial-gradient(circle at 10% 15%,#fff8 0 25px,transparent 26px),
+    radial-gradient(circle at 90% 20%,#fff8 0 32px,transparent 33px),
+    linear-gradient(#e9f7df,#fff8d7);
+}
+
+.activity-header{
+  width:min(1000px,100%);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
   margin-bottom:8px;
 }
 
-.question{
-  font-size:clamp(25px,5vw,40px);
+.activity-title{
+  font-size:25px;
   font-weight:bold;
-  color:#333;
-  margin:8px auto 18px;
 }
 
-.instruction{
-  font-size:19px;
-  color:#666;
-  margin-bottom:15px;
+.progress-wrap{
+  width:min(1000px,100%);
+  height:15px;
+  background:#d2dfcf;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:14px;
 }
 
-.visual{
-  font-size:clamp(70px,17vw,150px);
-  margin:5px auto 15px;
-  min-height:120px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  flex-wrap:wrap;
+.progress{
+  height:100%;
+  width:0%;
+  background:#69a84f;
+  transition:.3s;
 }
 
-/* CHOICES */
+.question{
+  width:min(1000px,100%);
+  background:#ffffffdd;
+  border-radius:30px;
+  padding:18px;
+  box-shadow:0 5px 15px #0002;
+  text-align:center;
+}
+
+.question-text{
+  font-size:29px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
 
 .choices{
   display:grid;
-  grid-template-columns:repeat(2, minmax(120px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
   gap:12px;
-  max-width:700px;
-  margin:auto;
+  width:100%;
 }
 
 .choice{
-  min-height:85px;
-  border-radius:20px;
-  background:#e8f1dc;
-  color:#333;
-  font-size:28px;
+  min-height:105px;
+  border-radius:22px;
+  background:#fff;
+  border:4px solid #d9e9cf;
+  box-shadow:0 4px 8px #0002;
+  font-size:24px;
   font-weight:bold;
-  padding:15px;
-  box-shadow:0 4px 0 #b8c9a7;
-  transition:.12s;
+  color:#345b37;
+  padding:10px;
 }
 
 .choice:active{
-  transform:translateY(4px);
-  box-shadow:none;
+  transform:scale(.95);
 }
 
-.choice.correct{
-  background:#9be28f !important;
+.emoji-choice{
+  font-size:58px;
 }
 
-.choice.wrong{
-  background:#ffd0c8 !important;
+.correct{
+  animation:correct .55s ease;
+  background:#d9f7c9 !important;
+  border-color:#62a94c !important;
 }
 
-/* COLOR CHOICES */
-
-.color-choice{
-  min-height:90px;
-  border-radius:20px;
-  border:5px solid white;
-  box-shadow:0 3px 10px rgba(0,0,0,.18);
-  color:white;
-  font-size:0;
+.wrong{
+  animation:shake .35s ease;
+  background:#ffdcdc !important;
+  border-color:#e78a8a !important;
 }
-
-.color-label{
-  font-size:18px;
-  background:rgba(0,0,0,.35);
-  border-radius:10px;
-  padding:5px 10px;
-}
-
-/* FEEDBACK */
 
 .feedback{
-  min-height:45px;
-  margin-top:15px;
-  font-size:24px;
+  min-height:38px;
+  font-size:23px;
   font-weight:bold;
+  margin-top:10px;
 }
 
-.good{
-  color:#278b32;
-}
-
-.try{
-  color:#d06c3b;
-}
-
-/* DRAWING */
-
-.canvas-wrap{
-  position:relative;
-  width:100%;
-  max-width:900px;
-  height:min(52vh,480px);
-  margin:10px auto;
-  background:#dff3d7;
-  border:5px solid #7bab67;
-  border-radius:25px;
-  overflow:hidden;
-  touch-action:none;
-}
-
-.canvas-board{
-  position:absolute;
-  inset:0;
-}
-
-.animal-target{
-  position:absolute;
-  font-size:70px;
-  z-index:2;
-  user-select:none;
-  pointer-events:none;
-}
-
-.mama{
-  left:8%;
-  top:35%;
-}
-
-.baby{
-  right:8%;
-  top:35%;
-}
-
-.target-label{
-  position:absolute;
-  font-size:18px;
-  font-weight:bold;
-  background:white;
-  padding:5px 9px;
-  border-radius:10px;
-  z-index:3;
-  pointer-events:none;
-}
-
-.mama-label{
-  left:5%;
-  top:18%;
-}
-
-.baby-label{
-  right:5%;
-  top:18%;
-}
-
-.draw-buttons{
+.activity-bottom{
+  width:min(1000px,100%);
   display:flex;
   justify-content:center;
   gap:10px;
+  margin-top:12px;
   flex-wrap:wrap;
 }
 
-.draw-buttons button{
-  padding:12px 20px;
-  border-radius:15px;
-  font-size:18px;
-  font-weight:bold;
-  background:#e9b24c;
-}
-
-/* MATCHING */
-
-.match-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
-  max-width:650px;
-  margin:auto;
-}
-
-.match-card{
-  background:#edf5df;
+.back-btn{
+  background:#fff;
+  color:#466b49;
+  padding:11px 18px;
   border-radius:20px;
-  min-height:120px;
+  font-weight:bold;
+  box-shadow:0 3px 8px #0002;
+}
+
+.listen-btn{
+  background:#8b6bb7;
+  color:white;
+  padding:11px 18px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.visual{
+  font-size:110px;
+  line-height:1;
+  margin:5px;
+}
+
+.color-box{
+  width:145px;
+  height:145px;
+  border-radius:28px;
+  margin:10px auto 20px;
+  box-shadow:inset 0 0 0 6px #ffffffaa,0 5px 12px #0002;
+}
+
+.shape{
+  width:140px;
+  height:140px;
+  margin:10px auto 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
+}
+
+.count-items{
+  min-height:125px;
   display:flex;
   justify-content:center;
   align-items:center;
-  font-size:60px;
-  box-shadow:0 4px 0 #b8c9a7;
+  flex-wrap:wrap;
+  gap:5px;
+  font-size:55px;
+  max-width:800px;
+  margin:0 auto 12px;
 }
 
-/* SAFARI */
+.letter{
+  font-size:100px;
+  font-weight:bold;
+  color:#e68a27;
+}
+
+.food-pair{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  font-size:80px;
+  margin:8px;
+}
+
+.line-board{
+  width:min(850px,100%);
+  background:#fff;
+  border-radius:25px;
+  padding:12px;
+  box-shadow:0 4px 10px #0002;
+  position:relative;
+}
+
+canvas{
+  width:100%;
+  height:310px;
+  background:
+    radial-gradient(circle,#dbead2 1px,transparent 1px);
+  background-size:20px 20px;
+  border:3px dashed #91b985;
+  border-radius:18px;
+  touch-action:none;
+}
+
+.draw-instructions{
+  font-size:20px;
+  font-weight:bold;
+  margin:5px;
+}
+
+.clear-btn{
+  background:#e77d67;
+  color:white;
+  padding:10px 18px;
+  border-radius:18px;
+  font-weight:bold;
+  margin-top:8px;
+}
+
+.big-small-area{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  gap:55px;
+  min-height:210px;
+}
+
+.big-object{
+  font-size:150px;
+}
+
+.small-object{
+  font-size:65px;
+}
+
+.tall-tree{
+  font-size:150px;
+}
+
+.pattern{
+  font-size:70px;
+  letter-spacing:8px;
+  margin:20px;
+}
+
+.missing{
+  color:#e68a27;
+  font-size:70px;
+  font-weight:bold;
+}
 
 .safari{
-  position:relative;
-  width:100%;
-  height:min(66vh,600px);
+  width:min(1100px,100%);
   min-height:430px;
+  border-radius:30px;
   overflow:hidden;
-  border-radius:28px;
+  position:relative;
   background:
-    linear-gradient(#a9d9ef 0 42%, #79bd65 42% 100%);
-  border:5px solid #638c51;
-  margin:auto;
+    linear-gradient(#8ed5ed 0 42%,#9bd36d 42% 100%);
+  border:6px solid #78a85c;
+  box-shadow:0 6px 15px #0002;
 }
 
 .sun{
   position:absolute;
+  right:30px;
   top:20px;
-  right:25px;
-  font-size:65px;
+  font-size:70px;
 }
 
 .cloud{
   position:absolute;
-  font-size:50px;
-  opacity:.9;
+  font-size:55px;
 }
 
-.cloud1{top:30px;left:15%;}
-.cloud2{top:85px;left:48%;}
+.cloud.one{left:8%;top:25px;}
+.cloud.two{left:48%;top:55px;}
 
 .tree{
   position:absolute;
-  font-size:90px;
+  bottom:20px;
+  font-size:85px;
 }
 
-.tree1{bottom:20px;left:2%;}
-.tree2{bottom:25px;right:2%;}
-.tree3{bottom:120px;left:26%;font-size:65px;}
-.tree4{bottom:100px;right:27%;font-size:70px;}
-
-.pond{
-  position:absolute;
-  bottom:5%;
-  left:38%;
-  font-size:95px;
-}
+.tree.t1{left:10px;}
+.tree.t2{right:15px;}
+.tree.t3{left:43%;bottom:0;}
 
 .safari-object{
   position:absolute;
-  font-size:45px;
-  padding:0;
+  border:0;
   background:transparent;
-  z-index:10;
+  font-size:55px;
+  padding:3px;
+  z-index:5;
   transition:.15s;
 }
 
-.safari-object:hover{
-  transform:scale(1.15);
+.safari-object:active{
+  transform:scale(1.25);
 }
 
-.safari-object.found{
-  animation:found .6s;
+.safari-instruction{
+  font-size:23px;
+  font-weight:bold;
+  margin:5px 0 10px;
 }
 
-.hint{
-  margin-top:10px;
-  font-size:18px;
-  color:#555;
-}
-
-/* COMPLETION */
-
-.complete{
-  min-height:calc(100vh - 90px);
-  display:flex;
+.celebration{
   justify-content:center;
-  align-items:center;
-}
-
-.complete-card{
-  background:#fffdf3;
   text-align:center;
-  padding:30px 18px;
-  border-radius:30px;
-  max-width:800px;
-  width:100%;
-  box-shadow:0 8px 25px rgba(0,0,0,.15);
-  position:relative;
-  z-index:20;
-}
-
-.complete-card h1{
-  font-size:clamp(38px,8vw,70px);
-  color:#2f6b3b;
-  margin:10px;
-}
-
-.complete-card p{
-  font-size:25px;
+  background:
+    radial-gradient(circle at 20% 20%,#ffeb88 0 25px,transparent 26px),
+    radial-gradient(circle at 80% 30%,#b8e7ff 0 30px,transparent 31px),
+    linear-gradient(#dff7ce,#fff2c4);
 }
 
 .trophy{
-  font-size:90px;
+  font-size:100px;
+  animation:bounce 1s infinite;
 }
 
 .confetti{
   position:fixed;
-  top:-20px;
-  font-size:25px;
-  z-index:9999;
+  inset:0;
   pointer-events:none;
+  overflow:hidden;
+  z-index:5000;
+}
+
+.confetti span{
+  position:absolute;
+  top:-30px;
+  font-size:28px;
   animation:fall 3s linear forwards;
 }
 
-/* ANIMATIONS */
+.finish-buttons{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
 
 @keyframes bounce{
   0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
+  50%{transform:translateY(-12px)}
+}
+
+@keyframes correct{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+  100%{transform:scale(1)}
+}
+
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  25%{transform:translateX(-8px)}
+  75%{transform:translateX(8px)}
 }
 
 @keyframes fall{
@@ -494,51 +547,67 @@ button{
   }
 }
 
-@keyframes found{
-  50%{transform:scale(1.5)}
-}
-
 @media(max-width:600px){
-  .choices{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .choice{
-    min-height:75px;
-    font-size:23px;
-  }
-
-  .visual{
-    min-height:95px;
-  }
-
-  .safari{
-    min-height:440px;
-  }
-
-  .safari-object{
-    font-size:38px;
-  }
+  h1{font-size:31px}
+  h2{font-size:25px}
+  .subtitle{font-size:16px}
+  .question-text{font-size:24px}
+  .activity-title{font-size:19px}
+  .visual{font-size:85px}
+  .choice{min-height:88px;font-size:19px}
+  .emoji-choice{font-size:45px}
+  .menu-grid{grid-template-columns:repeat(2,1fr)}
+  .game-button{min-height:110px}
+  .game-icon{font-size:38px}
+  .safari{min-height:380px}
+  .safari-object{font-size:44px}
+  canvas{height:270px}
 }
 
 @media(orientation:landscape) and (max-height:600px){
-  .activity-card{
-    min-height:calc(100vh - 80px);
-  }
-
-  .visual{
-    font-size:80px;
-    min-height:85px;
+  .screen{
+    min-height:calc(100vh - 50px);
+    padding:10px;
   }
 
   .question{
-    font-size:28px;
-    margin:5px;
+    padding:10px;
   }
 
-  .safari{
-    height:72vh;
-    min-height:300px;
+  .question-text{
+    font-size:23px;
+    margin-bottom:5px;
+  }
+
+  .choice{
+    min-height:65px;
+    padding:5px;
+  }
+
+  .visual{
+    font-size:70px;
+  }
+
+  .color-box{
+    width:90px;
+    height:90px;
+    margin:3px auto 8px;
+  }
+
+  .menu-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .game-button{
+    min-height:82px;
+  }
+
+  .game-icon{
+    font-size:30px;
+  }
+
+  .game-name{
+    font-size:13px;
   }
 }
 </style>
@@ -547,658 +616,907 @@ button{
 <body>
 
 <div class="topbar">
-  <div class="logo">🦁 Orion's Safari</div>
+  <div class="top-title">🦁 Orion's Kindergarten Safari</div>
 
-  <div class="top-buttons">
-    <button onclick="goFullscreen()">⛶</button>
-    <button onclick="rotateScreen()">🔄</button>
-    <button onclick="speakCurrent()">🔊</button>
+  <div class="top-actions">
+    <button class="small-btn" onclick="goMenu()">🏠 Menu</button>
+    <button class="small-btn" onclick="goFullscreen()">⛶</button>
+    <button class="small-btn" onclick="rotateScreen()">↔️</button>
   </div>
 </div>
 
-<div id="app">
+<!-- HOME -->
+<section id="home" class="screen home active">
+  <div class="home-animal">🦁</div>
 
-  <!-- HOME -->
-  <section id="home" class="home screen">
-    <div class="home-card">
-      <div class="big-lion">🦁</div>
-      <h1>Orion's Kindergarten Safari</h1>
-      <p>Let's learn, play, find animals, count, draw and explore! 🌿</p>
-      <button class="start-btn" onclick="startGame()">START! 🦁</button>
+  <h1>Orion's Safari!</h1>
+
+  <div class="subtitle">
+    Let's learn, play, tap, match, count and explore! 🌿🐘🦒
+  </div>
+
+  <button class="big-start" onclick="showMenu()">
+    🌟 START PLAYING
+  </button>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="screen menu-screen">
+
+  <h1 class="menu-title">🌟 What Do You Want To Play?</h1>
+
+  <p class="menu-subtitle">
+    Choose a game, Orion! 👆
+  </p>
+
+  <div class="menu-grid">
+
+    <button class="game-button" onclick="startCategory('body')">
+      <div class="game-icon">👦</div>
+      <div class="game-name">Body Parts</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('colors')">
+      <div class="game-icon">🌈</div>
+      <div class="game-name">Colors</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('shapes')">
+      <div class="game-icon">🔷</div>
+      <div class="game-name">Shapes</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('counting')">
+      <div class="game-icon">🔢</div>
+      <div class="game-name">Counting</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('animals')">
+      <div class="game-icon">🐾</div>
+      <div class="game-name">Find Animals</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('sounds')">
+      <div class="game-icon">🔊</div>
+      <div class="game-name">Animal Sounds</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('food')">
+      <div class="game-icon">🥕</div>
+      <div class="game-name">What Do Animals Eat?</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('drawing')">
+      <div class="game-icon">✏️</div>
+      <div class="game-name">Draw a Line</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('letters')">
+      <div class="game-icon">🔤</div>
+      <div class="game-name">Letters</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('bigsmall')">
+      <div class="game-icon">📏</div>
+      <div class="game-name">Big or Small?</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('matching')">
+      <div class="game-icon">🧩</div>
+      <div class="game-name">Matching</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('missing')">
+      <div class="game-icon">🧠</div>
+      <div class="game-name">What's Missing?</div>
+    </button>
+
+    <button class="game-button" onclick="startCategory('hunt')">
+      <div class="game-icon">🌿</div>
+      <div class="game-name">Safari Hunt</div>
+    </button>
+
+    <button class="game-button everything" onclick="startEverything()">
+      <div class="game-icon">🎮✨</div>
+      <div class="game-name">PLAY EVERYTHING!</div>
+    </button>
+
+  </div>
+</section>
+
+<!-- ACTIVITY -->
+<section id="activity" class="screen activity-screen">
+
+  <div class="activity-header">
+    <div id="activityTitle" class="activity-title">
+      🦁 Safari Game
     </div>
-  </section>
+  </div>
 
-  <!-- GAME -->
-  <section id="game" class="screen hidden">
+  <div class="progress-wrap">
+    <div id="progress" class="progress"></div>
+  </div>
 
-    <div class="progress-area">
-      <div id="progressText" class="progress-text"></div>
-      <div class="progress">
-        <div id="progressBar" class="progress-bar"></div>
-      </div>
-    </div>
+  <div id="question" class="question"></div>
 
-    <div class="activity-card">
+  <div class="activity-bottom">
+    <button class="back-btn" onclick="goMenu()">🏠 Choose Another Game</button>
+    <button class="listen-btn" onclick="speakCurrent()">🔊 Listen</button>
+  </div>
 
-      <div id="category" class="category"></div>
-      <div id="question" class="question"></div>
-      <div id="instruction" class="instruction"></div>
+</section>
 
-      <div id="activityContent"></div>
+<!-- CELEBRATION -->
+<section id="celebration" class="screen celebration">
 
-      <div id="feedback" class="feedback"></div>
+  <div class="trophy">🏆</div>
 
-    </div>
-  </section>
+  <h1 id="celebrationTitle">🎉 GOOD JOB, ORION! 🎉</h1>
 
-  <!-- COMPLETE -->
-  <section id="complete" class="complete screen hidden">
-    <div class="complete-card">
-      <div class="trophy">🏆🦁🎉</div>
-      <h1>GOOD JOB, ORION!</h1>
-      <p>You finished your Kindergarten Safari! 🌿</p>
-      <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
-      <button class="start-btn" onclick="restartGame()">PLAY AGAIN 🔄</button>
-    </div>
-  </section>
+  <p id="celebrationText" class="subtitle">
+    You finished your safari!
+  </p>
 
-</div>
+  <div class="finish-buttons">
+    <button class="big-start" onclick="goMenu()">
+      🦁 Choose Another Game
+    </button>
+
+    <button class="big-start" onclick="startEverything()">
+      🎮 Play Everything Again
+    </button>
+  </div>
+
+  <div id="confetti" class="confetti"></div>
+
+</section>
 
 <script>
 
-/* =========================================================
-   ORION'S KINDERGARTEN SAFARI
-========================================================= */
+let currentCategory = "";
+let playEverything = false;
+let activityIndex = 0;
+let currentQuestion = 0;
+let currentSpeech = "";
 
-const activities = [];
+const categories = {
 
-/* =========================================================
-   1. BODY PARTS
-========================================================= */
+body: {
+  title:"👦 Body Parts",
+  type:"body",
+  items:[
+    ["nose","👃"],
+    ["eyes","👀"],
+    ["ears","👂"],
+    ["mouth","👄"],
+    ["teeth","🦷"],
+    ["head","🙂"],
+    ["hair","💇"],
+    ["neck","🧣"],
+    ["arms","💪"],
+    ["hands","🖐️"],
+    ["fingers","☝️"],
+    ["tummy","🫃"],
+    ["legs","🦵"],
+    ["feet","🦶"],
+    ["toes","🦶"],
+    ["cheeks","😊"],
+    ["chin","🙂"],
+    ["bottom","🍑"]
+  ]
+},
 
-const bodyParts = [
-  ["Where is the nose?","👦",["Nose","Ear","Foot"],0],
-  ["Where are the eyes?","👦",["Eyes","Hands","Feet"],0],
-  ["Where are the ears?","👦",["Ears","Mouth","Tummy"],0],
-  ["Where is the mouth?","👦",["Mouth","Hair","Neck"],0],
-  ["Where are the teeth?","👦",["Teeth","Eyes","Hands"],0],
-  ["Where is the head?","👦",["Head","Foot","Arm"],0],
-  ["Where is the hair?","👦",["Hair","Tummy","Hand"],0],
-  ["Where is the neck?","👦",["Neck","Ear","Foot"],0],
-  ["Where are the arms?","👦",["Arms","Eyes","Toes"],0],
-  ["Where are the hands?","👦",["Hands","Hair","Mouth"],0],
-  ["Where are the fingers?","👦",["Fingers","Knees","Ears"],0],
-  ["Where is the tummy?","👦",["Tummy","Head","Hand"],0],
-  ["Where are the legs?","👦",["Legs","Ears","Hair"],0],
-  ["Where are the feet?","👦",["Feet","Eyes","Neck"],0],
-  ["Where are the toes?","👦",["Toes","Hands","Cheeks"],0],
-  ["Where are the cheeks?","👦",["Cheeks","Feet","Arms"],0],
-  ["Where is the chin?","👦",["Chin","Tummy","Legs"],0],
-  ["Where is the bottom?","👦",["Bottom","Nose","Hair"],0]
+colors:{
+  title:"🌈 Colors",
+  type:"colors",
+  items:[
+    ["yellow","🟨"],
+    ["blue","🟦"],
+    ["green","🟩"],
+    ["pink","🩷"],
+    ["black","⬛"],
+    ["white","⬜"],
+    ["purple","🟪"],
+    ["orange","🟧"],
+    ["red","🟥"],
+    ["brown","🟫"]
+  ]
+},
+
+shapes:{
+  title:"🔷 Shapes",
+  type:"shapes",
+  items:[
+    ["circle","●"],
+    ["square","■"],
+    ["triangle","▲"],
+    ["rectangle","▰"],
+    ["star","★"],
+    ["heart","♥"]
+  ]
+},
+
+counting:{
+  title:"🔢 Counting",
+  type:"counting",
+  items:[
+    ["apples",2,"🍎"],
+    ["chicks",3,"🐥"],
+    ["balloons",4,"🎈"],
+    ["stars",5,"⭐"],
+    ["fish",6,"🐟"],
+    ["butterflies",7,"🦋"],
+    ["bananas",3,"🍌"],
+    ["flowers",5,"🌸"],
+    ["ducks",4,"🦆"],
+    ["lions",6,"🦁"]
+  ]
+},
+
+animals:{
+  title:"🐾 Find the Animals",
+  type:"animals",
+  items:[
+    ["lion","🦁"],
+    ["elephant","🐘"],
+    ["giraffe","🦒"],
+    ["monkey","🐒"],
+    ["panda","🐼"],
+    ["rabbit","🐰"],
+    ["dog","🐶"],
+    ["cat","🐱"],
+    ["horse","🐴"],
+    ["penguin","🐧"],
+    ["polar bear","🐻‍❄️"],
+    ["bird","🐦"],
+    ["fish","🐟"],
+    ["bee","🐝"],
+    ["duck","🦆"],
+    ["chicken","🐔"],
+    ["leopard","🐆"],
+    ["zebra","🦓"]
+  ]
+},
+
+sounds:{
+  title:"🔊 Animal Sounds",
+  type:"sounds",
+  items:[
+    ["lion","🦁","Roar!"],
+    ["dog","🐶","Woof!"],
+    ["cat","🐱","Meow!"],
+    ["horse","🐴","Neigh!"],
+    ["duck","🦆","Quack!"],
+    ["bee","🐝","Buzz!"],
+    ["chicken","🐔","Cluck!"],
+    ["bird","🐦","Tweet!"]
+  ]
+},
+
+food:{
+  title:"🥕 What Do Animals Eat?",
+  type:"food",
+  items:[
+    ["rabbit","🐰","carrot","🥕"],
+    ["dog","🐶","bone","🦴"],
+    ["monkey","🐒","banana","🍌"],
+    ["panda","🐼","bamboo","🎋"],
+    ["horse","🐴","grass","🌿"],
+    ["fish","🐟","worm","🪱"],
+    ["bee","🐝","flower","🌸"]
+  ]
+},
+
+drawing:{
+  title:"✏️ Draw a Line",
+  type:"drawing",
+  items:[
+    ["🐱","👶","Connect Mama Cat to Baby Cat!"],
+    ["🐶","🐕","Connect Mama Dog to the Puppy!"],
+    ["🐴","🐎","Connect Mama Horse to the Foal!"],
+    ["🐔","🐣","Connect Mama Chicken to the Baby Chick!"]
+  ]
+},
+
+letters:{
+  title:"🔤 Letters",
+  type:"letters",
+  items:[
+    ["A","🍎","Apple"],
+    ["B","🐝","Bee"],
+    ["C","🐱","Cat"],
+    ["D","🐶","Dog"],
+    ["E","🥚","Egg"],
+    ["F","🐟","Fish"]
+  ]
+},
+
+bigsmall:{
+  title:"📏 Big or Small?",
+  type:"bigsmall",
+  items:[
+    ["big elephant","🐘","big"],
+    ["small dog","🐶","small"],
+    ["tall tree","🌳","tall"],
+    ["big lion","🦁","big"]
+  ]
+},
+
+matching:{
+  title:"🧩 Matching",
+  type:"matching",
+  items:[
+    ["🐶","dog"],
+    ["🦁","lion"],
+    ["🍎","apple"],
+    ["⭐","star"],
+    ["🟨","yellow"],
+    ["🐟","fish"]
+  ]
+},
+
+missing:{
+  title:"🧠 What's Missing?",
+  type:"missing",
+  items:[
+    ["🍎 🍌 🍎 ❓","banana"],
+    ["🐶 🐱 🐶 ❓","cat"],
+    ["⭐ 🌙 ⭐ ❓","moon"],
+    ["🔴 🔵 🔴 ❓","blue"],
+    ["🦁 🐘 🦁 ❓","elephant"]
+  ]
+},
+
+hunt:{
+  title:"🌿 Big Safari Hunt",
+  type:"hunt",
+  items:[
+    ["butterfly","🦋"],
+    ["lion","🦁"],
+    ["banana","🍌"],
+    ["red flower","🌹"],
+    ["elephant","🐘"],
+    ["monkey","🐒"],
+    ["yellow flower","🌼"],
+    ["bird","🐦"],
+    ["giraffe","🦒"],
+    ["carrot","🥕"],
+    ["bee","🐝"],
+    ["pond","💧"],
+    ["turtle","🐢"],
+    ["apple","🍎"],
+    ["zebra","🦓"]
+  ]
+}
+
+};
+
+let everythingList = [
+  "body",
+  "colors",
+  "shapes",
+  "counting",
+  "animals",
+  "sounds",
+  "food",
+  "drawing",
+  "letters",
+  "bigsmall",
+  "matching",
+  "missing",
+  "hunt"
 ];
 
-bodyParts.forEach(x=>{
-  activities.push({
-    type:"choice",
-    category:"👦 Body Parts",
-    question:x[0],
-    visual:x[1],
-    choices:x[2],
-    answer:x[3]
+function hideAll(){
+  document.querySelectorAll(".screen").forEach(s=>{
+    s.classList.remove("active");
   });
-});
+}
 
-/* =========================================================
-   2. COLORS
-========================================================= */
+function showMenu(){
+  hideAll();
+  document.getElementById("menu").classList.add("active");
+}
 
-const colors = [
-  ["Yellow","🟡","#f4d03f"],
-  ["Blue","🔵","#3498db"],
-  ["Green","🟢","#45a049"],
-  ["Pink","🩷","#f38bbd"],
-  ["Black","⚫","#222"],
-  ["White","⚪","#ffffff"],
-  ["Purple","🟣","#8e44ad"],
-  ["Orange","🟠","#f39c12"],
-  ["Red","🔴","#e74c3c"],
-  ["Brown","🟤","#8b5a2b"]
-];
+function goMenu(){
+  hideAll();
+  document.getElementById("menu").classList.add("active");
+  stopSpeech();
+}
 
-colors.forEach((c,index)=>{
-  activities.push({
-    type:"color",
-    category:"🌈 Colors",
-    question:"Can you find " + c[0] + "?",
-    answer:index,
-    choices:colors.map(x=>x[0]),
-    colorData:colors
-  });
-});
+function startCategory(category){
+  currentCategory=category;
+  playEverything=false;
+  activityIndex=0;
+  currentQuestion=0;
+  startActivity();
+}
 
-/* =========================================================
-   3. SHAPES
-========================================================= */
+function startEverything(){
+  playEverything=true;
+  activityIndex=0;
+  currentQuestion=0;
+  currentCategory=everythingList[0];
+  startActivity();
+}
 
-const shapes = [
-  ["Circle","⚪"],
-  ["Square","🟦"],
-  ["Triangle","🔺"],
-  ["Rectangle","▭"],
-  ["Star","⭐"],
-  ["Heart","❤️"]
-];
+function startActivity(){
 
-shapes.forEach((s,index)=>{
-  activities.push({
-    type:"choice",
-    category:"🔷 Shapes",
-    question:"Can you find the " + s[0].toLowerCase() + "?",
-    visual:s[1],
-    choices:shapes.map(x=>x[0]),
-    answer:index
-  });
-});
+  hideAll();
 
-/* =========================================================
-   4. COUNTING
-========================================================= */
+  document.getElementById("activity").classList.add("active");
 
-const counting = [
-  ["How many apples?","🍎",2],
-  ["How many chicks?","🐥",3],
-  ["How many balloons?","🎈",4],
-  ["How many stars?","⭐",5],
-  ["How many fish?","🐟",6],
-  ["How many butterflies?","🦋",7],
-  ["How many bananas?","🍌",3],
-  ["How many flowers?","🌸",5],
-  ["How many ducks?","🦆",4],
-  ["How many lions?","🦁",6]
-];
+  currentQuestion=0;
 
-counting.forEach(c=>{
-  let objects="";
-  for(let i=0;i<c[2];i++) objects+=c[1];
+  document.getElementById("activityTitle").textContent =
+    categories[currentCategory].title;
 
-  const choices=[c[2]-1,c[2],c[2]+1];
+  renderQuestion();
+}
 
-  activities.push({
-    type:"choice",
-    category:"🔢 Counting",
-    question:c[0],
-    visual:objects,
-    choices:choices.map(String),
-    answer:1
-  });
-});
+function renderQuestion(){
 
-/* =========================================================
-   5. ANIMALS
-========================================================= */
+  const data=categories[currentCategory];
+  const item=data.items[currentQuestion];
 
-const animals=[
-  "🦁 Lion",
-  "🐘 Elephant",
-  "🦒 Giraffe",
-  "🐒 Monkey",
-  "🐼 Panda",
-  "🐰 Rabbit",
-  "🐶 Dog",
-  "🐱 Cat",
-  "🐴 Horse",
-  "🐧 Penguin",
-  "🐻‍❄️ Polar Bear",
-  "🐦 Bird",
-  "🐟 Fish",
-  "🐝 Bee",
-  "🦆 Duck",
-  "🐔 Chicken",
-  "🐆 Leopard",
-  "🦓 Zebra"
-];
+  currentSpeech="";
 
-animals.forEach((a,index)=>{
-  activities.push({
-    type:"choice",
-    category:"🐾 Animals",
-    question:"Can you find the " + a.substring(2).toLowerCase() + "?",
-    visual:"🐾",
-    choices:animals,
-    answer:index
-  });
-});
+  document.getElementById("progress").style.width =
+    ((currentQuestion+1)/data.items.length*100)+"%";
 
-/* =========================================================
-   6. ANIMAL SOUNDS
-========================================================= */
+  const box=document.getElementById("question");
 
-const sounds=[
-  ["ROAR!","🦁 Lion",0],
-  ["WOOF!","🐶 Dog",1],
-  ["MEOW!","🐱 Cat",2],
-  ["NEIGH!","🐴 Horse",3],
-  ["QUACK!","🦆 Duck",4],
-  ["BUZZ!","🐝 Bee",5],
-  ["CLUCK!","🐔 Chicken",6],
-  ["BIRD SOUND!","🐦 Bird",7]
-];
+  if(data.type==="body"){
+    renderBody(box,item);
+  }
 
-sounds.forEach(s=>{
-  activities.push({
-    type:"choice",
-    category:"🔊 Animal Sounds",
-    question:"Who says " + s[0],
-    visual:"🔊",
-    choices:[
-      "🦁 Lion",
-      "🐶 Dog",
-      "🐱 Cat",
-      "🐴 Horse",
-      "🦆 Duck",
-      "🐝 Bee",
-      "🐔 Chicken",
-      "🐦 Bird"
-    ],
-    answer:s[2]
-  });
-});
+  else if(data.type==="colors"){
+    renderColor(box,item);
+  }
 
-/* =========================================================
-   7. WHAT DOES THE ANIMAL EAT?
-========================================================= */
+  else if(data.type==="shapes"){
+    renderShape(box,item);
+  }
 
-const foods=[
-  ["Rabbit","🐰","🥕",["🥕","🍌","🦴"]],
-  ["Dog","🐶","🦴",["🍎","🦴","🥕"]],
-  ["Monkey","🐒","🍌",["🍌","🦴","🌸"]],
-  ["Panda","🐼","🎋",["🍎","🎋","🥕"]],
-  ["Horse","🐴","🌿",["🦴","🌿","🍌"]],
-  ["Fish","🐟","🪱",["🍌","🪱","🥕"]],
-  ["Bee","🐝","🌸",["🌸","🦴","🍎"]]
-];
+  else if(data.type==="counting"){
+    renderCounting(box,item);
+  }
 
-foods.forEach(f=>{
-  activities.push({
-    type:"choice",
-    category:"🥕 What Does It Eat?",
-    question:"What does the " + f[0].toLowerCase() + " eat?",
-    visual:f[1],
-    choices:f[3],
-    answer:f[3].indexOf(f[2])
-  });
-});
+  else if(data.type==="animals"){
+    renderAnimals(box,item);
+  }
 
-/* =========================================================
-   8. DRAWING
-========================================================= */
+  else if(data.type==="sounds"){
+    renderSounds(box,item);
+  }
 
-activities.push({
-  type:"draw",
-  category:"✏️ Draw a Line",
-  question:"Help Mama Cat find her baby!",
-  instruction:"Use your finger or stylus to draw a line from Mama Cat to Baby Cat."
-});
+  else if(data.type==="food"){
+    renderFood(box,item);
+  }
 
-activities.push({
-  type:"draw",
-  category:"✏️ Draw a Line",
-  question:"Help Mama Dog find her puppy!",
-  instruction:"Use your finger or stylus to draw a line from Mama Dog to the puppy."
-});
+  else if(data.type==="drawing"){
+    renderDrawing(box,item);
+  }
 
-/* =========================================================
-   9. LETTERS
-========================================================= */
+  else if(data.type==="letters"){
+    renderLetters(box,item);
+  }
 
-const letters=[
-  ["A","🍎"],
-  ["B","🐝"],
-  ["C","🐱"],
-  ["D","🐶"],
-  ["E","🐘"],
-  ["F","🐟"]
-];
+  else if(data.type==="bigsmall"){
+    renderBigSmall(box,item);
+  }
 
-letters.forEach((l,index)=>{
-  activities.push({
-    type:"choice",
-    category:"🔤 Letters",
-    question:"Can you find the letter " + l[0] + "?",
-    visual:l[1],
-    choices:letters.map(x=>x[0]),
-    answer:index
-  });
-});
+  else if(data.type==="matching"){
+    renderMatching(box,item);
+  }
 
-/* =========================================================
-   10. BIG AND SMALL
-========================================================= */
+  else if(data.type==="missing"){
+    renderMissing(box,item);
+  }
 
-activities.push({
-  type:"choice",
-  category:"📏 Big & Small",
-  question:"Which elephant is BIG?",
-  visual:"🐘      🐘",
-  choices:["🐘 BIG","🐘 SMALL"],
-  answer:0
-});
+  else if(data.type==="hunt"){
+    renderHunt(box,item);
+  }
+}
 
-activities.push({
-  type:"choice",
-  category:"📏 Big & Small",
-  question:"Which dog is SMALL?",
-  visual:"🐶      🐕",
-  choices:["🐶 BIG","🐕 SMALL"],
-  answer:1
-});
+/* BODY PARTS */
 
-activities.push({
-  type:"choice",
-  category:"📏 Big & Small",
-  question:"Which tree is TALL?",
-  visual:"🌳      🌱",
-  choices:["🌳 TALL","🌱 SHORT"],
-  answer:0
-});
+function renderBody(box,item){
 
-/* =========================================================
-   11. MATCHING
-========================================================= */
+  const name=item[0];
 
-const matching=[
-  ["🐶","🐶","Dog"],
-  ["🦁","🦁","Lion"],
-  ["🍎","🍎","Apple"],
-  ["⭐","⭐","Star"],
-  ["🟡","🟡","Yellow"],
-  ["🐟","🐟","Fish"]
-];
+  currentSpeech="Where is your "+name+"?";
 
-matching.forEach(m=>{
-  activities.push({
-    type:"choice",
-    category:"🧩 Matching",
-    question:"Match the " + m[2] + "!",
-    visual:m[0],
-    choices:[m[0],m[1],"❌","❓"],
-    answer:0
-  });
-});
+  let options=[
+    item,
+    randomBodyOption(name),
+    randomBodyOption(name),
+    randomBodyOption(name)
+  ];
 
-/* =========================================================
-   12. WHAT'S MISSING?
-========================================================= */
+  options=uniqueBody(options,name);
 
-const missing=[
-  ["🍎 🍌 🍎 ❓","🍌"],
-  ["🦁 🐘 🦁 ❓","🐘"],
-  ["🔴 🔵 🔴 ❓","🔵"],
-  ["⭐ 🌙 ⭐ ❓","🌙"],
-  ["🐶 🐱 🐶 ❓","🐱"]
-];
+  shuffle(options);
 
-missing.forEach(m=>{
-  activities.push({
-    type:"choice",
-    category:"🧠 What's Missing?",
-    question:"What is missing?",
-    visual:m[0],
-    choices:[m[1],"🍎","🦁","⭐"],
-    answer:0
-  });
-});
+  box.innerHTML=`
+    <div class="question-text">Where is your ${name}? 👆</div>
+    <div class="visual">${item[1]}</div>
+    <div class="choices">
+      ${options.map((x,i)=>`
+        <button class="choice emoji-choice"
+          onclick="answerBody('${x[0]}',this,'${name}')">
+          ${x[1]}
+        </button>
+      `).join("")}
+    </div>
+    <div class="feedback" id="feedback"></div>
+  `;
+}
 
-/* =========================================================
-   13. BIG SAFARI HUNT
-========================================================= */
+function randomBodyOption(correct){
 
-const safariRounds=[
-  ["Find the butterfly!","🦋"],
-  ["Find the lion!","🦁"],
-  ["Find the banana!","🍌"],
-  ["Find the red flower!","🌹"],
-  ["Find the elephant!","🐘"],
-  ["Find the monkey!","🐒"],
-  ["Find the yellow flower!","🌼"],
-  ["Find the bird!","🐦"],
-  ["Find the giraffe!","🦒"],
-  ["Find the carrot!","🥕"],
-  ["Find the bee!","🐝"],
-  ["Find the pond!","💧"],
-  ["Find the turtle!","🐢"],
-  ["Find the apple!","🍎"],
-  ["Find the zebra!","🦓"]
-];
+  let list=categories.body.items
+    .filter(x=>x[0]!==correct);
 
-safariRounds.forEach(r=>{
-  activities.push({
-    type:"safari",
-    category:"🌿 Safari Hunt",
-    question:r[0],
-    target:r[1]
-  });
-});
+  return list[Math.floor(Math.random()*list.length)];
+}
 
-/* =========================================================
-   GAME STATE
-========================================================= */
+function uniqueBody(options,correct){
 
-let current=0;
-let drawing=false;
-let ctx;
+  let result=[];
+  let used=new Set();
+
+  for(let x of options){
+    if(!used.has(x[0])){
+      used.add(x[0]);
+      result.push(x);
+    }
+  }
+
+  while(result.length<4){
+    let x=randomBodyOption(correct);
+
+    if(!used.has(x[0])){
+      used.add(x[0]);
+      result.push(x);
+    }
+  }
+
+  return result;
+}
+
+function answerBody(value,button,correct){
+
+  if(value===correct){
+    correctAnswer(button,"Yes! That's your "+correct+"! 👏");
+  }else{
+    wrongAnswer(button);
+  }
+}
+
+/* COLORS */
+
+function renderColor(box,item){
+
+  const name=item[0];
+
+  const colorMap={
+    yellow:"#ffd92f",
+    blue:"#4aa3df",
+    green:"#5bb85c",
+    pink:"#f28bb8",
+    black:"#222",
+    white:"#fff",
+    purple:"#9b6bd6",
+    orange:"#f5a623",
+    red:"#e95b5b",
+    brown:"#9a6844"
+  };
+
+  currentSpeech="Find "+name;
+
+  let names=categories.colors.items.map(x=>x[0]);
+  let options=[name];
+
+  while(options.length<4){
+    let n=names[Math.floor(Math.random()*names.length)];
+    if(!options.includes(n)) options.push(n);
+  }
+
+  shuffle(options);
+
+  box.innerHTML=`
+    <div class="question-text">Can you find ${name}? 🌈</div>
+
+    <div class="color-box"
+      style="background:${colorMap[name]}">
+    </div>
+
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="answerSimple('${x}',this,'${name}')">
+          ${x}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+/* SHAPES */
+
+function renderShape(box,item){
+
+  const name=item[0];
+  const symbol=item[1];
+
+  currentSpeech="Find the "+name;
+
+  let options=categories.shapes.items
+    .map(x=>x[0]);
+
+  options=makeOptions(options,name);
+
+  box.innerHTML=`
+    <div class="question-text">What shape is this?</div>
+
+    <div class="shape">${symbol}</div>
+
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="answerSimple('${x}',this,'${name}')">
+          ${x}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+/* COUNTING */
+
+function renderCounting(box,item){
+
+  const name=item[0];
+  const number=item[1];
+  const emoji=item[2];
+
+  currentSpeech="How many "+name+"?";
+
+  let choices=[number-1,number,number+1];
+
+  if(number===2) choices=[1,2,3];
+
+  shuffle(choices);
+
+  box.innerHTML=`
+    <div class="question-text">How many ${name}? 🔢</div>
+
+    <div class="count-items">
+      ${Array(number).fill(emoji).join(" ")}
+    </div>
+
+    <div class="choices">
+      ${choices.map(n=>`
+        <button class="choice"
+          onclick="answerSimple(${n},this,${number})">
+          ${n}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+/* ANIMALS */
+
+function renderAnimals(box,item){
+
+  const name=item[0];
+  const emoji=item[1];
+
+  currentSpeech="Find the "+name;
+
+  let options=[item];
+
+  while(options.length<4){
+    let x=categories.animals.items[
+      Math.floor(Math.random()*categories.animals.items.length)
+    ];
+
+    if(!options.some(o=>o[0]===x[0])){
+      options.push(x);
+    }
+  }
+
+  shuffle(options);
+
+  box.innerHTML=`
+    <div class="question-text">Can you find the ${name}? 🐾</div>
+
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice emoji-choice"
+          onclick="answerSimple('${x[0]}',this,'${name}')">
+          ${x[1]}
+          <br>
+          <small>${x[0]}</small>
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+/* SOUNDS */
+
+function renderSounds(box,item){
+
+  const animal=item[0];
+  const emoji=item[1];
+  const sound=item[2];
+
+  currentSpeech="What sound does the "+animal+" make?";
+
+  let options=categories.sounds.items.map(x=>x[2]);
+
+  options=makeOptions(options,sound);
+
+  box.innerHTML=`
+    <div class="question-text">
+      What sound does the ${animal} make?
+    </div>
+
+    <div class="visual">${emoji}</div>
+
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="answerSimple('${x}',this,'${sound}')">
+          🔊 ${x}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+/* FOOD */
+
+function renderFood(box,item){
+
+  const animal=item[0];
+  const animalEmoji=item[1];
+  const food=item[2];
+  const foodEmoji=item[3];
+
+  currentSpeech="What does the "+animal+" eat?";
+
+  let foods=categories.food.items.map(x=>[
+    x[2],
+    x[3]
+  ]);
+
+  let options=[[food,foodEmoji]];
+
+  while(options.length<4){
+    let x=foods[Math.floor(Math.random()*foods.length)];
+
+    if(!options.some(o=>o[0]===x[0])){
+      options.push(x);
+    }
+  }
+
+  shuffle(options);
+
+  box.innerHTML=`
+    <div class="question-text">
+      What does the ${animal} eat? 🥕
+    </div>
+
+    <div class="food-pair">
+      <span>${animalEmoji}</span>
+      <span>➡️</span>
+      <span>❓</span>
+    </div>
+
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="answerSimple('${x[0]}',this,'${food}')">
+          <div style="font-size:48px">${x[1]}</div>
+          ${x[0]}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+/* DRAWING */
+
+function renderDrawing(box,item){
+
+  currentSpeech=item[2];
+
+  box.innerHTML=`
+    <div class="question-text">${item[2]}</div>
+
+    <div class="draw-instructions">
+      Use your finger or stylus ✏️
+    </div>
+
+    <div class="line-board">
+
+      <canvas id="drawCanvas"></canvas>
+
+      <div style="
+        position:absolute;
+        left:35px;
+        top:125px;
+        font-size:70px;
+      ">${item[0]}</div>
+
+      <div style="
+        position:absolute;
+        right:35px;
+        top:125px;
+        font-size:70px;
+      ">${item[1]}</div>
+
+    </div>
+
+    <button class="clear-btn" onclick="clearCanvas()">
+      🧹 Clear
+    </button>
+
+    <button
+      class="big-start"
+      style="font-size:20px;margin-top:12px;padding:12px 28px"
+      onclick="finishDrawing()">
+      💚 I Did It!
+    </button>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+
+  setTimeout(setupCanvas,50);
+}
+
 let canvas;
-let lineStarted=false;
+let ctx;
+let drawing=false;
+let hasDrawn=false;
 
-function startGame(){
-  current=0;
+function setupCanvas(){
 
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("complete").classList.add("hidden");
-  document.getElementById("game").classList.remove("hidden");
+  canvas=document.getElementById("drawCanvas");
 
-  renderActivity();
-}
+  if(!canvas)return;
 
-function restartGame(){
-  document.getElementById("complete").classList.add("hidden");
-  document.getElementById("home").classList.remove("hidden");
-}
+  const rect=canvas.getBoundingClientRect();
 
-/* =========================================================
-   RENDER
-========================================================= */
+  const ratio=window.devicePixelRatio||1;
 
-function renderActivity(){
-
-  if(current>=activities.length){
-    finishGame();
-    return;
-  }
-
-  const a=activities[current];
-
-  document.getElementById("category").textContent=a.category;
-  document.getElementById("question").textContent=a.question;
-  document.getElementById("instruction").textContent=a.instruction || "";
-
-  document.getElementById("feedback").textContent="";
-  document.getElementById("feedback").className="feedback";
-
-  const content=document.getElementById("activityContent");
-  content.innerHTML="";
-
-  updateProgress();
-
-  if(a.type==="choice"){
-    renderChoice(a);
-  }
-
-  if(a.type==="color"){
-    renderColor(a);
-  }
-
-  if(a.type==="draw"){
-    renderDraw(a);
-  }
-
-  if(a.type==="safari"){
-    renderSafari(a);
-  }
-
-  speakCurrent();
-}
-
-/* =========================================================
-   CHOICE ACTIVITY
-========================================================= */
-
-function renderChoice(a){
-
-  if(a.visual){
-    const visual=document.createElement("div");
-    visual.className="visual";
-    visual.textContent=a.visual;
-    document.getElementById("activityContent").appendChild(visual);
-  }
-
-  const choices=document.createElement("div");
-  choices.className="choices";
-
-  a.choices.forEach((choice,index)=>{
-
-    const btn=document.createElement("button");
-    btn.className="choice";
-    btn.textContent=choice;
-
-    btn.onclick=()=>{
-
-      if(index===a.answer){
-
-        btn.classList.add("correct");
-        correctFeedback();
-
-        setTimeout(nextActivity,850);
-
-      }else{
-
-        btn.classList.add("wrong");
-        tryAgain();
-      }
-    };
-
-    choices.appendChild(btn);
-  });
-
-  document.getElementById("activityContent").appendChild(choices);
-}
-
-/* =========================================================
-   COLOR ACTIVITY
-========================================================= */
-
-function renderColor(a){
-
-  const colorsGrid=document.createElement("div");
-  colorsGrid.className="choices";
-
-  a.colorData.forEach((c,index)=>{
-
-    const btn=document.createElement("button");
-    btn.className="color-choice";
-    btn.style.background=c[2];
-
-    const label=document.createElement("span");
-    label.className="color-label";
-    label.textContent=c[0];
-
-    btn.appendChild(label);
-
-    btn.onclick=()=>{
-
-      if(index===a.answer){
-
-        btn.classList.add("correct");
-        correctFeedback();
-        setTimeout(nextActivity,850);
-
-      }else{
-
-        btn.classList.add("wrong");
-        tryAgain();
-      }
-    };
-
-    colorsGrid.appendChild(btn);
-  });
-
-  document.getElementById("activityContent").appendChild(colorsGrid);
-}
-
-/* =========================================================
-   DRAWING ACTIVITY
-========================================================= */
-
-function renderDraw(a){
-
-  const wrap=document.createElement("div");
-  wrap.className="canvas-wrap";
-
-  canvas=document.createElement("canvas");
-  canvas.className="canvas-board";
-
-  canvas.width=900;
-  canvas.height=450;
+  canvas.width=rect.width*ratio;
+  canvas.height=rect.height*ratio;
 
   ctx=canvas.getContext("2d");
 
-  wrap.appendChild(canvas);
+  ctx.scale(ratio,ratio);
 
-  const mama=document.createElement("div");
-  mama.className="animal-target mama";
-  mama.textContent=a.question.includes("Dog") ? "🐶" : "🐱";
-  wrap.appendChild(mama);
-
-  const baby=document.createElement("div");
-  baby.className="animal-target baby";
-  baby.textContent=a.question.includes("Dog") ? "🐕" : "🐱";
-  wrap.appendChild(baby);
-
-  const ml=document.createElement("div");
-  ml.className="target-label mama-label";
-  ml.textContent="Mama";
-  wrap.appendChild(ml);
-
-  const bl=document.createElement("div");
-  bl.className="target-label baby-label";
-  bl.textContent="Baby";
-  wrap.appendChild(bl);
-
-  document.getElementById("activityContent").appendChild(wrap);
-
-  const buttons=document.createElement("div");
-  buttons.className="draw-buttons";
-
-  const clear=document.createElement("button");
-  clear.textContent="🧹 Clear";
-  clear.onclick=clearDrawing;
-
-  const done=document.createElement("button");
-  done.textContent="✅ I'm Done!";
-  done.onclick=finishDrawing;
-
-  buttons.appendChild(clear);
-  buttons.appendChild(done);
-
-  document.getElementById("activityContent").appendChild(buttons);
-
-  setupDrawing();
-}
-
-function setupDrawing(){
-
-  drawing=false;
-  lineStarted=false;
+  ctx.lineWidth=6;
+  ctx.lineCap="round";
+  ctx.lineJoin="round";
+  ctx.strokeStyle="#4c8b4e";
 
   canvas.addEventListener("pointerdown",startDrawing);
   canvas.addEventListener("pointermove",drawLine);
@@ -1206,22 +1524,22 @@ function setupDrawing(){
   canvas.addEventListener("pointercancel",stopDrawing);
 }
 
-function getPosition(e){
+function pointerPosition(e){
 
   const rect=canvas.getBoundingClientRect();
 
   return {
-    x:(e.clientX-rect.left)*(canvas.width/rect.width),
-    y:(e.clientY-rect.top)*(canvas.height/rect.height)
+    x:e.clientX-rect.left,
+    y:e.clientY-rect.top
   };
 }
 
 function startDrawing(e){
 
   drawing=true;
-  lineStarted=true;
+  hasDrawn=true;
 
-  const p=getPosition(e);
+  const p=pointerPosition(e);
 
   ctx.beginPath();
   ctx.moveTo(p.x,p.y);
@@ -1229,14 +1547,9 @@ function startDrawing(e){
 
 function drawLine(e){
 
-  if(!drawing) return;
+  if(!drawing)return;
 
-  const p=getPosition(e);
-
-  ctx.lineWidth=10;
-  ctx.lineCap="round";
-  ctx.lineJoin="round";
-  ctx.strokeStyle="#e49b28";
+  const p=pointerPosition(e);
 
   ctx.lineTo(p.x,p.y);
   ctx.stroke();
@@ -1246,290 +1559,501 @@ function stopDrawing(){
   drawing=false;
 }
 
-function clearDrawing(){
+function clearCanvas(){
 
-  if(ctx){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-  }
+  if(!canvas||!ctx)return;
 
-  lineStarted=false;
+  const rect=canvas.getBoundingClientRect();
+
+  ctx.clearRect(0,0,rect.width,rect.height);
+
+  hasDrawn=false;
 }
 
 function finishDrawing(){
 
-  if(!lineStarted){
+  if(!hasDrawn){
 
-    tryAgain();
+    document.getElementById("feedback").textContent=
+      "Try drawing a line first! ✏️";
+
     return;
   }
 
-  correctFeedback();
-
-  setTimeout(nextActivity,1000);
+  correctAnswer(null,"Great drawing, Orion! 🎨👏");
 }
 
-/* =========================================================
-   SAFARI HUNT
-========================================================= */
+/* LETTERS */
 
-function renderSafari(a){
+function renderLetters(box,item){
 
-  const scene=document.createElement("div");
-  scene.className="safari";
+  const letter=item[0];
+  const emoji=item[1];
+  const word=item[2];
 
-  scene.innerHTML=`
-    <div class="sun">☀️</div>
-    <div class="cloud cloud1">☁️</div>
-    <div class="cloud cloud2">☁️</div>
+  currentSpeech="What letter is this?";
 
-    <div class="tree tree1">🌴</div>
-    <div class="tree tree2">🌳</div>
-    <div class="tree tree3">🌳</div>
-    <div class="tree tree4">🌴</div>
+  let options=[letter];
 
-    <div class="pond">💧</div>
+  let letters=categories.letters.items.map(x=>x[0]);
+
+  while(options.length<4){
+    let x=letters[Math.floor(Math.random()*letters.length)];
+
+    if(!options.includes(x)) options.push(x);
+  }
+
+  shuffle(options);
+
+  box.innerHTML=`
+    <div class="question-text">What letter is this?</div>
+
+    <div class="letter">${letter}</div>
+
+    <div style="font-size:55px">${emoji}</div>
+
+    <div style="font-size:23px;font-weight:bold">
+      ${word}
+    </div>
+
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="answerSimple('${x}',this,'${letter}')">
+          ${x}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
   `;
+}
+
+/* BIG / SMALL */
+
+function renderBigSmall(box,item){
+
+  const text=item[0];
+  const emoji=item[1];
+  const answer=item[2];
+
+  currentSpeech="Is it "+answer+"?";
+
+  let options=["big","small","tall"];
+
+  shuffle(options);
+
+  box.innerHTML=`
+    <div class="question-text">
+      Which one?
+    </div>
+
+    <div class="big-small-area">
+      <div class="${answer==="small"?"small-object":"big-object"}">
+        ${emoji}
+      </div>
+    </div>
+
+    <div style="font-size:20px;font-weight:bold">
+      ${text}
+    </div>
+
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="answerSimple('${x}',this,'${answer}')">
+          ${x}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+/* MATCHING */
+
+function renderMatching(box,item){
+
+  const emoji=item[0];
+  const answer=item[1];
+
+  currentSpeech="What is this?";
+
+  const all=[
+    ["🐶","dog"],
+    ["🦁","lion"],
+    ["🍎","apple"],
+    ["⭐","star"],
+    ["🟨","yellow"],
+    ["🐟","fish"],
+    ["🐱","cat"],
+    ["🍌","banana"]
+  ];
+
+  let options=[item];
+
+  while(options.length<4){
+
+    let x=all[Math.floor(Math.random()*all.length)];
+
+    if(!options.some(o=>o[1]===x[1])){
+      options.push(x);
+    }
+  }
+
+  shuffle(options);
+
+  box.innerHTML=`
+    <div class="question-text">
+      What is this? 🧩
+    </div>
+
+    <div class="visual">${emoji}</div>
+
+    <div class="choices">
+      ${options.map(x=>`
+        <button class="choice"
+          onclick="answerSimple('${x[1]}',this,'${answer}')">
+          ${x[1]}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+/* MISSING */
+
+function renderMissing(box,item){
+
+  const pattern=item[0];
+  const answer=item[1];
+
+  currentSpeech="What is missing?";
+
+  let possible=[
+    answer,
+    randomMissing(answer),
+    randomMissing(answer),
+    randomMissing(answer)
+  ];
+
+  possible=[...new Set(possible)];
+
+  while(possible.length<4){
+    let x=randomMissing(answer);
+    if(!possible.includes(x)) possible.push(x);
+  }
+
+  shuffle(possible);
+
+  box.innerHTML=`
+    <div class="question-text">
+      What is missing? 🧠
+    </div>
+
+    <div class="pattern">${pattern}</div>
+
+    <div class="choices">
+      ${possible.map(x=>`
+        <button class="choice"
+          onclick="answerSimple('${x}',this,'${answer}')">
+          ${x}
+        </button>
+      `).join("")}
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  `;
+}
+
+function randomMissing(correct){
+
+  const list=[
+    "apple","banana","cat","dog","moon",
+    "blue","elephant","lion","star"
+  ];
+
+  let x;
+
+  do{
+    x=list[Math.floor(Math.random()*list.length)];
+  }while(x===correct);
+
+  return x;
+}
+
+/* SAFARI HUNT */
+
+function renderHunt(box,item){
+
+  const targetName=item[0];
+  const targetEmoji=item[1];
+
+  currentSpeech="Find the "+targetName;
 
   const objects=[
-    "🦋","🦁","🍌","🌹","🐘","🐒","🌼",
-    "🐦","🦒","🥕","🐝","💧","🐢","🍎",
-    "🦓","🐯","🐆","🐰","🐍","🐟","🐔",
-    "🌸","🍉","🥥","⭐","🪨","🌿"
+    ["🌳",10,65],
+    ["🌴",82,63],
+    ["🌸",22,76],
+    ["🌼",70,75],
+    ["🪨",55,82],
+    ["🍎",38,73],
+    ["🍌",63,67],
+    ["🥕",48,76],
+    ["🦋",30,25],
+    ["🐝",75,30],
+    ["🐢",60,86],
+    ["🦁",15,75],
+    ["🐒",83,76],
+    ["🐘",52,68],
+    ["🦒",88,55],
+    ["🐦",42,35],
+    ["🦓",28,84],
+    ["💧",70,87]
   ];
+
+  if(!objects.some(o=>o[0]===targetEmoji)){
+    objects.push([targetEmoji,50,65]);
+  }
 
   shuffle(objects);
 
-  const positions=[
-    [8,18],[20,28],[34,15],[49,27],[64,16],
-    [78,30],[13,53],[27,66],[43,48],[58,63],
-    [73,50],[88,62],[7,75],[19,40],[35,76],
-    [51,37],[68,75],[83,43],[31,25],[55,18],
-    [91,25],[45,78],[76,20],[10,35],[61,35],
-    [87,75],[39,58]
-  ];
+  box.innerHTML=`
+    <div class="safari-instruction">
+      Find the ${targetName}! ${targetEmoji}
+    </div>
 
-  objects.forEach((obj,index)=>{
+    <div class="safari" id="safariScene">
 
-    const button=document.createElement("button");
+      <div class="sun">☀️</div>
+      <div class="cloud one">☁️</div>
+      <div class="cloud two">☁️</div>
 
-    button.className="safari-object";
-    button.textContent=obj;
+      <div class="tree t1">🌳</div>
+      <div class="tree t2">🌴</div>
+      <div class="tree t3">🌳</div>
 
-    const pos=positions[index];
+      ${objects.map((o,i)=>`
+        <button
+          class="safari-object"
+          style="left:${o[1]}%;top:${o[2]}%"
+          onclick="huntAnswer('${escapeQuotes(o[0])}',this,'${escapeQuotes(targetEmoji)}')">
+          ${o[0]}
+        </button>
+      `).join("")}
 
-    button.style.left=pos[0]+"%";
-    button.style.top=pos[1]+"%";
+    </div>
 
-    button.onclick=()=>{
-
-      if(obj===a.target){
-
-        button.classList.add("found");
-        button.disabled=true;
-
-        correctFeedback();
-
-        setTimeout(nextActivity,1000);
-
-      }else{
-
-        tryAgain();
-      }
-    };
-
-    scene.appendChild(button);
-  });
-
-  document.getElementById("activityContent").appendChild(scene);
-
-  const hint=document.createElement("div");
-  hint.className="hint";
-  hint.textContent="🔎 Look carefully! There are many things hiding in the safari.";
-  document.getElementById("activityContent").appendChild(hint);
+    <div class="feedback" id="feedback"></div>
+  `;
 }
 
-/* =========================================================
-   FEEDBACK
-========================================================= */
-
-function correctFeedback(){
-
-  const f=document.getElementById("feedback");
-
-  const messages=[
-    "🎉 Good job, Orion!",
-    "🌟 Amazing!",
-    "👏 You did it!",
-    "🦁 Great job!",
-    "⭐ Wonderful!",
-    "🎊 Yay, Orion!"
-  ];
-
-  f.textContent=messages[Math.floor(Math.random()*messages.length)];
-  f.className="feedback good";
-
-  speak(f.textContent);
+function escapeQuotes(x){
+  return x.replace(/'/g,"\\'");
 }
 
-function tryAgain(){
+function huntAnswer(value,button,correct){
 
-  const f=document.getElementById("feedback");
+  if(value===correct){
 
-  f.textContent="🔎 Try again! You can do it!";
-  f.className="feedback try";
+    button.classList.add("correct");
 
-  speak("Try again. You can do it!");
-}
+    document.getElementById("feedback").textContent=
+      "You found it! 🎉👏";
 
-/* =========================================================
-   NEXT
-========================================================= */
-
-function nextActivity(){
-
-  current++;
-
-  if(current>=activities.length){
-
-    finishGame();
+    setTimeout(nextQuestion,850);
 
   }else{
 
-    renderActivity();
-  }
-}
+    button.classList.add("wrong");
 
-/* =========================================================
-   PROGRESS
-========================================================= */
-
-function updateProgress(){
-
-  const percent=(current/activities.length)*100;
-
-  document.getElementById("progressBar").style.width=percent+"%";
-
-  document.getElementById("progressText").textContent=
-    "Activity " + (current+1) + " of " + activities.length;
-}
-
-/* =========================================================
-   FINISH
-========================================================= */
-
-function finishGame(){
-
-  document.getElementById("game").classList.add("hidden");
-  document.getElementById("complete").classList.remove("hidden");
-
-  createConfetti();
-
-  setTimeout(()=>{
-    speak("Good job Orion! You finished your Kindergarten Safari!");
-  },300);
-}
-
-/* =========================================================
-   CONFETTI
-========================================================= */
-
-function createConfetti(){
-
-  const pieces=[
-    "🎉","🎊","⭐","🌟","🦁","🦋",
-    "🌈","❤️","🍌","🎈","👏","✨"
-  ];
-
-  for(let i=0;i<70;i++){
-
-    const piece=document.createElement("div");
-
-    piece.className="confetti";
-    piece.textContent=pieces[Math.floor(Math.random()*pieces.length)];
-
-    piece.style.left=Math.random()*100+"%";
-    piece.style.animationDelay=Math.random()*2+"s";
-    piece.style.fontSize=(18+Math.random()*22)+"px";
-
-    document.body.appendChild(piece);
+    document.getElementById("feedback").textContent=
+      "Keep looking! 👀🌿";
 
     setTimeout(()=>{
-      piece.remove();
-    },5000);
+      button.classList.remove("wrong");
+    },450);
   }
 }
 
-/* =========================================================
-   SPEECH
-========================================================= */
+/* ANSWERS */
 
-function speak(text){
+function answerSimple(value,button,correct){
 
-  if(!("speechSynthesis" in window)) return;
+  if(String(value)===String(correct)){
 
-  window.speechSynthesis.cancel();
-
-  const utterance=new SpeechSynthesisUtterance(text);
-
-  utterance.rate=.85;
-  utterance.pitch=1.1;
-
-  window.speechSynthesis.speak(utterance);
-}
-
-function speakCurrent(){
-
-  setTimeout(()=>{
-
-    const a=activities[current];
-
-    if(a){
-      speak(a.question);
-    }
-
-  },250);
-}
-
-/* =========================================================
-   FULLSCREEN
-========================================================= */
-
-function goFullscreen(){
-
-  const element=document.documentElement;
-
-  if(element.requestFullscreen){
-
-    element.requestFullscreen().catch(()=>{});
-
-  }else if(element.webkitRequestFullscreen){
-
-    element.webkitRequestFullscreen();
-  }
-}
-
-/* =========================================================
-   ROTATION
-========================================================= */
-
-function rotateScreen(){
-
-  if(screen.orientation && screen.orientation.lock){
-
-    screen.orientation.lock("landscape").catch(()=>{
-
-      alert("Please turn your phone sideways for the best view. 📱↔️");
-    });
+    correctAnswer(button,"Great job, Orion! 🎉");
 
   }else{
 
-    alert("Please turn your phone sideways for the best view. 📱↔️");
+    wrongAnswer(button);
   }
 }
 
-/* =========================================================
-   SHUFFLE
-========================================================= */
+function correctAnswer(button,message){
+
+  if(button){
+    button.classList.add("correct");
+    button.disabled=true;
+  }
+
+  const feedback=document.getElementById("feedback");
+
+  if(feedback){
+    feedback.textContent=message;
+  }
+
+  setTimeout(nextQuestion,850);
+}
+
+function wrongAnswer(button){
+
+  button.classList.add("wrong");
+
+  const feedback=document.getElementById("feedback");
+
+  if(feedback){
+    feedback.textContent="Try again! 💚";
+  }
+
+  setTimeout(()=>{
+    button.classList.remove("wrong");
+  },450);
+}
+
+/* NEXT */
+
+function nextQuestion(){
+
+  stopSpeech();
+
+  const data=categories[currentCategory];
+
+  currentQuestion++;
+
+  if(currentQuestion<data.items.length){
+
+    renderQuestion();
+
+  }else{
+
+    finishCategory();
+  }
+}
+
+function finishCategory(){
+
+  if(playEverything){
+
+    activityIndex++;
+
+    if(activityIndex<everythingList.length){
+
+      currentCategory=everythingList[activityIndex];
+
+      currentQuestion=0;
+
+      setTimeout(startActivity,250);
+
+    }else{
+
+      showFinalCelebration();
+    }
+
+  }else{
+
+    showCategoryCelebration();
+  }
+}
+
+/* CATEGORY FINISH */
+
+function showCategoryCelebration(){
+
+  hideAll();
+
+  document.getElementById("celebration").classList.add("active");
+
+  document.getElementById("celebrationTitle").textContent=
+    "🎉 GREAT JOB, ORION! 🎉";
+
+  document.getElementById("celebrationText").textContent=
+    "You finished "+categories[currentCategory].title+"!";
+
+  makeConfetti();
+}
+
+/* EVERYTHING FINISH */
+
+function showFinalCelebration(){
+
+  hideAll();
+
+  document.getElementById("celebration").classList.add("active");
+
+  document.getElementById("celebrationTitle").textContent=
+    "🎉 GOOD JOB, ORION! 🎉";
+
+  document.getElementById("celebrationText").textContent=
+    "You finished the whole Safari! 🦁🌿🏆";
+
+  makeConfetti();
+}
+
+/* CONFETTI */
+
+function makeConfetti(){
+
+  const container=document.getElementById("confetti");
+
+  container.innerHTML="";
+
+  const pieces=[
+    "🎉","⭐","🌟","🎈","🦁","🐘","🦒",
+    "🍎","🍌","🌸","💚","💛","🎊"
+  ];
+
+  for(let i=0;i<55;i++){
+
+    const span=document.createElement("span");
+
+    span.textContent=
+      pieces[Math.floor(Math.random()*pieces.length)];
+
+    span.style.left=Math.random()*100+"%";
+
+    span.style.animationDelay=
+      Math.random()*1.8+"s";
+
+    span.style.animationDuration=
+      (2.2+Math.random()*2)+"s";
+
+    container.appendChild(span);
+  }
+}
+
+/* OPTIONS */
+
+function makeOptions(list,correct){
+
+  let options=[correct];
+
+  while(options.length<4){
+
+    let x=list[Math.floor(Math.random()*list.length)];
+
+    if(!options.includes(x)){
+      options.push(x);
+    }
+  }
+
+  shuffle(options);
+
+  return options;
+}
 
 function shuffle(array){
 
@@ -1537,15 +2061,95 @@ function shuffle(array){
 
     const j=Math.floor(Math.random()*(i+1));
 
-    [array[i],array[j]]=[array[j],array[i]];
+    [array[i],array[j]]=
+      [array[j],array[i]];
   }
 
   return array;
 }
 
-/* =========================================================
-   START
-========================================================= */
+/* SPEECH */
+
+function speakCurrent(){
+
+  if(!currentSpeech)return;
+
+  stopSpeech();
+
+  const utterance=
+    new SpeechSynthesisUtterance(currentSpeech);
+
+  utterance.rate=.8;
+  utterance.pitch=1.2;
+
+  speechSynthesis.speak(utterance);
+}
+
+function stopSpeech(){
+
+  if("speechSynthesis" in window){
+    speechSynthesis.cancel();
+  }
+}
+
+/* FULLSCREEN */
+
+function goFullscreen(){
+
+  const element=document.documentElement;
+
+  if(!document.fullscreenElement){
+
+    if(element.requestFullscreen){
+
+      element.requestFullscreen();
+
+    }else if(element.webkitRequestFullscreen){
+
+      element.webkitRequestFullscreen();
+    }
+
+  }else{
+
+    if(document.exitFullscreen){
+
+      document.exitFullscreen();
+
+    }else if(document.webkitExitFullscreen){
+
+      document.webkitExitFullscreen();
+    }
+  }
+}
+
+/* ROTATION */
+
+async function rotateScreen(){
+
+  try{
+
+    if(screen.orientation && screen.orientation.lock){
+
+      await screen.orientation.lock("landscape");
+
+    }else{
+
+      alert(
+        "Please rotate your phone sideways for a bigger Safari screen! 🦁↔️"
+      );
+    }
+
+  }catch(error){
+
+    alert(
+      "Please turn your phone sideways for the best Safari view! 🦁↔️"
+    );
+  }
+}
+
+/* INITIAL */
+
+window.addEventListener("beforeunload",stopSpeech);
 
 </script>
 
